@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Aliases
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias todo="nvim TODO.md"
+alias pp="cd ~/Documents/python_projects"
+alias venv="source .venv/bin/activate"
+alias n=nvim
+alias ..="cd .."
+alias ...="cd ../.."
+alias c="clear"
+alias e="exit"
+alias l="ls -l --color=auto"
+alias ll="ls -all --color=auto"
+alias gs='git status'
+alias ga='git add'
+alias gcm='git commit -m'
+alias gp='git push'
+alias s="source"
+
