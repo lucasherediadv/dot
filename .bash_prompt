@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Bash prompt
+export PS1="\w $ "
+
