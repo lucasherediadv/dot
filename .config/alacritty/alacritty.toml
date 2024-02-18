@@ -1,0 +1,17 @@
+# Settings
+
+import = [".config/alacritty/themes/gnome_terminal.toml"] # Import theme
+
+[font]
+size = 14
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[window]
+dynamic_padding = true # Fix problems with padding
+
+[window.padding]
+x = 8
+y = 0
+
