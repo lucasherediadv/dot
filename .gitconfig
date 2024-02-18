@@ -9,6 +9,3 @@
   editor = nvim
   autocrlf = input
 
-[status]
-  short = true
-
