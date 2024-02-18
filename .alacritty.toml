@@ -1,4 +1,19 @@
-# ----------------Theme: Gnome (Gnome Terminal Default)-------------------
+# Settings
+
+[font]
+size = 14
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[window]
+dynamic_padding = true # Fix problems with padding
+
+[window.padding]
+x = 8
+y = 0
+
+# Theme: Gnome (Gnome Terminal Default)
 
 # Default colors
 [colors.primary]
@@ -26,18 +41,4 @@ blue       = '#2a7bde'
 magenta    = '#c061cb'
 cyan       = '#33c7de'
 white      = '#ffffff'
-[font]
-size = 14
-
-# ----------------------Settings-----------------------------
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-
-# Fix problems with padding
-[window]
-dynamic_padding = true
-
-[window.padding]
-x = 8
-y = 0
 
