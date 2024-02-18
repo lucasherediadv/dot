@@ -1,67 +1,25 @@
-# .bashrc
+# Load the shell dotfiles, and then some:
+# ~/.path can be used to extend `$PATH`.
+# ~/.extra can be used for other settings you don't want to commit.
+for file in ~/.{path,exports,bash_prompt,functions,aliases,extra}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+# Enable bash completion
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion;
 fi
 
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
+# Exit early if not interactive
+[ -z "$PS1" ] && return
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-unset rc
-
-# Minimal prompt
-PS1="\w $ "
-
-# Enable vi navigation
+# Enable vi commands
 set -o vi
 
-# ------------ Aliases ---------------
-
-# Alias to manage my dotfiles with a git bare repo
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-alias todo="nvim TODO.md"
-alias pp="cd ~/Documents/python_projects"
-alias venv="source .venv/bin/activate"
-
-alias n=nvim
-alias ..="cd .."
-alias ...="cd ../.."
-alias c="clear"
-alias e="exit"
-
-alias l="ls -l"
-alias ll="ls -all"
-
-alias gs='git status'
-alias ga='git add'
-alias gcm='git commit -m'
-alias gp='git push'
-
-# ---------- History ----------------
-
-HISTCONTROL=ignoredups
-HISTSIZE=2000
-HISTFILESIZE=2000
+# Append instead of overwriting Bash history
 shopt -s histappend
 
-# ----------- Node Version Manager --------------
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Enable autocd. When enabled, just the name of a directory will be sufficient to cd to it.
+shopt -s autocd
 
