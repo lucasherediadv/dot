@@ -1,5 +1,6 @@
--- Set mapleader to space
-vim.g.mapleader = " "
+-- Map leader
+vim.g.mapleader = " " -- Re-map leader from default \ to space
+vim.g.maplocalleader = '\\' -- Local leader becomes \.
 
 -- Disable Warning
 vim.g.loaded_perl_provider = 0
