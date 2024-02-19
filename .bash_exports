@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+EDITOR="nvim" # Set nvim default editor
+HISTCONTROL=ignoredups # Ignore duplicate commands in history
+HISTSIZE=2000 # Number of lines in active history
+HISTFILESIZE=2000 # Number of lines saved in Bash history
+
