@@ -1,25 +1,16 @@
-# Load the shell dotfiles, and then some:
-# ~/.path can be used to extend `$PATH`.
-# ~/.extra can be used for other settings you don't want to commit.
-for file in ~/.{path,exports,bash_prompt,functions,aliases,extra}; do
+# The following files are sourced if they're present
+# This keeps things a little more organized and modular
+for file in ~/.{bash_exports,bash_prompt,bash_aliases,bash_extras}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-# Enable bash completion
-if [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
+# If not running interactively, don't do anything
+if [[ $- != *i* ]]; then
+  return
 fi
 
-# Exit early if not interactive
-[ -z "$PS1" ] && return
-
-# Enable vi commands
-set -o vi
-
-# Append instead of overwriting Bash history
-shopt -s histappend
-
-# Enable autocd. When enabled, just the name of a directory will be sufficient to cd to it.
-shopt -s autocd
+set -o vi # Enable vi navigation
+shopt -s histappend # Append Bash history
+shopt -s autocd # Enable autocd.
 
