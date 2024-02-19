@@ -3,7 +3,7 @@ return {
   opts = {
     on_attach = function(bufnr)
       local gitsigns = require "gitsigns"
-      vim.keymap.set("n", "<leader>ph", gitsigns.preview_hunk, {buffer = bufnr}, { desc = "Preview hunk"})
+      vim.keymap.set("n", "<leader>ph", gitsigns.preview_hunk, {buffer = bufnr}) -- Preview hunk with <leader>ph
     end,
     max_file_length = 10000, -- Don't load if file size is > 10000
   },
