@@ -34,7 +34,7 @@ alias gf='git diff'
 alias gl='git log'
 
 # Dot-files
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
 alias da='dotfiles add'
 alias dcm='dotfiles commit'
