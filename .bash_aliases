@@ -3,6 +3,7 @@
 # Core
 alias l="ls -l --color=auto"
 alias ll="ls -all --color=auto"
+alias tre="tree -C"
 alias ..="cd .."
 alias ...="cd ../.."
 alias s="source"
@@ -14,14 +15,22 @@ alias mv='rm -v'
 alias n=nvim
 alias venv="source .venv/bin/activate"
 
-# Files/Dirs
+# Files
 alias todo="nvim Documents/TODO.md"
 alias pp="cd ~/Documents/python_projects"
 
 # Git
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gp='git push'
+alias gf='git diff'
+
+# Dot-files
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ds='dotfiles status'
+alias da='dotfiles add'
+alias dcm='dotfiles commit -m'
+alias dp='dotfiles push'
+alias dff='dotfiles diff'
 
