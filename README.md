@@ -1,4 +1,4 @@
-## Philosophy && Motivation
+## Philosophy & Motivation
 
 - Minimalist, terminal based workflow.
 
