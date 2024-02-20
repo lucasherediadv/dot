@@ -22,7 +22,7 @@ alias pp="cd ~/Documents/python_projects"
 # Git
 alias gs='git status'
 alias ga='git add'
-alias gcm='git commit -m'
+alias gcm='git commit' # I write the commit message in neovim since it has spell checker
 alias gp='git push'
 alias gf='git diff'
 alias gl='git log'
@@ -31,7 +31,7 @@ alias gl='git log'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
 alias da='dotfiles add'
-alias dcm='dotfiles commit -m'
+alias dcm='dotfiles commit' # Same as git commit
 alias dp='dotfiles push'
 alias dff='dotfiles diff'
 alias dl="dotfiles log"
