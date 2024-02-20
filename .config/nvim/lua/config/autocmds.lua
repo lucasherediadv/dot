@@ -1,6 +1,6 @@
-local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+local autocmd = vim.api.nvim_create_autocmd -- Create auto command
 
--- Remove whitespace on save
+-- Remove white space on save
 autocmd("BufWritePre", {
   pattern = {"*"},
   command = [[%s/\s\+$//e]],
@@ -29,7 +29,7 @@ autocmd({ "VimResized" }, {
   end,
 })
 
--- Close some filetypes with <q>
+-- Close some file types with <q>
 autocmd("FileType", {
   pattern = {
     "qf",
@@ -47,6 +47,15 @@ autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- Wrap and check for spell in text filetypes
+autocmd("Filetype", {
+  pattern = { "gitcommit", "markdown", "text"},
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
   end,
 })
 
