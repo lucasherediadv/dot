@@ -1,4 +1,4 @@
-# Philosophy && Motivation
+## Philosophy && Motivation
 
 - Minimalist, terminal based workflow.
 
@@ -6,7 +6,7 @@
 
 - Modularized file structure.
 
-# Git bare repo
+## Git bare repo
 
-# How to setup in another machine
+## How to setup in another machine
 
