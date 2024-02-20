@@ -1,5 +1,6 @@
 # The following files are sourced if they're present
 # This keeps things a little more organized and modular
+# ~/.bash_extras is for other things I don't want to commit
 for file in ~/.{bash_exports,bash_prompt,bash_aliases,bash_extras}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
