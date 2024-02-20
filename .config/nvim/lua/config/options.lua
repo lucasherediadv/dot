@@ -1,19 +1,15 @@
 -- Map leader
-vim.g.mapleader = " " -- Re-map leader from default \ to space
-vim.g.maplocalleader = '\\' -- Local leader becomes \.
+vim.g.mapleader = " " -- Re-map leader from default '\' to 'space'
 
 -- Disable Warning
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Disable netrw because of telescope-file-browser
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 local options = {
   autowrite = true, -- Enable auto write
   confirm = true, -- Confirm to save changes before exiting modified buffer
-  list = true, -- Show some invisible characters (tabs, spaces)
+  list = true, -- Show some invisible characters
+  listchars = { tab = '→ ', trail = '•', extends = '»', precedes = '«' }, -- Replace with symbols
   expandtab = true, -- Use spaces instead of tabs
   tabstop = 2, -- Number of spaces tabs count for
   shiftwidth = 2, -- Size of an indent
@@ -35,16 +31,18 @@ local options = {
   mouse = "a", -- Enable mouse mode
   splitright = true, -- Put new windows right of current
   splitbelow = true, -- Put new windows below current
-  laststatus = 3, -- Global statusline
-  conceallevel = 2, -- Hide * markup for bold and italic, but not markers with substitutions
+  laststatus = 3, -- Global status line
+  conceallevel = 0, -- So that I can see `` in markdown files
   swapfile = false, -- Disable use of swap files
   backup = false, -- Disable backup file
-  writebackup = false, -- if a file is begin edited by antother program (or was written to a file while editing with another program), it is not allowed to be edited
+  writebackup = false, -- if a file is begin edited by another program (or was written to a file while editing with another program), it is not allowed to be edited
   fileencoding = "utf-8", -- The encoding written to a file
   wildmenu = true, -- Make tab completion for files/buffers act like bash
   signcolumn = "yes", -- Always show the sign column
   history = 100, -- Keep 100 lines of history
   cmdheight = 1, -- Set height of command line
+  -- spell = true, -- This is enabled by file type in 'autocmd.lua'
+  spelllang="en_US", -- Spell language
 }
 
 for option, value in pairs(options) do
