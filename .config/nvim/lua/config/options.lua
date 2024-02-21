@@ -43,6 +43,7 @@ local options = {
   cmdheight = 1, -- Set height of command line
   -- spell = true, -- This is enabled by file type in 'autocmd.lua'
   spelllang="en_US", -- Spell language
+  showmatch = true, -- When a bracket is inserted, briefly jump to the matching one.
 }
 
 for option, value in pairs(options) do
