@@ -1,4 +1,4 @@
-## Dofiles
+## Dotfiles
 
 My configuration files for Neovim, Bash, Tmux and other things.
 
