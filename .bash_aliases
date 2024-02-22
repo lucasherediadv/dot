@@ -22,7 +22,7 @@ alias tls="tmux ls"
 alias tks='tmux kill-session'
 
 # Files
-alias todo="nvim Documents/TODO.md"
+alias todo="nvim Documents/todo.md"
 alias pp="cd ~/Documents/python_projects"
 
 # Git
