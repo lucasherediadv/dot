@@ -35,15 +35,13 @@ local options = {
   conceallevel = 0, -- So that I can see `` in markdown files
   swapfile = false, -- Disable use of swap files
   backup = false, -- Disable backup file
-  writebackup = false, -- if a file is begin edited by another program (or was written to a file while editing with another program), it is not allowed to be edited
+  writebackup = false, -- If a file is begin edited by another program (or was written to a file while editing with another program), it is not allowed to be edited
   fileencoding = "utf-8", -- The encoding written to a file
   wildmenu = true, -- Make tab completion for files/buffers act like bash
   signcolumn = "yes", -- Always show the sign column
   history = 100, -- Keep 100 lines of history
   cmdheight = 1, -- Set height of command line
-  -- spell = true, -- This is enabled by file type in 'autocmd.lua'
   spelllang="en_US", -- Spell language
-  showmatch = true, -- When a bracket is inserted, briefly jump to the matching one.
 }
 
 for option, value in pairs(options) do

@@ -12,7 +12,7 @@ autocmd("BufEnter", {
   command = "set fo-=c fo-=r fo-=o"
 })
 
--- Highlight on yank (copy)
+-- Highlight on yank
 autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
@@ -29,33 +29,24 @@ autocmd({ "VimResized" }, {
   end,
 })
 
--- Close some file types with <q>
-autocmd("FileType", {
-  pattern = {
-    "qf",
-    "query",
-    "checkhealth",
-    "help",
-    "man",
-    "notify",
-    "lspinfo",
-    "spectre_panel",
-    "startuptime",
-    "tsplayground",
-    "PlenaryTestPopup",
-  },
-  callback = function(event)
-    vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
-  end,
-})
-
 -- Wrap and check for spell in text filetypes
 autocmd("Filetype", {
   pattern = { "gitcommit", "markdown", "text"},
   callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
+    vim.opt_local.wrap = true -- Enable wrap
+    vim.opt_local.spell = true -- Check for spell
+    vim.opt.linebreak = true -- Better line break
+  end,
+})
+
+-- Specific settings for python files
+autocmd("Filetype", {
+  pattern = { "python" },
+  callback = function ()
+    vim.opt_local.expandtab = true -- Use spaces instead of tabs
+    vim.opt_local.tabstop = 4 -- Number of spaces tabs count for
+    vim.opt_local.shiftwidth = 4 -- Size of an indent
+    vim.opt_local.colorcolumn = "79" -- Display color when line reach PEP8 standards
   end,
 })
 
