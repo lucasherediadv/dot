@@ -7,8 +7,9 @@ return {
   config = function()
     require('vscode').setup({
       italic_comments = true, -- Set italic format to comments
+      underline_links = true, -- Underline `@markup.link.*` variants
      })
-     vim.cmd([[colorscheme vscode]]) -- Set theme
+     vim.cmd([[colorscheme vscode]])
   end,
 }
 
