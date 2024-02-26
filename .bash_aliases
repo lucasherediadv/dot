@@ -26,6 +26,7 @@ alias todo="nvim ~/Documents/todo.md"
 alias pp="cd ~/Documents/python_projects"
 
 # Git
+alias gi='git init'
 alias gs='git status'
 alias ga='git add'
 alias gcm='git commit'
