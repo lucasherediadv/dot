@@ -13,7 +13,7 @@ map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
 -- Clear highlight search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- Move between buffers with <space>lh
-map("n", "<space>n", vim.cmd.bnext)
-map("n", "<space>p", vim.cmd.bprev)
+-- Move between buffers with <space>[]
+map("n", "<space>]", vim.cmd.bnext)
+map("n", "<space>[", vim.cmd.bprev)
 
