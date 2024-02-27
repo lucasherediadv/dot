@@ -10,11 +10,14 @@ alias ...="cd ../.."
 alias s="source"
 alias c="clear"
 alias e="exit"
-alias mv='mv -v'
-alias cp='cp -v'
-alias rm='rm -v'
+alias mkdir="mkdir -v -p"
 alias n=nvim
 alias venv="source .venv/bin/activate"
+
+# Safety features
+alias mv='mv -i -v'
+alias cp='cp -i -v'
+alias rm='rm -i -v'
 
 # Tmux
 alias t='tmux'
