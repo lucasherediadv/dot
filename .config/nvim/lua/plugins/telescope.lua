@@ -5,6 +5,9 @@ return {
     'nvim-telescope/telescope-file-browser.nvim',
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}
   },
+  defaults = {
+    initial_mode = "normal",
+  },
   opts = {
     extensions = {
       fzf = {
@@ -25,7 +28,7 @@ return {
     {
       "<leader>bb",
       function()
-        require("telescope").extensions.file_browser.file_browser({path = "%:h:p", select_buffer = true})
+        require("telescope").extensions.file_browser.file_browser({path = "%:h:p", select_buffer = true, hidden = true})
       end,
       desc = "Telescope file browser"
     },
