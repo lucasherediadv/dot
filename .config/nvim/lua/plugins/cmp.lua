@@ -1,3 +1,5 @@
+-- A completion engine plugin
+
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
@@ -12,15 +14,21 @@ return {
   },
   event = "VeryLazy",
   config = function()
+
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+
     cmp.setup({
+
+      -- Snippet Engine
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
+      -- Mappings
       mapping = {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -35,12 +43,14 @@ return {
           end
         end, { "i", "s" }),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-y>"] = cmp.mapping.confirm {
+        ["<CR>"] = cmp.mapping.confirm {
           behavior = cmp.ConfirmBehavior.Insert,
           select = true,
         },
         ["<c-space>"] = cmp.mapping.complete(),
       },
+
+      -- Sources active in all buffers
       sources = {
         { name = "nvim_lsp" },
         { name = "path" },
@@ -49,6 +59,7 @@ return {
       },
     })
 
+    -- Autopairs if LSP server dosen't send the keys
     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 
     -- Set configuration for specific filetype.
