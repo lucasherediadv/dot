@@ -1,12 +1,10 @@
 return {
   'nvim-telescope/telescope.nvim',
+  event = "VeryLazy",
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-file-browser.nvim',
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}
-  },
-  defaults = {
-    initial_mode = "normal",
   },
   opts = {
     extensions = {
@@ -23,31 +21,29 @@ return {
     require('telescope').setup(opts)
     require('telescope').load_extension('fzf')
   end,
+
+  defaults = {
+    initial_mode = "normal",
+  },
+
   -- Custom Keymaps
   keys = {
     {
-      "<leader>bb",
+      "<leader>b",
       function()
         require("telescope").extensions.file_browser.file_browser({path = "%:h:p", select_buffer = true, hidden = true})
       end,
       desc = "Telescope file browser"
     },
     {
-      "<leader>ff",
+      "<leader>f",
       function()
         require('telescope.builtin').find_files()
       end,
       desc = "Telescope find files"
     },
     {
-      "<leader>fb",
-      function()
-        require("telescope.builtin").buffers()
-      end,
-      desc = "Telescope buffers",
-    },
-    {
-      "<leader>hh",
+      "<leader>h",
       function()
         require("telescope.builtin").help_tags()
       end,
