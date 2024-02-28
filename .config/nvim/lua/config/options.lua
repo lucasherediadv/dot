@@ -42,6 +42,7 @@ local options = {
   history = 100, -- Keep 100 lines of history
   cmdheight = 1, -- Set height of command line
   spelllang="en_US", -- Spell language
+  shortmess = "I",
 }
 
 for option, value in pairs(options) do
