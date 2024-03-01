@@ -25,8 +25,8 @@ alias tls="tmux ls"
 alias tks='tmux kill-session'
 
 # Files
-alias todo="nvim ~/Documents/todo.md"
-alias pp="cd ~/Documents/python_projects"
+alias todo="n ~/Notes/TODO.md"
+alias pp="cd ~/Projects/python_projects"
 
 # Git
 alias gi='git init'
@@ -38,7 +38,7 @@ alias gf='git diff'
 alias gl='git log'
 
 # Dot-files
-alias dotfiles='/usr/bin/git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
 alias ds='dotfiles status'
 alias da='dotfiles add'
 alias dcm='dotfiles commit'
