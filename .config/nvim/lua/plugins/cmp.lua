@@ -14,7 +14,6 @@ return {
   },
   event = "VeryLazy",
   config = function()
-
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local cmp_autopairs = require "nvim-autopairs.completion.cmp"
@@ -28,7 +27,11 @@ return {
         end,
       },
 
-      -- Mappings
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+
       mapping = {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -43,7 +46,7 @@ return {
           end
         end, { "i", "s" }),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<CR>"] = cmp.mapping.confirm {
+        ["<C-y>"] = cmp.mapping.confirm {
           behavior = cmp.ConfirmBehavior.Insert,
           select = true,
         },
@@ -65,7 +68,7 @@ return {
     -- Set configuration for specific filetype.
     cmp.setup.filetype('gitcommit', {
       sources = cmp.config.sources({
-        { name = 'git' },   -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+        { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
       }, {
         { name = 'buffer' },
       })
@@ -90,4 +93,3 @@ return {
     })
   end
 }
-
