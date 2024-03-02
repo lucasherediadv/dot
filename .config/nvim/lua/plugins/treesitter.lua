@@ -7,6 +7,8 @@ return {
       'lua',
       'bash',
       'python',
+      'markdown',
+      'markdown_inline',
     },
     highlight = {
       enable = true,
