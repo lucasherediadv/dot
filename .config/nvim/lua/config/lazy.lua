@@ -23,5 +23,24 @@ require("lazy").setup {
     notify = false, -- Disable notification when new updates are found
     frequency = 86400, -- Checks for updates every day
   },
+  chage_detection = {
+    -- Automatically check for config files changes and reload the ui
+    enabled = true,
+    notify = false,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 }
 
