@@ -8,5 +8,13 @@ My configuration files for Neovim, Bash, Tmux and other things.
 
 - Well documented configurations.
 
-- Modularized file structure.
+- Modular file structure.
+
+## Git bare repository
+
+- Why I choose this method?
+
+## How to setup in another machine
+
+- Step to setup in another machine
 
