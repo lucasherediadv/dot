@@ -22,25 +22,28 @@ return {
     require('telescope').load_extension('fzf')
   end,
 
-  defaults = {
-    initial_mode = "normal",
-  },
-
   -- Custom Keymaps
   keys = {
     {
-      "<leader>b",
+      "<leader>bb",
       function()
         require("telescope").extensions.file_browser.file_browser({path = "%:h:p", select_buffer = true, hidden = true})
       end,
       desc = "Telescope file browser"
     },
     {
-      "<leader>f",
+      "<leader>ff",
       function()
-        require('telescope.builtin').find_files()
+        require('telescope.builtin').find_files( {file_ignore_patterns = { "Dotfiles" } })
       end,
       desc = "Telescope find files"
+    },
+    {
+    "<leader>k",
+      function()
+        require("telescope.builtin").keymaps()
+      end,
+      desc = "Telescope key mappings"
     },
     {
       "<leader>h",
