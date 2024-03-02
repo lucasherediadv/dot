@@ -9,7 +9,7 @@ local options = {
   autowrite = true, -- Enable auto write
   confirm = true, -- Confirm to save changes before exiting modified buffer
   list = true, -- Show some invisible characters
-  listchars = { tab = '→ ', trail = '•', extends = '»', precedes = '«' }, -- Replace with symbols
+  listchars = {tab = '→ ', trail = '•', extends = '»', precedes = '«' }, -- Replace with symbols
   expandtab = true, -- Use spaces instead of tabs
   tabstop = 2, -- Number of spaces tabs count for
   shiftwidth = 2, -- Size of an indent
@@ -41,8 +41,8 @@ local options = {
   signcolumn = "yes", -- Always show the sign column
   history = 100, -- Keep 100 lines of history
   cmdheight = 1, -- Set height of command line
-  spelllang="en_US", -- Spell language
-  shortmess = "I",
+  spelllang="en_us", -- Spell language
+  shortmess = "I", -- Don't display welcome message
 }
 
 for option, value in pairs(options) do
