@@ -39,14 +39,14 @@ return {
       desc = "Telescope find files"
     },
     {
-    "<leader>k",
+    "<leader>kk",
       function()
         require("telescope.builtin").keymaps()
       end,
       desc = "Telescope key mappings"
     },
     {
-      "<leader>h",
+      "<leader>hh",
       function()
         require("telescope.builtin").help_tags()
       end,
