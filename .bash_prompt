@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-# Minimal prompt
-export PS1="\w $ "
-

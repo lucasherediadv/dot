@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-export EDITOR="nvim" # Set nvim default editor
-export VISUAL="nvim" # Set nvim default editor
-export MANPAGER="nvim +Man!" # Open manual pages in Neovim
-export HISTCONTROL=ignoredups # Ignore duplicate commands in history
-export HISTSIZE=2000 # Number of lines in active history
-export HISTFILESIZE=2000 # Number of lines saved in Bash history
-
