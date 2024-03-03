@@ -1,11 +1,5 @@
 local map = vim.keymap.set -- Set new keymap
 
--- Better movement in splits with <Ctrl>hjkl
-map("n", "<C-h>", "<C-w>h", { remap = true})
-map("n", "<C-j>", "<C-w>j", { remap = true})
-map("n", "<C-k>", "<C-w>k", { remap = true})
-map("n", "<C-l>", "<C-w>l", { remap = true})
-
 -- Clear highlight search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear highlight search" })
 
