@@ -17,8 +17,8 @@ HISTFILESIZE=10000
 
 # aliases
 alias d='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='ls --color=auto'
-alias ll='ls -la'
+alias l='ls -l  --color=auto'
+alias ll='ls -la --color=auto'
 alias c='clear'
 alias less='less -R'
 alias v="vim"
