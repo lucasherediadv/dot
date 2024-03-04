@@ -1,0 +1,36 @@
+let skip_defautls_vim=1
+set nocompatible
+
+filetype plugin indent on " load plugins according to detected filetype.
+syntax on " enable syntax highlighting
+
+set relativenumber " activate line relative numbers
+set numberwidth=1 " width of the numbers column
+
+set hidden " stop complaints about switching buffer with changes
+set linebreak
+
+set expandtab " use spaces instead of tabs
+set autoindent " indent according to previous line
+set smarttab
+set smartindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+set hlsearch
+set incsearch
+set ignorecase
+map <silent> <leader><cr> :noh<cr>
+
+set nobackup
+set noswapfile
+set nowritebackup
+
+set shortmess=aoOtI " avoid most of the 'Hit Enter ...' messages
+
+" not a fan of bracket matching or folding
+let g:loaded_matchparen=1
+set noshowmatch
+set foldmethod=manual
+
