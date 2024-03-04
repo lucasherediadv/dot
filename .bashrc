@@ -12,8 +12,8 @@ export PS1="\w $ "
 set -o vi
 
 # Aliases
-alias d='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
+alias d='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls="ls --color=auto"
-alias n="nvim"
-alias todo="nvim ~/.todo.md"
+alias v="vim"
+alias todo="vi ~/.todo.md"
 
