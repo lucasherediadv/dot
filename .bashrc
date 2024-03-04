@@ -1,19 +1,26 @@
 # ~/.bashrc
 
-# If not running interactively, don't do anything
+# if not running interactively, don't do anything
 if [[ $- != *i* ]]; then
   return
 fi
 
-# Minimal prompt
+# minimal prompt
 export PS1="\w $ "
 
-# Enable vi commands
+# enable vi commands
 set -o vi
 
-# Aliases
+# history
+HISTCONTROL=ignoreboth
+HISTFILESIZE=10000
+
+# aliases
 alias d='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls="ls --color=auto"
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias c='clear'
+alias less='less -R'
 alias v="vim"
-alias todo="vi ~/.todo.md"
+alias todo="vim ~/.todo.md"
 
