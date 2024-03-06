@@ -17,8 +17,7 @@ HISTFILESIZE=10000
 
 # aliases
 alias d='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias l='ls -l  --color=auto'
-alias ll='ls -la --color=auto'
+alias ls='ls --color=auto'
 alias c='clear'
 alias todo='vim ~/Zettelkasten/todo.md'
 
