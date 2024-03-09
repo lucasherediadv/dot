@@ -1,4 +1,6 @@
+#
 # ~/.bashrc
+#
 
 # if not running interactively, don't do anything
 if [[ $- != *i* ]]; then
@@ -12,12 +14,12 @@ export PS1="\w $ "
 set -o vi
 
 # history
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth,ignorespace
 HISTFILESIZE=10000
 
 # aliases
 alias d='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='ls --color=auto'
 alias c='clear'
-alias todo='vim ~/Zettelkasten/todo.md'
+alias todo='vim ~/Projects/zettelkasten/todo.md'
 
