@@ -18,19 +18,4 @@ require("lazy").setup {
   default = {
     lazy = true, -- Should plugins be lazy-loaded?
   },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip",
-        "matchit",
-        "matchparen",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-      },
-    },
-  },
-}
 
