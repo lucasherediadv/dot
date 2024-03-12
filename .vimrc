@@ -6,10 +6,7 @@ if &compatible
   set nocompatible
 endif
 
-if has("autocmd")
-  filetype plugin indent on
-endif
-
+filetype plugin indent on
 syntax on
 
 let g:loaded_netrw=1
