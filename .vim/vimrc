@@ -9,28 +9,37 @@ endif
 filetype plugin indent on
 syntax on
 
+" not a fan of these plugins
 let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 let g:loaded_matchparen=1
 
 colorscheme habamax
 
+set numberwidth=1 " width of the number column
+set noshowmode " don't show mode
+set undofile " ???
+set ruler " turn info in tray on even if default
+set list " show some invisible characters
+set listchars=tab:→\ ,trail:· " replace with symbols
+set hidden " stop complaints about switching buffer with changes
+set clipboard=unnamed " sync with system clipboard
+set autoread " reload files if changed externally
 set viminfofile=~/.vim/viminfo
-set relativenumber
-set expandtab
+set relativenumber " activate relative line numbers
+set expandtab " use spaces instead of tabs
 set autoindent
 set smarttab
-set smartindent
-set tabstop=2
+set smartindent " insert indents automatically
+set tabstop=2 " number of spaces tabs count fo
 set softtabstop=2
 set shiftwidth=2
-set ignorecase
+set ignorecase " ignore case in search
 set linebreak
 set wrap
-set nohlsearch
-set noincsearch
+set nohlsearch " no highlight in search
+set noincsearch " no incremental search
 set nobackup
 set noswapfile
 set nowritebackup
-
 
