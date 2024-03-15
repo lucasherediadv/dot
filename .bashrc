@@ -20,5 +20,7 @@ unalias -a
 alias d="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias ls="ls --color=auto"
 alias c="clear"
-alias todo="vim ~/Projects/zettelkasten/todo.md"
+alias todo="vim ~/Projects/notes/todo.md"
+
+export PATH=$PATH:~/Projects/scripts/create_new_note/
 
