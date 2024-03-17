@@ -17,7 +17,7 @@ HISTFILESIZE=10000
 
 # aliases
 unalias -a
-alias d="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
 alias ls="ls --color=auto"
 alias c="clear"
 alias todo="vim ~/Projects/notes/todo.md"
