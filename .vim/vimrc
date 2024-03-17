@@ -16,9 +16,9 @@ let g:loaded_matchparen=1
 
 colorscheme habamax
 
+set viminfofile=~/.vim/viminfo
 set numberwidth=1 " width of the number column
 set noshowmode " don't show mode
-set undofile " ???
 set ruler " turn info in tray on even if default
 set list " show some invisible characters
 set listchars=tab:→\ ,trail:· " replace with symbols
@@ -30,9 +30,9 @@ set expandtab " use spaces instead of tabs
 set autoindent
 set smarttab
 set smartindent " insert indents automatically
-set tabstop=2 " number of spaces tabs count fo
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4 " number of spaces tabs count fo
+set softtabstop=4
+set shiftwidth=4
 set ignorecase " ignore case in search
 set linebreak
 set wrap
