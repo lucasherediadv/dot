@@ -25,7 +25,6 @@ set listchars=tab:→\ ,trail:· " replace with symbols
 set hidden " stop complaints about switching buffer with changes
 set clipboard=unnamed " sync with system clipboard
 set autoread " reload files if changed externally
-set viminfofile=~/.vim/viminfo
 set relativenumber " activate relative line numbers
 set expandtab " use spaces instead of tabs
 set autoindent
