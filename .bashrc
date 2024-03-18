@@ -1,26 +1,26 @@
-# ~/.bashrc
-
-# if not running interactively, don't do anything
+# If not running interactively, don't do anything
 if [[ $- != *i* ]]; then
   return
 fi
 
-# minimal prompt
+# Prompt
 export PS1="\w $ "
 
-# enable vi commands
+# Vi commands
 set -o vi
 
-# history
+# History
 HISTCONTROL=ignoreboth,ignorespace
 HISTFILESIZE=10000
 
-# aliases
+# Aliases
 unalias -a
+alias tre="tree -aC -I '.git|node_modules|bower_components|dotfiles' --dirsfirst "$@" | less -FRNX;"
 alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
+alias todo="vim ~/Projects/notes/todo.md"
 alias ls="ls --color=auto"
 alias c="clear"
-alias todo="vim ~/Projects/notes/todo.md"
 
+# Exports
 export PATH=$PATH:~/Projects/scripts/create_new_note/
 
