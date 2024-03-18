@@ -1,48 +1,27 @@
-if has("eval")
-  let skip_defautls_vim=1
-endif
-
-if &compatible
-  set nocompatible
-endif
-
-filetype plugin indent on
-syntax on
+let skip_defautls_vim=1
+set nocompatible
 
 " not a fan of these plugins
 let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 let g:loaded_matchparen=1
 
+filetype plugin indent on
 colorscheme habamax
+syntax on
 
-if exists("&undodir")
-    set undodir=~/.vim/undo
-endif
-
-set backspace=indent,eol,start " allow backspace in insert mode
-set viminfofile=~/.vim/viminfo " change default location of viminfo
-set numberwidth=1 " width of the number column
-set noshowmode " don't show mode
-set ruler " turn info in tray on even if default
-set list " show some invisible characters
-set listchars=tab:→\ ,trail:· " replace with symbols
-set hidden " stop complaints about switching buffer with changes
-set clipboard=unnamed " sync with system clipboard
-set autoread " reload files if changed externally
-set relativenumber " activate relative line numbers
-set expandtab " use spaces instead of tabs
+set viminfofile=~/.vim/viminfo
+set numberwidth=1
+set noshowmode
+set relativenumber
+set expandtab
 set autoindent
 set smarttab
-set smartindent " insert indents automatically
-set tabstop=4 " number of spaces tabs count fo
-set softtabstop=4
+set smartindent
+set tabstop=4
 set shiftwidth=4
-set ignorecase " ignore case in search
 set linebreak
 set wrap
-set nohlsearch " no highlight in search
-set noincsearch " no incremental search
 set nobackup
 set noswapfile
 set nowritebackup
