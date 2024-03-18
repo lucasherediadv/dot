@@ -16,7 +16,12 @@ let g:loaded_matchparen=1
 
 colorscheme habamax
 
-set viminfofile=~/.vim/viminfo
+if exists("&undodir")
+    set undodir=~/.vim/undo
+endif
+
+set backspace=indent,eol,start " allow backspace in insert mode
+set viminfofile=~/.vim/viminfo " change default location of viminfo
 set numberwidth=1 " width of the number column
 set noshowmode " don't show mode
 set ruler " turn info in tray on even if default
