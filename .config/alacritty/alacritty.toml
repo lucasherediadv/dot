@@ -8,5 +8,4 @@ family = "JetBrainsMono Nerd Font"
 
 [window]
 dynamic_padding = true # Fix problems with padding
-startup_mode = "Maximized"
 
