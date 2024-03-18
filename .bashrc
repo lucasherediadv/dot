@@ -10,6 +10,7 @@ export PS1="\w $ "
 set -o vi
 
 # History
+shopt -s histappend;
 HISTCONTROL=ignoreboth,ignorespace
 HISTFILESIZE=10000
 
