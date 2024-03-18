@@ -1,28 +1,27 @@
-let skip_defautls_vim=1
 set nocompatible
 
-" not a fan of these plugins
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
-let g:loaded_matchparen=1
-
 filetype plugin indent on
-colorscheme habamax
 syntax on
 
-set viminfofile=~/.vim/viminfo
-set numberwidth=1
-set noshowmode
-set relativenumber
-set expandtab
+colorscheme habamax
+
+set noincsearch
+set nohlsearch
 set autoindent
-set smarttab
-set smartindent
-set tabstop=4
-set shiftwidth=4
+set expandtab
+set softtabstop=2
+set shiftwidth=2
+set relativenumber
 set linebreak
 set wrap
 set nobackup
 set noswapfile
 set nowritebackup
+set viminfofile=$HOME/.vim/viminfo
+
+augroup custom_indentation
+  autocmd!
+  autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+  autocmd Filetype go setlocal shiftwidth=4 softtabstop=4
+augroup END
 
