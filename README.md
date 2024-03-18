@@ -15,8 +15,5 @@ For more information see [here](https://wiki.archlinux.org/title/Dotfiles)
 
 ## Setup on another machine
 
-I have written a bash script to quickly setup my dotfiles on another machine. Run the following command to execute the script:
-```
-curl -Lks https://github.com/lucasherediadv/scripts/blob/main/setup_dotfiles/setup | /bin/bash
-```
+Currently working on this
 
