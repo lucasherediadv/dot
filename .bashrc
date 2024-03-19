@@ -16,7 +16,6 @@ HISTFILESIZE=10000
 
 # Aliases
 unalias -a
-alias tre="tree -aC -I '.git|node_modules|bower_components|dotfiles' --dirsfirst "$@" | less -FRNX;"
 alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
 alias todo="vim ~/Projects/notes/todo.md"
 alias ls="ls --color=auto"
