@@ -4,7 +4,7 @@ These are my configuration files for bash, vim, tmux, and other tools.
 
 ## Objective
 
-Maintain a minimum set of configurations while keeping it well documented and organized to facilitate maintainance and portability.
+Keep a minimum set of configurations, well documented and organized to facilitate maintainance and portability.
 
 ## Git bare respository
 
