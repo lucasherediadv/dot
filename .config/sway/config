@@ -1,13 +1,21 @@
 # Border, fonts style
-font pango:JetBrainsMono Nerd Font 12
+font pango:JetBrainsMono Nerd Font 11
 default_border none
-smart_gaps on
+#smart_gaps on
 
-# Variables
+gaps inner 3px
+gaps outer 3px
+
+# Set $mod to <Alt>
 set $mod Mod1
+# Set alacritty as default terminal
 set $term alacritty
-set $browser brave-browser
+# Set browser to brave - open always in incognito
+set $browser brave-browser --incognito
+# Set menu
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+# Set vi keybindings
 set $left h
 set $down j
 set $up k
@@ -15,7 +23,8 @@ set $right l
 
 # Output
 output HDMI-A-3 mode 1920x1080@74.973Hz pos 1920,0
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/user/Downloads/wallpapers/sea.jpg fill
 
 # Keybinds
     bindsym $mod+b exec $browser
@@ -62,8 +71,15 @@ bar {
     position top
     status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
     colors {
+        #statusline #ffffff
+        #background #323232
+        #background #1d1d1d
+
         statusline #ffffff
-        background #323232
+        background #000000AA
+        inactive_workspace #323232AA #323232AA #5c5c5cAA
+
+
     }
 }
 
