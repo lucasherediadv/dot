@@ -1,14 +1,18 @@
-# Border, fonts style
+# Font style and size
 font pango:JetBrainsMono Nerd Font 11
-default_border none
-smart_gaps on
 
-# Set $mod to <Alt>
+# Remove all borders from applications
+default_border none
+
+# Logo key. Use Mod1 fot Alt
 set $mod Mod1
+
 # Set alacritty as default terminal
 set $term alacritty
-# Open browser
+
+# Set browser
 set $browser brave-browser
+
 # Set menu
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
@@ -20,8 +24,9 @@ set $right l
 
 # Output
 output HDMI-A-3 mode 1920x1080@74.973Hz pos 1920,0
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/user/Downloads/wallpapers/sea.jpg fill
+
+# Wallpaper
+output * bg /home/user/.config/sway/images/wallpaper.jpg fill
 
 # Keybinds
     bindsym $mod+b exec $browser
@@ -69,7 +74,7 @@ bar {
     status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
     colors {
         statusline #ffffff
-        background #323232
+        background #1e1e1e
     }
 }
 
