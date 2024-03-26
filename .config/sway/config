@@ -1,10 +1,7 @@
 # Border, fonts style
 font pango:JetBrainsMono Nerd Font 11
 default_border none
-#smart_gaps on
-
-gaps inner 3px
-gaps outer 3px
+smart_gaps on
 
 # Set $mod to <Alt>
 set $mod Mod1
@@ -71,15 +68,8 @@ bar {
     position top
     status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
     colors {
-        #statusline #ffffff
-        #background #323232
-        #background #1d1d1d
-
         statusline #ffffff
-        background #000000AA
-        inactive_workspace #323232AA #323232AA #5c5c5cAA
-
-
+        background #323232
     }
 }
 
