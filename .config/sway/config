@@ -1,10 +1,10 @@
 # Font style and size
-font pango:JetBrainsMono Nerd Font 11
+font pango:JetBrainsMono Nerd Font 12
 
-# Remove all borders from applications
+# Remove all borders
 default_border none
 
-# Logo key. Use Mod1 fot Alt
+# <Alt> as meta key
 set $mod Mod1
 
 # Set alacritty as default terminal
@@ -71,12 +71,15 @@ output * bg /home/user/.config/sway/images/wallpaper.jpg fill
 # Status Bar:
 bar {
     position top
-    status_command while date +'%Y-%m-%d %I:%M %p'; do sleep 1; done
+    font pango:JetBrainsMono Nerd Font 12
+    status_command while ~/.config/sway/status.sh; do sleep 1; done
+
     colors {
+        # Text color of status bar
         statusline #ffffff
+
+        # Background color of status bar
         background #1e1e1e
     }
 }
-
-include /etc/sway/config.d/*
 
