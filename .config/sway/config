@@ -14,7 +14,7 @@ set $term alacritty
 set $browser brave-browser
 
 # Set menu
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu -fn "JetBrainsMono Nerd Font-12" | xargs swaymsg exec --
 
 # Set vi keybindings
 set $left h
