@@ -5,6 +5,7 @@ syntax on
 
 colorscheme habamax
 
+set noshowmode
 set noincsearch
 set nohlsearch
 set autoindent
