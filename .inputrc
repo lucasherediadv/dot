@@ -1,0 +1,3 @@
+# Single tab will partially complete the word and show all possible completions if it is still ambiguous
+set show-all-if-ambiguous on
+
