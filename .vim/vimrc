@@ -1,13 +1,11 @@
 set nocompatible
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 syntax on
 
 colorscheme habamax
 
-set noshowmode
-set noincsearch
-set nohlsearch
 set autoindent
 set expandtab
 set softtabstop=2
