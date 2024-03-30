@@ -10,7 +10,7 @@ set $mod Mod1
 # Set alacritty as default terminal
 set $term alacritty
 
-# Set browser
+# Brave default browser
 set $browser brave-browser
 
 # Set menu
@@ -22,8 +22,23 @@ set $down j
 set $up k
 set $right l
 
-# Output
-output HDMI-A-3 mode 1920x1080@74.973Hz pos 1920,0
+# Outputs
+focus output HDMI-A-3 mode 1920x1080@74.973Hz
+output DP-1 mode 1440x900@59.887Hz
+
+# DP-1
+workspace 6 output DP-1
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
+workspace 10 output DP-1
+
+# HDMI-A-3
+workspace 1 output HDMI-A-3
+workspace 2 output HDMI-A-3
+workspace 3 output HDMI-A-3
+workspace 4 output HDMI-A-3
+workspace 5 output HDMI-A-3
 
 # Wallpaper
 output * bg /home/user/.config/sway/images/wallpaper.jpg fill
