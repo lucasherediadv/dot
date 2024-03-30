@@ -23,7 +23,7 @@ set $up k
 set $right l
 
 # Outputs
-focus output HDMI-A-3 mode 1920x1080@74.973Hz
+output HDMI-A-3 mode 1920x1080@74.973Hz
 output DP-1 mode 1440x900@59.887Hz
 
 # DP-1
