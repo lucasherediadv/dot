@@ -20,6 +20,8 @@ alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
 alias todo="vim ~/Projects/notes/todo.md"
 alias ls="ls --color=auto"
 alias c="clear"
+alias tls="tmux ls"
+alias tks="tmux kill-session"
 
 # Exports
 export PATH=$PATH:~/Projects/scripts/create_new_note/
