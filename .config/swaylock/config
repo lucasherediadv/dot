@@ -1,9 +1,8 @@
-font-size=12
+font-size=14
 font=JetBrainsMono Nerd Font
 image=~/.config/sway/images/wallpaper.jpg
 
 daemonize
-no-unlock-indicator
 ignore-empty-password
 indicator-caps-lock=enabled
 

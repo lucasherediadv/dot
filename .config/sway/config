@@ -1,5 +1,5 @@
 # Font style and size
-font pango:JetBrainsMono Nerd Font 11
+font pango:JetBrainsMono Nerd Font 12
 
 # Remove all borders
 default_border none
@@ -8,10 +8,13 @@ default_border none
 set $mod Mod1
 
 # Set alacritty as default terminal
-set $term alacritty
+set $term foot
 
 # Brave default browser
 set $browser brave-browser
+
+# Set swaylock
+set $lock swaylock
 
 # Set menu
 set $menu dmenu_path | dmenu -fn "JetBrainsMono Nerd Font-11" | xargs swaymsg exec --
@@ -43,8 +46,9 @@ workspace 5 output HDMI-A-3
 # Wallpaper
 output * bg /home/user/.config/sway/images/wallpaper.jpg fill
 
-# Keybinds
-    bindsym $mod+b exec $browser
+    # Keybinds
+    bindsym $mod+Shift+s exec $lock
+    bindsym $mod+Shift+Return exec $browser
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+q kill
     bindsym $mod+d exec $menu
@@ -86,7 +90,7 @@ output * bg /home/user/.config/sway/images/wallpaper.jpg fill
 # Status Bar:
 bar {
     position top
-    font pango:JetBrainsMono Nerd Font 11
+    font pango:JetBrainsMono Nerd Font 12
     status_command while ~/.config/sway/status.sh; do sleep 1; done
 
     colors {
@@ -95,6 +99,17 @@ bar {
 
         # Background color of status bar
         background #1e1e1e
+
+        # Border, background and text color for a focused workspace
+        focused_workspace #1e1e1e #1e1e1e #ffffff
+
+        # Border, background and text color for an active workspace but without 
+        # focus
+        active_workspace #1e1e1e #1e1e1e #666666
+
+        # Border, background and text color for an inactive workspace
+        inactive_workspace #1e1e1e #1e1e1e #666666
+
     }
 }
 
