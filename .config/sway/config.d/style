@@ -1,0 +1,8 @@
+# Sway style configuration
+
+# Font for window titles
+font pango:JetBrainsMono Nerd Font 12
+
+# Windows without borders
+default_border none
+

@@ -1,0 +1,16 @@
+# Sway bar configuration
+
+bar {
+  position top
+  font pango:JetBrainsMono Nerd Font 12
+  status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
+
+  colors {
+    statusline #ffffff
+      background #1e1e1e
+      focused_workspace #1e1e1e #1e1e1e #ffffff
+      active_workspace #1e1e1e #1e1e1e #666666
+      inactive_workspace #1e1e1e #1e1e1e #666666
+  }
+} 
+
