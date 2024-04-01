@@ -1,9 +1,0 @@
-[font]
-size = 14
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-
-[window]
-dynamic_padding = true # Fix problems with padding
-
