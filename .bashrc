@@ -12,9 +12,6 @@ set -o vi
 # Checks the window size after each command
 shopt -s checkwinsize
 
-# Disable history
-export HISTSIZE=0
-
 # Aliases
 unalias -a
 alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
