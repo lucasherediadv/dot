@@ -28,6 +28,7 @@ map <silent> <esc><esc> :noh<cr>
 set incsearch
 set ignorecase
 
+" Indentation configuration per filetype
 augroup custom_indentation
   autocmd!
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
