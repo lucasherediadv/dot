@@ -7,9 +7,10 @@ fi
 export PS1="\w $ "
 
 # Options
-set -o vi # Enable vi commands
-shopt -s checkwinsize # Checks the window size after each command and,
-                      # if necessary, updates the values of LINES and COLUMNS
+# Enable vi commands
+set -o vi
+# Checks the window size after each command
+shopt -s checkwinsize
 
 # Disable history
 export HISTSIZE=0
@@ -24,7 +25,9 @@ alias tls="tmux ls"
 alias tks="tmux kill-session"
 
 # Exports
-export PATH=$PATH:~/Projects/scripts/create_new_note/
+export TERMINAL="usr/bin/foot"
+export SVN_EDITOR="vim"
+export EDITOR="vim"
 
 # Functions
 # cd and ls in one
