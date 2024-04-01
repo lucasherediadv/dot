@@ -6,3 +6,7 @@ font pango:JetBrainsMono Nerd Font 12
 # Windows without borders
 default_border none
 
+# Gaps
+gaps inner 5
+gaps outer 0
+
