@@ -1,3 +1,3 @@
-date_formatted=$(date +"%A %F %H:%M")
+date_formatted=$(date +"%F %H:%M")
 echo "$date_formatted"
 
