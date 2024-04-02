@@ -6,6 +6,5 @@
   defaultBranch = main
 
 [core]
-  editor = vim
   autocrlf = input
 
