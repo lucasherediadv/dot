@@ -13,7 +13,7 @@ set -o vi
 shopt -s checkwinsize
 
 # Disable history file
-unset HISTFILE
+export HISTSIZE=0
 
 # Aliases
 unalias -a
