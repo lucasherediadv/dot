@@ -12,7 +12,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# Move focursed container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -23,18 +23,4 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-
-# Assign workspace 1-5 to output HDMI-A-3
-workspace 1 output HDMI-A-3
-workspace 2 output HDMI-A-3
-workspace 3 output HDMI-A-3
-workspace 4 output HDMI-A-3
-workspace 5 output HDMI-A-3
-
-# Assign workspace 6-10 to output DP-1
-workspace 6 output DP-1
-workspace 7 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-workspace 10 output DP-1
 
