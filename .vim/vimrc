@@ -4,29 +4,27 @@ filetype plugin on
 filetype indent on
 syntax on
 
-let g:loaded_matchparen=1
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
-
-colorscheme habamax
+" Colorful theme for colorful souls
+colorscheme atlas
 
 set noshowmode
 set autoindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
-set number
 set relativenumber
 set linebreak
 set wrap
+
+" Files
 set nobackup
 set noswapfile
 set nowritebackup
 set viminfofile=$HOME/.vim/viminfo
 
-" Clear highlight search
-map <silent> <esc><esc> :noh<cr>
-set incsearch
+" Search
+set nohlsearch
+set noincsearch
 set ignorecase
 
 " Indentation configuration per filetype
