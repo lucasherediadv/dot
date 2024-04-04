@@ -18,7 +18,7 @@ export HISTSIZE=0
 # Aliases
 unalias -a
 alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
-alias todo="vim ~/Projects/notes/todo.md"
+alias todo="vim ~/.todo.md"
 alias ls="ls --color=auto"
 alias c="clear"
 alias tls="tmux ls"
