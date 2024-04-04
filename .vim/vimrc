@@ -4,6 +4,14 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" Disable matchparen
+let g:loaded_matchparen=1
+set noshowmatch
+
+" Disable netrw
+let g:loaded_netrw=1
+let g:loaded_netrwPlugin=1
+
 " Colorful theme for colorful souls
 colorscheme atlas
 
