@@ -6,9 +6,9 @@ fi
 # Prompt
 export PS1="\w $ "
 
-# Options
 # Enable vi commands
 set -o vi
+
 # Checks the window size after each command
 shopt -s checkwinsize
 
