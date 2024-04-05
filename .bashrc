@@ -6,18 +6,15 @@ fi
 # Prompt
 export PS1="\w $ "
 
-# Enable vi commands
+# Options
 set -o vi
 
-# Checks the window size after each command
-shopt -s checkwinsize
-
-# Disable history file
+# History
 export HISTSIZE=0
 
 # Aliases
 unalias -a
-alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
+alias d="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias todo="vim ~/.todo.md"
 alias ls="ls --color=auto"
 alias c="clear"
