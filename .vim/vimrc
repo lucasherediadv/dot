@@ -1,21 +1,24 @@
+" Do not use Vi defaults 
 set nocompatible
 
-filetype plugin on
-filetype indent on
+" Load plugins, set colors, enable syntax
+filetype plugin indent on
+colorscheme atlas
 syntax on
 
-" Disable matchparen
+" Unnecessary
 let g:loaded_matchparen=1
-set noshowmatch
-
-" Disable netrw
 let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
-
-" Colorful theme for colorful souls
-colorscheme atlas
-
+set noshowmatch
 set noshowmode
+set nobackup
+set noswapfile
+set nowritebackup
+set nohlsearch
+set noincsearch
+
+" General options
 set autoindent
 set expandtab
 set softtabstop=2
@@ -23,19 +26,10 @@ set shiftwidth=2
 set relativenumber
 set linebreak
 set wrap
-
-" Files
-set nobackup
-set noswapfile
-set nowritebackup
 set viminfofile=$HOME/.vim/viminfo
-
-" Search
-set nohlsearch
-set noincsearch
 set ignorecase
 
-" Indentation configuration per filetype
+" Indentation exceptions
 augroup custom_indentation
   autocmd!
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
