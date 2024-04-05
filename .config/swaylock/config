@@ -1,9 +1,7 @@
-# Swaylock configuration
-
+daemonize
 font-size=14
-font=JetBrainsMono Nerd Font
-image=~/.config/sway/images/wallpaper.jpg
-daemonize # Detach from the controlling terminal after locking
 ignore-empty-password
 indicator-caps-lock=enabled
+font=JetBrainsMono Nerd Font
+image=~/.config/sway/images/wallpaper.jpg
 
