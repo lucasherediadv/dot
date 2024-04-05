@@ -1,6 +1,4 @@
-# Sway global configuration
-
-# Main definitions
+# Constants
 set $mod Mod4
 set $left h
 set $down j
@@ -11,7 +9,7 @@ set $browser brave-browser
 set $lock swaylock
 set $wallpaper ~/.config/sway/images/wallpaper.jpg
 
-# Main shortcuts
+# Shortcuts
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $browser
 bindsym $mod+Shift+s exec $lock

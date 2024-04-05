@@ -1,5 +1,3 @@
-# Sway movement keys configuration
-
 # Move focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down

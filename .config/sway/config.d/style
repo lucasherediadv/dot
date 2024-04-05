@@ -1,6 +1,4 @@
-# Sway style configuration
-
-# Font for window titles
+# Font style and size
 font pango:JetBrainsMono Nerd Font 12
 
 # Windows without borders

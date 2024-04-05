@@ -1,8 +1,6 @@
-# Sway outputs configuration
+# Device
+output HDMI-A-3 mode 1920x1080@74.973Hz
 
 # Wallpaper
 output * bg $wallpaper fill
-
-# Device
-output HDMI-A-3 mode 1920x1080@74.973Hz
 

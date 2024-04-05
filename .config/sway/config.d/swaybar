@@ -1,5 +1,3 @@
-# Sway bar configuration
-
 bar {
   position top
   font pango:JetBrainsMono Nerd Font 12
