@@ -65,7 +65,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bar {
   position top
     font pango:JetBrainsMono Nerd Font 12
-    status_command while ~/.config/sway/scripts/status.sh; do sleep 1; done
+    status_command while date +"%F %H:%M";do sleep 1; done
 
     colors {
       statusline #ffffff
