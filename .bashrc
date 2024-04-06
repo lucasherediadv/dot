@@ -7,8 +7,9 @@ export PS1="\w $ "
 # Options
 set -o vi
 
-# History
+# Disable bash history
 export HISTSIZE=0
+# ln -sv /dev/null "$HISTFILE"
 
 # Aliases
 unalias -a
