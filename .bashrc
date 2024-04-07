@@ -9,7 +9,6 @@ set -o vi
 
 # Disable bash history
 export HISTSIZE=0
-# ln -sv /dev/null "$HISTFILE"
 
 # Aliases
 unalias -a
