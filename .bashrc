@@ -14,7 +14,7 @@ export HISTSIZE=0
 # Aliases
 unalias -a
 alias d="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias todo="vim $HOME/.todo.md"
+alias todo="vim $HOME/Projects/.todo.md"
 alias ls="ls --color=auto"
 alias c="clear"
 
