@@ -3,7 +3,7 @@ set nocompatible
 
 " Load plugins, set colors, enable syntax
 filetype plugin indent on
-colorscheme atlas
+colorscheme habamax
 syntax on
 
 " Unnecessary
