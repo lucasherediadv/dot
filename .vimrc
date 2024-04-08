@@ -1,36 +1,20 @@
-" Do not use Vi defaults 
-set nocompatible
-
-" Load plugins, set colors, enable syntax
+" General
 filetype plugin indent on
-colorscheme habamax
-syntax on
-
-" Unnecessary
-let skip_defaults_vim=1
-let g:loaded_matchparen=1
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
 set viminfofile=NONE
-set noshowmatch
-set noshowmode
-set nobackup
-set noswapfile
+colorscheme habamax
+set relativenumber
 set nowritebackup
-set nohlsearch
-set noincsearch
+set noswapfile
+set linebreak
+set nobackup
+set wrap
 
-" General options
-set autoindent
-set expandtab
+" Indentation
 set softtabstop=2
 set shiftwidth=2
-set relativenumber
-set linebreak
-set wrap
-set ignorecase
+set autoindent
+set expandtab
 
-" Indentation exceptions
 augroup custom_indentation
   autocmd!
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4
