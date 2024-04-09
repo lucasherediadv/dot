@@ -36,9 +36,6 @@ output * bg $wallpaper fill
 # Style
 font pango:JetBrainsMono Nerd Font 12
 default_border none
-gaps inner 5
-gaps outer 0
-smart_gaps on
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
