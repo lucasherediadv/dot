@@ -1,16 +1,16 @@
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
-# Prompt
+# Prompt.
 export PS1="\w $ "
 
-# Options
+# Options.
 set -o vi
 
-# Disable bash history
+# Disable bash history.
 export HISTSIZE=0
 
-# Aliases
+# Aliases.
 unalias -a
 alias d="/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME"
 alias todo="vim $HOME/Projects/.todo.md"
