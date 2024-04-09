@@ -1,7 +1,5 @@
 " Do not use defaults.
-if has("eval")
-  let skip_defaults_vim=1
-endif
+let skip_defaults_vim=1
 set nocompatible
 
 " Set colorscheme.
@@ -21,9 +19,9 @@ set noincsearch " No incremental search.
 set nohlsearch " No highlight search.
 set ignorecase " Ignore case in search.
 set nowrap " No wrap lines
-set viminfofile=NONE " Disable viminfo file.
 
-" Disable all temporary files.
+" Disable files.
+set viminfofile=NONE
 set nowritebackup
 set noswapfile
 set nobackup
