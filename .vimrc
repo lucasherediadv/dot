@@ -28,7 +28,7 @@ set nowritebackup
 set noswapfile
 set nobackup
 
-set tabstop " Number of spaces to replace a tab with when expandtab.
+set tabstop=2 " Number of spaces to replace a tab with when expandtab.
 set softtabstop=2 " Tab key indents by 2 spaces.
 set shiftwidth=2 " Indents by 2 spaces.
 set autoindent " Indent according to previous line.
