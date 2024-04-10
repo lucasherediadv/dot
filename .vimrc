@@ -1,6 +1,13 @@
-" Do not use defaults.
-let skip_defaults_vim=1
-set nocompatible
+if has("eval") " VIM tiny detection.
+  let skip_defaults_vim = 1 " Skip VIM defaults.
+  let g:loaded_matchparen=1 " Disable matchparen.
+  let g:loaded_netrw=1 " Disable netrw.
+endif
+
+" Disable VI compatibility.
+if &compatible
+  set nocompatible
+endif
 
 " Set colorscheme.
 colorscheme habamax
@@ -8,17 +15,19 @@ colorscheme habamax
 filetype plugin indent on " Load plugins according to detected filetype.
 syntax on " Enable syntax highlighting.
 
-" Disable matchparen and netrw plugins.
-let g:loaded_matchparen=1
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
-
-set noshowmatch " No show match.
-set noshowmode " No show mode.
+set nonumber " Deactivate line numbers.
 set noincsearch " No incremental search.
 set nohlsearch " No highlight search.
-set ignorecase " Ignore case in search.
-set nowrap " No wrap lines
+set nowrap " No wrap lines.
+set noignorecase " Use case when search.
+
+set ruler " Turn col and row position on.
+set autowrite " Automatically write files.
+set showmode " Show mode.
+set list " Display unprinteable characters.
+set listchars=trail:*,nbsp:*,extends:>,precedes:<,tab:\|> " ASCII friendly listchars.
+set wrap " Wrap lines.
+set linebreak " Do not break line at the last character.
 
 " Disable files.
 set viminfofile=NONE
@@ -35,7 +44,6 @@ set expandtab " Use spaces instead of tabs.
 " Custom settings per filetype.
 augroup custom_settings
   autocmd!
-  autocmd FileType markdown setlocal wrap linebreak
   autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
   autocmd Filetype go setlocal shiftwidth=4 softtabstop=4 tabstop=4
 augroup END
