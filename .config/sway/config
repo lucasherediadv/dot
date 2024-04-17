@@ -8,12 +8,12 @@ set $term foot
 set $browser brave-browser
 set $lock swaylock
 set $wallpaper ~/.config/sway/images/wallpaper.jpg
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Shortcuts.
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $browser
-# bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu
 bindsym $mod+Shift+s exec $lock
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
@@ -38,6 +38,11 @@ output * bg $wallpaper fill
 # Style (Fonts and borders).
 font pango:JetBrainsMono Nerd Font 12
 default_border none
+
+# Gaps
+smart_gaps on
+gaps inner 5
+gaps outer 0
 
 # Switch to workspace.
 bindsym $mod+1 workspace number 1
