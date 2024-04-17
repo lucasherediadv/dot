@@ -9,6 +9,7 @@ set noswapfile " No write swapfile.
 set nowritebackup " No write backup.
 set viminfofile=NONE " No write viminfo file.
 
+set ignorecase " Ignore case when search.
 set smarttab " Always use shiftwidth.
 set shiftwidth=2 " Indent by 2 spaces.
 set expandtab " Use spaces instead of tabs.
