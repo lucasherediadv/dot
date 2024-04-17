@@ -1,3 +1,5 @@
+daemonize
+ignore-empty-password
 image=~/.config/sway/images/wallpaper.jpg
 font=JetBrainsMono Nerd Font
 font-size=14
