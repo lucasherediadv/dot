@@ -1,21 +1,51 @@
-# Constants.
+# Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
+# Home row direction keys, like VI.
 set $left h
 set $down j
 set $up k
 set $right l
-set $term foot
-set $browser brave-browser
-set $lock swaylock
-set $wallpaper ~/.config/sway/images/wallpaper.jpg
 
-# Shortcuts.
+# Terminal.
+set $term foot
+
+# Web browser.
+set $browser brave-browser
+
+# Lockscreen.
+set $lock swaylock
+
+# Open terminal.
 bindsym $mod+Return exec $term
+
+# Open web browser.
 bindsym $mod+Shift+Return exec $browser
+
+# Lock the screen.
 bindsym $mod+Shift+s exec $lock
+
+# Kill focused window.
 bindsym $mod+Shift+q kill
+
+# Reload the configuration file.
 bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session).
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed     the exit shortcut. Do you really want to exit sway?     This     will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg     exit'
+
+# Output.
+output HDMI-A-3 mode 1920x1080@74.973Hz
+output * bg ~/.config/sway/images/wallpaper.jpg fill
+
+# Style (Fonts and borders).
+font pango:JetBrainsMono Nerd Font 12
+default_border none
+
+# Gaps
+smart_gaps on
+gaps inner 3
+gaps outer 0
 
 # Move focus around.
 bindsym $mod+$left focus left
@@ -28,19 +58,6 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-
-# Output.
-output HDMI-A-3 mode 1920x1080@74.973Hz
-output * bg $wallpaper fill
-
-# Style (Fonts and borders).
-font pango:JetBrainsMono Nerd Font 12
-default_border none
-
-# Gaps
-smart_gaps on
-gaps inner 3
-gaps outer 0
 
 # Switch to workspace.
 bindsym $mod+1 workspace number 1
