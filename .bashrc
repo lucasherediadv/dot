@@ -13,7 +13,7 @@ export HISTSIZE=0
 
 # Aliases.
 unalias -a
-alias d="/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME"
+alias d="/usr/bin/git --git-dir=$HOME/projects/github.com/lucasherediadv/dotfiles --work-tree=$HOME"
 alias ls="ls --color=auto"
 alias c="clear"
 
