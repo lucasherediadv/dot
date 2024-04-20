@@ -11,5 +11,5 @@ daemonize
 no-unlock-indicator
 
 # Background image.
-image=~/.config/sway/images/vagabond.jpg
+image=~/.config/sway/images/wallpaper.png
 
