@@ -7,14 +7,15 @@ export PS1="\w $ "
 # Use VI commands.
 set -o vi
 
-# Disable bash history.
-# ln -sv /dev/null "$HISTFILE"
-export HISTSIZE=0
+# Disable writing the history file, while it still allows to cycle
+# through the last commands.
+unset HISTFILE
 
 # Aliases.
 unalias -a
-alias d="/usr/bin/git --git-dir=$HOME/projects/github.com/lucasherediadv/dotfiles --work-tree=$HOME"
+alias d="/usr/bin/git --git-dir=$HOME/Arch/github.com/lucasherediadv/dotfiles --work-tree=$HOME"
 alias todo="vim ~/.todo"
 alias ls="ls --color=auto"
+alias ll="ls -al"
 alias c="clear"
 
