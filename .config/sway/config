@@ -36,7 +36,7 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed     the exit shortc
 
 # Output.
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output * bg ~/.config/sway/images/wallpaper.jpg fill
+output * bg ~/.config/sway/images/vagabond.jpg fill
 
 # Style (Fonts and borders).
 font pango:JetBrainsMono Nerd Font 12
