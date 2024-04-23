@@ -16,7 +16,6 @@ unset HISTFILE
 # Aliases.
 unalias -a
 alias d='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
-alias todo="vim ~/.todo"
 alias ls="ls --color=auto"
 alias c="clear"
 
