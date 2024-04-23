@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
@@ -13,9 +15,8 @@ unset HISTFILE
 
 # Aliases.
 unalias -a
-alias d="/usr/bin/git --git-dir=$HOME/Arch/github.com/lucasherediadv/dotfiles --work-tree=$HOME"
+alias d='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
 alias todo="vim ~/.todo"
 alias ls="ls --color=auto"
-alias ll="ls -al"
 alias c="clear"
 

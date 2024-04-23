@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # If running from tty1 start sway.
 if [ "$(tty)" = "/dev/tty1" ] ; then
   export QT_QPA_PLATFORM=wayland
@@ -7,5 +9,5 @@ if [ "$(tty)" = "/dev/tty1" ] ; then
 fi
 
 # Source ~/.bashrc.
-[ -n "$PS1" ] && source ~/.bashrc;
+[ -n "$PS1" ] && source "$HOME"/.bashrc;
 
