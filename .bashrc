@@ -24,7 +24,6 @@ unset HISTFILE
 unalias -a
 alias d='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
 alias ls="ls --color=auto"
-alias l="ls -l"
 alias ll="ls -al"
 alias c="clear"
 alias gs="git status"
