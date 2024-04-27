@@ -9,6 +9,10 @@ export PS1="\w $ "
 # Use VI commands.
 set -o vi
 
+# Path configuration.
+PATH=$PATH:$(go env GOPATH)/bin:"$HOME/repos/github.com/lucasherediadv/scripts"
+export PATH
+
 # Disable writing the history file, while it still allows to cycle
 # through the last commands.
 unset HISTFILE
@@ -17,5 +21,9 @@ unset HISTFILE
 unalias -a
 alias d='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
 alias ls="ls --color=auto"
+alias l="ls -l"
+alias ll="ls -al"
 alias c="clear"
+alias gs="git status"
+alias ga="git add"
 
