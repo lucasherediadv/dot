@@ -9,6 +9,9 @@ export PS1="\w $ "
 # Use VI commands.
 set -o vi
 
+# Environment Variables.
+export GOPATH="$HOME/.local/share/go"
+
 # Path configuration.
 PATH=$PATH:$(go env GOPATH)/bin:"$HOME/repos/github.com/lucasherediadv/scripts"
 export PATH
