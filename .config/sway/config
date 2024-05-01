@@ -40,7 +40,7 @@ focus output HDMI-A-3
 
 # Style: Fonts - Background - Borders - Gaps
 font pango:JetBrainsMono Nerd Font 12
-output * bg ~/.config/sway/images/wallpaper.png fill
+output * bg ~/.config/sway/images/wallpaper.jpg fill
 default_border none
 smart_gaps on
 gaps inner 3
