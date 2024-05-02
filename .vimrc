@@ -23,4 +23,4 @@ map <silent> <leader> :noh<cr>
 
 " Custom indentation settings per filetype.
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
-autocmd Filetype go setlocal noexpandtab tabstop=4
+autocmd Filetype go setlocal noexpandtab autoindent tabstop=4 shiftwidth=4
