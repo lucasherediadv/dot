@@ -33,10 +33,10 @@ bindsym $mod+Shift+c reload
 
 # Outputs.
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output DP-1 mode 1440x900@59.887Hz
+# output DP-1 mode 1440x900@59.887Hz
 
 # Focus monitor on Sway launch.
-focus output HDMI-A-3
+# focus output HDMI-A-3
 
 # Style: Fonts - Background - Borders - Gaps
 font pango:JetBrainsMono Nerd Font 12
@@ -64,18 +64,18 @@ bindsym $mod+Shift+$right move right
 
 # Binding workspaces to monitors.
 # HDMI-A-3
-workspace 1 output HDMI-A-3
-workspace 2 output HDMI-A-3
-workspace 3 output HDMI-A-3
-workspace 4 output HDMI-A-3
-workspace 5 output HDMI-A-3
+# workspace 1 output HDMI-A-3
+# workspace 2 output HDMI-A-3
+# workspace 3 output HDMI-A-3
+# workspace 4 output HDMI-A-3
+# workspace 5 output HDMI-A-3
 
 # DP-1
-workspace 6 output DP-1
-workspace 7 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-workspace 10 output DP-1
+# workspace 6 output DP-1
+# workspace 7 output DP-1
+# workspace 8 output DP-1
+# workspace 9 output DP-1
+# workspace 10 output DP-1
 
 # Switch to workspace.
 bindsym $mod+1 workspace number 1
