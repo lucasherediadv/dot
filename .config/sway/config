@@ -43,7 +43,7 @@ font pango:JetBrainsMono Nerd Font 12
 output * bg ~/.config/sway/images/wallpaper.jpg fill
 default_border none
 smart_gaps on
-gaps inner 3
+gaps inner 2
 gaps outer 0
 
 # Control window position in splits.
