@@ -1,10 +1,13 @@
 set nocompatible " Disable VI compatibility.
 let skip_defaults_vim = 1 " Skip VIM defaults.
 
+let g:loaded_matchparen=1 " Disable match paren plugin.
+let g:loaded_netrwPlugin=1 " Disable netrw plugin.
+
 colorscheme habamax " Set colorscheme.
 filetype plugin indent on " Load plugins according to detected filetype.
 
-set nobackup " No backup
+set nobackup " No backup.
 set noswapfile " No write swapfile.
 set nowritebackup " No write backup.
 set viminfofile=NONE " No write viminfo file.
