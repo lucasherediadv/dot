@@ -16,16 +16,26 @@ export GOPATH="$HOME/.local/share/go"
 PATH=$PATH:$(go env GOPATH)/bin:"$HOME/repos/github.com/lucasherediadv/scripts"
 export PATH
 
-# Disable writing the history file, while it still allows to cycle
-# through the last commands.
+# Disable writing the history file.
 unset HISTFILE
 
 # Aliases.
 unalias -a
-alias d='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
+alias me="cd ~/repos/github.com/lucasherediadv"
 alias ls="ls --color=auto"
-alias ll="ls -al"
+alias ll="ls -la"
+alias la="ls -A"
 alias c="clear"
+alias e="exit"
+alias v="vim"
+alias t="tmux"
+alias bye="sudo shutdown -h now"
 alias gs="git status"
 alias ga="git add"
-
+alias gm="git commit -m"
+alias gf="git diff"
+alias ds="dotfiles status"
+alias da="dotfiles add"
+alias dm="dotfiles commit -m"
+alias df="dotfiles diff"
