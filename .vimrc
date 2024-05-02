@@ -12,6 +12,7 @@ set noswapfile " No write swapfile.
 set nowritebackup " No write backup.
 set viminfofile=NONE " No write viminfo file.
 
+set mouse=a " Enable mouse support.
 set ignorecase " Ignore case when search.
 set smarttab " Always use shiftwidth.
 set shiftwidth=2 " Indent by 2 spaces.
