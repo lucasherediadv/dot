@@ -23,6 +23,7 @@ unset HISTFILE
 unalias -a
 alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
 alias me="cd ~/repos/github.com/lucasherediadv"
+alias to="v ~/.todo.md"
 alias ls="ls --color=auto"
 alias ll="ls -la"
 alias la="ls -A"
