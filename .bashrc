@@ -19,13 +19,25 @@ export PATH
 # Disable writing the history file.
 unset HISTFILE
 
+# Functions.
+# cd and ls -hall in one.
+cl() {
+  local dir="$1"
+  local dir="${dir:=$HOME}"
+  if [[ -d "$dir" ]]; then
+    cd "$dir" >/dev/null || exit; ls -hall --color=auto
+  else
+    echo "bash: cl: $dir: Directory not found"
+  fi
+}
+
 # Aliases.
 unalias -a
 alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
 alias me="cd ~/repos/github.com/lucasherediadv"
 alias to="v ~/.todo.md"
 alias ls="ls --color=auto"
-alias ll="ls -la"
+alias ll="ls -hall"
 alias la="ls -A"
 alias bye="sudo shutdown -h now"
 alias reboot="sudo reboot"
