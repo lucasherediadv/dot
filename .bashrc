@@ -15,7 +15,8 @@ unset HISTFILE
 # Environment Variables
 export VISUAL=vim
 export EDITOR=vim
-export SCRIPTS="$HOME/repos/github.com/lucasherediadv/scripts"
+export GHREPOS="$HOME/repos/github.com/lucasherediadv"
+export SCRIPTS="$GHREPOS/scripts"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
@@ -23,22 +24,10 @@ export GOBIN="$GOPATH/bin"
 PATH=$PATH:"$SCRIPTS":"$GOBIN"
 export PATH
 
-# Functions.
-# cd and ls -hall in one.
-cl() {
-  local dir="$1"
-  local dir="${dir:=$HOME}"
-  if [[ -d "$dir" ]]; then
-    cd "$dir" >/dev/null || exit; ls -hall --color=auto
-  else
-    echo "bash: cl: $dir: Directory not found"
-  fi
-}
-
 # Aliases.
 unalias -a
 alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
-alias me="cd ~/repos/github.com/lucasherediadv"
+alias repos="cd $GHREPOS"
 alias to="v ~/.todo.md"
 alias ls="ls --color=auto"
 alias ll="ls -hall"
