@@ -9,15 +9,19 @@ export PS1="\w $ "
 # Use VI commands.
 set -o vi
 
-# Environment Variables.
-export GOPATH="$HOME/.local/share/go"
-
-# Path configuration.
-PATH=$PATH:$(go env GOPATH)/bin:"$HOME/repos/github.com/lucasherediadv/scripts"
-export PATH
-
 # Disable writing the history file.
 unset HISTFILE
+
+# Environment Variables
+export VISUAL=vim
+export EDITOR=vim
+export SCRIPTS="$HOME/repos/github.com/lucasherediadv/scripts"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+
+# Path configuration.
+PATH=$PATH:"$SCRIPTS":"$GOBIN"
+export PATH
 
 # Functions.
 # cd and ls -hall in one.
