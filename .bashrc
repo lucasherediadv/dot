@@ -26,7 +26,7 @@ export PATH
 
 # Aliases.
 unalias -a
-alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dotfiles --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias repos="cd $GHREPOS"
 alias to="v ~/.todo.md"
 alias ls="ls --color=auto"
@@ -46,8 +46,8 @@ alias ga="git add"
 alias gm="git commit -m"
 alias gp="git push"
 alias gff="git diff"
-alias ds="dotfiles status"
-alias da="dotfiles add"
-alias dm="dotfiles commit -m"
-alias dp="dotfiles push"
-alias dff="dotfiles diff"
+alias ds="dot status"
+alias da="dot add"
+alias dm="dot commit -m"
+alias dp="dot push"
+alias dff="dot diff"
