@@ -16,6 +16,7 @@ unset HISTFILE
 export VISUAL=vim
 export EDITOR=vim
 export GHREPOS="$HOME/repos/github.com/lucasherediadv"
+export LAB="$GHREPOS/lab"
 export SCRIPTS="$GHREPOS/scripts"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
@@ -28,6 +29,7 @@ export PATH
 unalias -a
 alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias repos="cd $GHREPOS"
+alias lab="cd $LAB"
 alias to="v ~/.todo.md"
 alias ls="ls --color=auto"
 alias ll="ls -hall"
