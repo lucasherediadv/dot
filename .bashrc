@@ -17,7 +17,7 @@ export VISUAL=vim
 export EDITOR=vim
 export GHREPOS="$HOME/repos/github.com/lucasherediadv"
 export LAB="$GHREPOS/lab"
-export SCRIPTS="$GHREPOS/scripts"
+export SCRIPTS="$GHREPOS/scr"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
