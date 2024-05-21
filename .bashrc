@@ -18,7 +18,7 @@ export EDITOR=vim
 export GHREPOS="$HOME/repos/github.com/lucasherediadv"
 export LAB="$GHREPOS/lab"
 export SCRIPTS="$GHREPOS/scr"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/.local/share/go"
 export GOBIN="$GOPATH/bin"
 
 # Path configuration.
