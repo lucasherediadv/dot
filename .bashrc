@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Prompt.
-export PS1="\w $ "
+export PS1='\w\n\$ '
 
 # Use VI commands.
 set -o vi
@@ -40,9 +40,6 @@ alias up="sudo dnf upgrade"
 alias c="clear"
 alias e="exit"
 alias v="vim"
-alias t="tmux"
-alias ts="tmux ls"
-alias tk="tmux kill-session"
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit -m"
@@ -52,5 +49,4 @@ alias ds="dot status"
 alias da="dot add"
 alias dm="dot commit -m"
 alias dp="dot push"
-alias df="df -h"
-alias ..="cd ../"
+alias dff="dot diff"
