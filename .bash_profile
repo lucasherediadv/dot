@@ -1,6 +1,8 @@
 #!/bin/bash
+#
+# ~/.bash_profile
 
-# If running from tty1 start sway.
+# If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ] ; then
   export QT_QPA_PLATFORM=wayland
   export XDG_SESSION_TYPE=wayland
@@ -8,5 +10,5 @@ if [ "$(tty)" = "/dev/tty1" ] ; then
   exec sway
 fi
 
-# Source ~/.bashrc.
+# Source ~/.bashrc
 [ -n "$PS1" ] && source "$HOME"/.bashrc;

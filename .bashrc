@@ -1,9 +1,15 @@
 #!/bin/bash
+#
+# ~/.bashrc
 
-# If not running interactively, don't do anything.
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Prompt.
+# Use VI commands
+set -o vi
+
+# ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~ 
+
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -14,46 +20,60 @@ fi
 
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 
-# Use VI commands.
-set -o vi
+# ~~~~~~~~~~~~~~~ Environment variables ~~~~~~~~~~~~~~~ 
 
-# Disable writing the history file.
-unset HISTFILE
-
-# Environment Variables
 export VISUAL=vim
 export EDITOR=vim
+
+# Directories
 export GHREPOS="$HOME/repos/github.com/lucasherediadv"
-export LAB="$GHREPOS/lab"
 export SCRIPTS="$GHREPOS/scr"
+
+# Go related
 export GOPATH="$HOME/.local/share/go"
 export GOBIN="$GOPATH/bin"
 
-# Path configuration.
+# Disable history file
+unset HISTFILE
+
+# ~~~~~~~~~~~~~~~ Path ~~~~~~~~~~~~~~~ 
+
 PATH=$PATH:"$SCRIPTS":"$GOBIN"
 export PATH
 
-# Aliases.
+# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~ 
+
+# Remove previous aliases
 unalias -a
-alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
-alias repos="cd $GHREPOS"
-alias lab="cd $LAB"
-alias to="v ~/.todo.md"
-alias ls="ls --color=auto"
-alias ll="ls -hall"
-alias la="ls -A"
+
+# System
 alias bye="sudo shutdown -h now"
 alias reboot="sudo reboot"
 alias up="sudo dnf upgrade"
 alias c="clear"
 alias e="exit"
 alias v="vim"
+
+# Directories
+alias repos="cd $GHREPOS"
+alias lab="cd $GHREPOS/lab"
+alias to="v ~/.todo.md"
+
+# ls
+alias ls="ls --color=auto"
+alias ll="ls -la"
+alias la="ls -lathr"
+
+# Git
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit -m"
 alias gp="git push"
 alias gff="git diff"
 alias gb="git branch --all"
+
+# Dotfiles
+alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias ds="dot status"
 alias da="dot add"
 alias dm="dot commit -m"
