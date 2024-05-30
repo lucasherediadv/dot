@@ -14,8 +14,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-if [[ -f .config/git/git-prompt.sh ]]; then
-  source .config/git/git-prompt.sh
+if [[ -f ~/.config/git/git-prompt.sh ]]; then
+  source ~/.config/git/git-prompt.sh
 fi
 
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
