@@ -68,6 +68,8 @@ alias up="sudo dnf upgrade"
 alias c="clear"
 alias e="exit"
 alias v="vim"
+alias tls="tmux ls"
+alias tks="tmux kill-session"
 
 # Directories
 alias repos='cd $GHREPOS'
