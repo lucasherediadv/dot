@@ -80,8 +80,8 @@ alias to="v ~/.todo.md"
 
 # ls
 alias ls="ls --color=auto"
-alias ll="ls -la"
-alias la="ls -lathr"
+alias ll="ls -l"
+alias la="ls -hall"
 
 # Git
 alias gs="git status"
