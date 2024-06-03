@@ -73,6 +73,7 @@ alias tks="tmux kill-session"
 
 # Directories
 alias repos='cd $GHREPOS'
+alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
 alias zet='cd $GHREPOS/zet'
 alias to="v ~/.todo.md"
