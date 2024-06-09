@@ -1,70 +1,51 @@
-# Logo key. Use Mod1 for Alt.
+# Super key
 set $mod Mod4
 
-# Home row direction keys, like VI.
+# Home row direction keys, like VI
 set $left h
 set $down j
 set $up k
 set $right l
 
-# Terminal.
+# Terminal
 set $term foot
 
-# Web browser.
+# Web browser
 set $browser brave-browser
 
-# Open terminal.
+# Open terminal
 bindsym $mod+Return exec $term
 
-# Open web browser.
+# Open web browser
 bindsym $mod+Shift+Return exec $browser
 
-# Kill focused window.
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# Reload the configuration file.
+# Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Outputs.
+# Outputs
 output HDMI-A-3 mode 1920x1080@74.973Hz
+output * bg /usr/share/backgrounds/default.png fill
 
 # Style
 font pango:JetBrainsMono Nerd Font 12
-output * bg /usr/share/backgrounds/default.png fill
 default_border none
 
-# Control window position in splits.
-bindsym $mod+b splith
-bindsym $mod+v splitv
-
-# Move focus around.
+# Move focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# Move the focused window.
+# Move the focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# Binding workspaces to monitors.
-# HDMI-A-3
-# workspace 1 output HDMI-A-3
-# workspace 2 output HDMI-A-3
-# workspace 3 output HDMI-A-3
-# workspace 4 output HDMI-A-3
-# workspace 5 output HDMI-A-3
-
-# DP-1
-# workspace 6 output DP-1
-# workspace 7 output DP-1
-# workspace 8 output DP-1
-# workspace 9 output DP-1
-# workspace 10 output DP-1
-
-# Switch to workspace.
+# Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -76,7 +57,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# Move focused container to workspace.
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -88,7 +69,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Swaybar.
+# Swaybar
 bar {
   position top
     font pango:JetBrainsMonoNL Nerd Font 12
