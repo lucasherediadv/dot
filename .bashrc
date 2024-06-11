@@ -86,7 +86,6 @@ alias ga="git add"
 alias gm="git commit -m"
 alias gp="git push"
 alias gff="git diff"
-alias gb="git branch --all"
 
 # Dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
