@@ -13,6 +13,9 @@ set $term foot
 # Web browser
 set $browser brave-browser
 
+# Lock
+set $lock swaylock
+
 # Open terminal
 bindsym $mod+Return exec $term
 
@@ -24,6 +27,9 @@ bindsym $mod+Shift+q kill
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
+
+# Lock the screen
+bindsym $mod+Shift+s exec $lock
 
 # Outputs
 output HDMI-A-3 mode 1920x1080@74.973Hz
