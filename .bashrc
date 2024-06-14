@@ -26,7 +26,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # Directories
-export GHREPOS="$HOME/repos/github.com/lucasherediadv"
+export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
 export SCRIPTS="$GHREPOS/scr"
 
 # Go related
@@ -70,7 +70,7 @@ alias e="exit"
 alias v="vim"
 
 # Directories
-alias repos='cd $GHREPOS'
+alias me='cd $GHREPOS'
 alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
 alias to="v ~/.todo.md"
@@ -88,7 +88,7 @@ alias gp="git push"
 alias gff="git diff"
 
 # Dotfiles
-alias dot='/usr/bin/git --git-dir=$HOME/repos/github.com/lucasherediadv/dot --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias ds="dot status"
 alias da="dot add"
 alias dm="dot commit -m"
