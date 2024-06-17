@@ -73,6 +73,7 @@ alias v="vim"
 alias me='cd $GHREPOS'
 alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
+alias zet='cd $GHREPOS/zet/doc'
 alias to="v ~/.todo.md"
 
 # ls
