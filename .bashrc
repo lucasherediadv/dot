@@ -28,6 +28,7 @@ export EDITOR=vim
 # Directories
 export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
 export SCRIPTS="$GHREPOS/scr"
+export ZET="$GHREPOS/zet"
 
 # Go related
 export GOPATH="$HOME/.local/share/go"
@@ -73,8 +74,8 @@ alias v="vim"
 alias me='cd $GHREPOS'
 alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
-alias zet='cd $GHREPOS/zet/doc'
-alias to="v ~/.todo.md"
+alias zet='cd $ZET/doc'
+alias to="v $ZET/doc/todo.md"
 
 # ls
 alias ls="ls --color=auto"
