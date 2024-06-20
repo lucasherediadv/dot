@@ -32,9 +32,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+s exec $lock
 
 # Outputs
-output HDMI-A-3 mode 1920x1080@74.973Hz
+output HDMI-A-3 mode 1920x1080@74.973Hz position 0,0
 output DP-1 mode 1440x900@59.887Hz
-focus output HDMI-A-3
+# focus output HDMI-A-3
 output * bg /usr/share/backgrounds/default.png fill
 
 # Style
