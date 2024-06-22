@@ -10,6 +10,7 @@ set -o vi
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~ 
 
+# Git configuration
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -22,6 +23,7 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 
 # ~~~~~~~~~~~~~~~ Environment variables ~~~~~~~~~~~~~~~ 
 
+# Default editor
 export VISUAL=vim
 export EDITOR=vim
 
@@ -65,7 +67,7 @@ unalias -a
 # System
 alias bye="sudo shutdown -h now"
 alias reboot="sudo reboot"
-alias up="sudo dnf upgrade"
+alias up="sudo dnf upgrade --refresh"
 alias c="clear"
 alias e="exit"
 alias v="vim"
