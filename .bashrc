@@ -77,7 +77,7 @@ alias me='cd $GHREPOS'
 alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
 alias zet='cd $ZET/doc'
-alias to="v $ZET/doc/todo.md"
+alias to='v $ZET/doc/todo.md'
 
 # ls
 alias ls="ls --color=auto"
