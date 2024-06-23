@@ -78,13 +78,11 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Binding workspaces to monitors
-# HDMI-A-3
 workspace 1 output HDMI-A-3
 workspace 2 output HDMI-A-3
 workspace 3 output HDMI-A-3
 workspace 4 output HDMI-A-3
 workspace 5 output HDMI-A-3
-# DP-1
 workspace 6 output DP-1
 workspace 7 output DP-1
 workspace 8 output DP-1
