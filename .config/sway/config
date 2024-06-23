@@ -81,9 +81,15 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # HDMI-A-3
 workspace 1 output HDMI-A-3
 workspace 2 output HDMI-A-3
+workspace 3 output HDMI-A-3
+workspace 4 output HDMI-A-3
+workspace 5 output HDMI-A-3
 # DP-1
-workspace 3 output DP-1
-workspace 4 output DP-1
+workspace 6 output DP-1
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
+workspace 10 output DP-1
 
 # Auto start apps
 exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
