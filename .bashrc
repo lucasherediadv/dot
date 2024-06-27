@@ -71,7 +71,7 @@ alias reboot="sudo reboot"
 alias up="sudo dnf upgrade --refresh"
 alias c="clear"
 alias e="exit"
-alias v="vim"
+alias vi="vim" # For muscle memory
 
 # Directories
 alias me='cd $GHREPOS'
