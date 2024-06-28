@@ -24,8 +24,8 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 # ~~~~~~~~~~~~~~~ Environment variables ~~~~~~~~~~~~~~~ 
 
 # Default editor
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=vi
+export EDITOR=vi
 
 # Directories
 export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
@@ -71,7 +71,6 @@ alias reboot="sudo reboot"
 alias up="sudo dnf upgrade --refresh"
 alias c="clear"
 alias e="exit"
-alias vi="vim" # For muscle memory
 
 # Directories
 alias me='cd $GHREPOS'
@@ -79,7 +78,6 @@ alias scr='cd $GHREPOS/scr'
 alias lab='cd $GHREPOS/lab'
 alias zet='cd $ZET/doc'
 alias homelab='cd $HOMELAB'
-alias to='v $ZET/doc/todo.md'
 
 # ls
 alias ls="ls --color=auto"
