@@ -64,5 +64,3 @@ alias zet='cd $ZET/doc'
 alias hl='cd $HOMELAB'
 alias scr='cd $SCRIPTS'
 alias lab='cd $GHREPOS/lab'
-
-_have vim && alias vi=vim
