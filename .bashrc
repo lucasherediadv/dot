@@ -8,9 +8,8 @@
 # Use VI commands
 set -o vi
 
-# ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~ 
+# --------------- Prompt --------------- 
 
-# Git configuration
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -21,31 +20,24 @@ fi
 
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 
-# ~~~~~~~~~~~~~~~ Environment variables ~~~~~~~~~~~~~~~ 
+# --------------- Environment variables --------------- 
 
-# Default editor
 export VISUAL=vi
 export EDITOR=vi
-
-# Directories
 export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
 export SCRIPTS="$GHREPOS/scr"
 export ZET="$GHREPOS/zet"
 export HOMELAB="$GHREPOS/homelab"
-
-# Go related
 export GOPATH="$HOME/.local/share/go"
 export GOBIN="$GOPATH/bin"
-
-# Disable history file
 unset HISTFILE
 
-# ~~~~~~~~~~~~~~~ Path ~~~~~~~~~~~~~~~ 
+# --------------- Path --------------- 
 
 PATH=$PATH:"$SCRIPTS":"$GOBIN"
 export PATH
 
-# ~~~~~~~~~~~~~~~ SSH ~~~~~~~~~~~~~~~ 
+# --------------- SSH --------------- 
 
 if [ -f ~/.ssh/github/agent.env ] ; then
   source ~/.ssh/github/agent.env > /dev/null
@@ -60,41 +52,17 @@ else
   ssh-add ~/.ssh/github/id_ed25519
 fi
 
-# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~ 
+# --------------- Aliases --------------- 
 
-# Remove previous aliases
 unalias -a
-
-# System
-alias bye="sudo shutdown -h now"
-alias reboot="sudo reboot"
-alias up="sudo dnf upgrade --refresh"
-alias c="clear"
-alias e="exit"
-
-# Directories
-alias me='cd $GHREPOS'
-alias scr='cd $GHREPOS/scr'
-alias lab='cd $GHREPOS/lab'
-alias zet='cd $ZET/doc'
-alias homelab='cd $HOMELAB'
-
-# ls
-alias ls="ls --color=auto"
-alias ll="ls -l"
-alias la="ls -hall"
-
-# Git
-alias gs="git status"
-alias ga="git add"
-alias gm="git commit -m"
-alias gp="git push"
-alias gff="git diff"
-
-# Dotfiles
 alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --work-tree=$HOME'
-alias ds="dot status"
-alias da="dot add"
-alias dm="dot commit -m"
-alias dp="dot push"
-alias dff="dot diff"
+alias todo='vi ~/.todo'
+alias c='printf "\e[H\e[2J"'
+alias ls='ls -h --color=auto'
+alias me='cd $GHREPOS'
+alias zet='cd $ZET/doc'
+alias hl='cd $HOMELAB'
+alias scr='cd $SCRIPTS'
+alias lab='cd $GHREPOS/lab'
+
+_have vim && alias vi=vim
