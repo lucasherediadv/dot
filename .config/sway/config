@@ -11,7 +11,7 @@ set $right l
 set $term foot
 
 # Web browser
-set $browser brave-browser --incognito
+set $browser brave-browser
 
 # Lock
 set $lock swaylock
