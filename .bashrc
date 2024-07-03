@@ -34,7 +34,7 @@ unset HISTFILE
 
 # --------------- Path --------------- 
 
-PATH=$PATH:"$SCRIPTS":"$GOBIN"
+PATH=$PATH:"$SCRIPTS/bin":"$GOBIN"
 export PATH
 
 # --------------- SSH --------------- 
