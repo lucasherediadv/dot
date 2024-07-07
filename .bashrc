@@ -57,7 +57,8 @@ fi
 unalias -a
 alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias todo='vi ~/.todo'
-alias c='printf "\e[H\e[2J"'
+# alias c='printf "\e[H\e[2J"'
+alias c='clear'
 alias ls='ls -h --color=auto'
 alias me='cd $GHREPOS'
 alias zet='cd $ZET/doc'
