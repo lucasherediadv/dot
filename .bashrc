@@ -26,8 +26,6 @@ export VISUAL=vi
 export EDITOR=vi
 export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
 export SCRIPTS="$GHREPOS/scr"
-export ZET="$GHREPOS/zet"
-export HOMELAB="$GHREPOS/homelab"
 export GOPATH="$HOME/.local/share/go"
 export GOBIN="$GOPATH/bin"
 unset HISTFILE
@@ -57,7 +55,6 @@ fi
 unalias -a
 alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --work-tree=$HOME'
 alias todo='vi ~/.todo'
-# alias c='printf "\e[H\e[2J"'
 alias c='clear'
 alias ls='ls -h --color=auto'
 alias me='cd $GHREPOS'
