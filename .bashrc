@@ -25,14 +25,14 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 export VISUAL=vi
 export EDITOR=vi
 export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
-export SCRIPTS="$GHREPOS/scr"
+export SCRIPTS="$GHREPOS/scr/bin"
 export GOPATH="$HOME/.local/share/go"
 export GOBIN="$GOPATH/bin"
 unset HISTFILE
 
 # --------------- Path --------------- 
 
-PATH=$PATH:"$SCRIPTS/bin":"$GOBIN"
+PATH=$PATH:"$SCRIPTS":"$GOBIN"
 export PATH
 
 # --------------- SSH --------------- 
@@ -57,7 +57,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --wo
 alias c='clear'
 alias ls='ls -h --color=auto'
 alias me='cd $GHREPOS'
-alias s='cd $SCRIPTS'
-alias z='cd $GHREPOS/zet/doc'
+alias scr='cd $SCRIPTS'
+alias zet='cd $GHREPOS/zet/doc'
 alias hl='cd $GHREPOS/homelab'
 alias lab='cd $GHREPOS/lab'
