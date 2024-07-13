@@ -57,3 +57,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --wo
 alias c='clear'
 alias ls='ls -h --color=auto'
 alias me='cd $GHREPOS'
+alias s='cd $SCRIPTS'
+alias z='cd $GHREPOS/zet/doc'
+alias hl='cd $GHREPOS/homelab'
+alias lab='cd $GHREPOS/lab'
