@@ -33,7 +33,7 @@ bindsym $mod+Shift+s exec $lock
 
 # Outputs
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output * bg /usr/share/backgrounds/default.png fill
+output * bg /usr/share/backgrounds/default-dark.png fill
 
 # Style
 font pango:JetBrainsMono Nerd Font 12
