@@ -22,18 +22,17 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\w${PS1_CMD1}\n\$ '
 
 # --------------- Environment variables --------------- 
 
+unset HISTFILE
 export VISUAL=vi
 export EDITOR=vi
-export GHREPOS="$HOME/Repos/github.com/lucasherediadv"
+export REPOS="$HOME/Repos"
+export GITUSER="lucasherediadv"
+export GHREPOS="$REPOS/github.com/$GITUSER"
 export SCRIPTS="$GHREPOS/scr/bin"
-export GOPATH="$HOME/.local/share/go"
-export GOBIN="$GOPATH/bin"
-unset HISTFILE
 
 # --------------- Path --------------- 
 
-PATH=$PATH:"$SCRIPTS":"$GOBIN"
-export PATH
+export PATH=$PATH:"$SCRIPTS"
 
 # --------------- SSH --------------- 
 
