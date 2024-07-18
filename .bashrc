@@ -52,7 +52,7 @@ fi
 # --------------- Aliases --------------- 
 
 unalias -a
-alias dot='/usr/bin/git --git-dir=$HOME/Repos/github.com/lucasherediadv/dot --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$GHREPOS/dot --work-tree=$HOME'
 alias c='clear'
 alias ls='ls -h --color=auto'
 alias me='cd $GHREPOS'
