@@ -11,11 +11,7 @@ set -o vi
 # Prompt
 PS1='\w\n\\$ '
 
-# PATH
-export PATH=$PATH:"$SCRIPTS"
-
-# --------------- Environment variables --------------- 
-
+# Environment variables
 unset HISTFILE
 export VISUAL=vi
 export EDITOR=vi
@@ -24,8 +20,7 @@ export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export SCRIPTS="$GHREPOS/scr/bin"
 
-# --------------- SSH --------------- 
-
+# SSH
 if [ -f ~/.ssh/github/agent.env ] ; then
   source ~/.ssh/github/agent.env > /dev/null
   if ! kill -0 "$SSH_AGENT_PID" > /dev/null 2>&1; then
@@ -39,8 +34,10 @@ else
   ssh-add ~/.ssh/github/id_ed25519
 fi
 
-# --------------- Aliases --------------- 
+# PATH
+export PATH=$PATH:"$SCRIPTS"
 
+# Aliases
 unalias -a
 alias dot='/usr/bin/git --git-dir=$GHREPOS/dot --work-tree=$HOME'
 alias c='clear'
