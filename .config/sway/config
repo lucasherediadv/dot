@@ -75,9 +75,6 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Auto start
-exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term -e tmux new'
-
 # Swaybar
 bar {
   position top
@@ -92,4 +89,3 @@ bar {
         inactive_workspace #1e1e1e #1e1e1e #666666
     }
 }
-
