@@ -6,4 +6,6 @@
 [ "$(tty)" = "/dev/tty1" ] && exec sway
 
 # Source ~/.bashrc
-[ -n "$PS1" ] && source "$HOME"/.bashrc;
+if [ -r ~/.bashrc ]; then
+	source ~/.bashrc
+fi
