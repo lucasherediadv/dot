@@ -8,9 +8,11 @@
 # Use VI commands
 set -o vi
 
-# --------------- Prompt --------------- 
-
+# Prompt
 PS1='\w\n\\$ '
+
+# PATH
+export PATH=$PATH:"$SCRIPTS"
 
 # --------------- Environment variables --------------- 
 
@@ -21,10 +23,6 @@ export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export SCRIPTS="$GHREPOS/scr/bin"
-
-# --------------- Path --------------- 
-
-export PATH=$PATH:"$SCRIPTS"
 
 # --------------- SSH --------------- 
 
