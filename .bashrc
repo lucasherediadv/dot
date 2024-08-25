@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # ~/.bashrc
+#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -13,26 +14,10 @@ PS1='\w\n\\$ '
 
 # Environment variables
 unset HISTFILE
-export VISUAL=vi
-export EDITOR=vi
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export SCRIPTS="$GHREPOS/scr/bin"
-
-# SSH
-#if [ -f ~/.ssh/github/agent.env ] ; then
-#  source ~/.ssh/github/agent.env > /dev/null
-#  if ! kill -0 "$SSH_AGENT_PID" > /dev/null 2>&1; then
-#    echo "Stale agent file found. Spawning a new agent."
-#    eval "$(ssh-agent | tee ~/.ssh/github/agent.env)"
-#    ssh-add ~/.ssh/github/id_ed25519
-#  fi
-#else
-#  echo "Starting ssh-agent"
-#  eval "$(ssh-agent | tee ~/.ssh/github/agent.env)"
-#  ssh-add ~/.ssh/github/id_ed25519
-#fi
 
 # PATH
 export PATH=$PATH:"$SCRIPTS"
