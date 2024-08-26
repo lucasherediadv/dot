@@ -1,8 +1,3 @@
-#!/bin/bash
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -10,7 +5,7 @@
 set -o vi
 
 # Prompt
-PS1='\w\n\\$ '
+PS1='\w $ '
 
 # Environment variables
 unset HISTFILE
