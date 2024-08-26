@@ -31,13 +31,13 @@ bindsym $mod+Shift+c reload
 # Lock the screen
 bindsym $mod+Shift+s exec $lock
 
-# Outputs
+# Output
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output * bg /usr/share/backgrounds/default-dark.png fill
 
 # Style
 font pango:JetBrainsMono Nerd Font 12
 default_border none
+gaps inner 5
 
 # Move focus around
 bindsym $mod+$left focus left
