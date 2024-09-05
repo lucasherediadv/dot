@@ -2,4 +2,4 @@ debug
 ignore-empty-password
 daemonize
 no-unlock-indicator
-image=/usr/share/backgrounds/default-dark.png
+image=~/.config/sway/gruv-commit.png
