@@ -43,7 +43,7 @@ client.focused #968c71 #968c71 #968c71 #968c71 #968c71
 client.unfocused #968c71 #968c71 #968c71 #968c71 #968c71
 client.focused_inactive #968c71 #968c71 #968c71 #968c71 #968c71
 default_border pixel 1
-gaps inner 8
+gaps inner 6
 
 # Move focus around
 bindsym $mod+$left focus left
