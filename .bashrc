@@ -9,21 +9,13 @@ PS1='\w $ '
 
 # Environment variables
 unset HISTFILE
-export REPOS="$HOME/Repos"
-export GITUSER="lucasherediadv"
-export GHREPOS="$REPOS/github.com/$GITUSER"
-export SCRIPTS="$GHREPOS/scr/bin"
-
-# PATH
-export PATH=$PATH:"$SCRIPTS"
+export EDITOR=vim
+export VISUAL=vim
+export LESSHISTFILE=/dev/null
 
 # Aliases
 unalias -a
 alias dot='/usr/bin/git --git-dir=$GHREPOS/dot --work-tree=$HOME'
-alias c='clear'
 alias ls='ls -h --color=auto'
-alias me='cd $GHREPOS'
-alias scr='cd $SCRIPTS'
-alias zet='cd $GHREPOS/zet/docs'
-alias hl='cd $GHREPOS/homelab'
-alias lab='cd $GHREPOS/lab'
+alias to='vim ~/.todo.md'
+alias c='clear'
