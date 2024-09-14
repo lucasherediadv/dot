@@ -1,5 +1,0 @@
-debug
-ignore-empty-password
-daemonize
-no-unlock-indicator
-image=~/.config/sway/gruv-commit.png
