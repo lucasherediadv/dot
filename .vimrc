@@ -1,3 +1,7 @@
+" Disable unnecesary plugins
+let g:loaded_matchparen=1
+let g:loaded_netrwPlugin=1
+
 syntax on " Enable syntax highlighting
 set autoindent " Automatically indent new lines
 set expandtab " Replace tabs with spaces
