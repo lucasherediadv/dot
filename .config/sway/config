@@ -76,5 +76,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Autostart
+workspace 1
+exec $browser
 workspace 2
 exec $term tmux new
