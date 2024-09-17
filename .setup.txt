@@ -1,4 +1,0 @@
-git clone --bare https://github.com/lucasherediadv/dot.git $HOME/.dot
-alias dot='/usr/bin/git --git-dir="$HOME/.dot/" --work-tree="$HOME"'
-dot checkout -f
-dot config --local status.showUntrackedFiles no
