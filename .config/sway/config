@@ -33,9 +33,9 @@ output HDMI-A-3 mode 1920x1080@74.973Hz
 output "*" bg ~/.config/sway/gruv-commit.png fill
 
 # Style
-client.focused #968c71 #968c71 #968c71 #968c71 #968c71
-client.unfocused #968c71 #968c71 #968c71 #968c71 #968c71
-client.focused_inactive #968c71 #968c71 #968c71 #968c71 #968c71
+client.focused #5a5443 #5a5443 #5a5443 #5a5443 #5a5443
+client.unfocused #5a5443 #5a5443 #5a5443 #5a5443 #5a5443
+client.focused_inactive #5a5443 #5a5443 #5a5443 #5a5443 #5a5443
 default_border pixel 1
 gaps inner 6
 
