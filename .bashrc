@@ -17,5 +17,5 @@ export LESSHISTFILE=/dev/null
 unalias -a
 alias dot='/usr/bin/git --git-dir=/home/user/.dot --work-tree=$HOME'
 alias ls='ls -h --color=auto'
-alias to='vim ~/.todo.md'
+alias todo='vim ~/.todo.md'
 alias c='clear'
