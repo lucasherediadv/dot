@@ -78,3 +78,18 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Autostart
 workspace 2
 exec $term tmux new
+
+# Swaybar
+bar {
+  position top
+    font pango:JetBrainsMonoNL Nerd Font 12
+    status_command while date --date="-3 hours" +"%F %H:%M";do sleep 1; done
+
+    colors {
+       statusline #ebdbb2
+        background #1a1c1d
+        focused_workspace #1a1c1d #1a1c1d #ebdbb2
+        active_workspace #1a1c1d #1a1c1d #5e5747
+        inactive_workspace #1a1c1d #1a1c1d #5e5747
+    }
+}
