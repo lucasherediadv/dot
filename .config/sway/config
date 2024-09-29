@@ -38,6 +38,7 @@ client.unfocused #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 client.focused_inactive #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 default_border pixel 1
 gaps inner 4
+gaps outer 2
 
 # Move focus around
 bindsym $mod+$left focus left
