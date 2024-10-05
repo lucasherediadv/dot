@@ -1,0 +1,43 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 10,
+    "margin-left": 12,
+    "margin-right": 12,
+    "margin-top": 12,
+    "margin-bottom": 0,
+    "modules-left": [
+      "sway/workspaces"
+    ],
+    "modules-right": [
+      "user",
+      "custom/separator",
+      "cpu",
+      "custom/separator",
+      "memory",
+      "custom/separator",
+      "load",
+      "custom/separator",
+      "clock"
+    ],
+    "user": {
+      "format": "up. {work_H}.{work_M}"
+    },
+    "cpu": {
+      "format":"cpu. {avg_frequency}"
+    },
+    "load": {
+      "format": "load. {}"
+    },
+    "memory": {
+      "format": "mem. {used}"
+    },
+    "clock": {
+      "format": "{:%F %H:%M}",
+      "timezone": "America/Argentina/Cordoba"
+    },
+    "custom/separator": {
+      "format": "|"
+    }
+}
