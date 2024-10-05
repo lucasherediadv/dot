@@ -1,0 +1,4 @@
+daemonize
+no-unlock-indicator
+ignore-empty-password
+image=~/.config/sway/solid-color-image.png
