@@ -16,6 +16,9 @@ set $term foot
 # Browser
 set $browser firefox
 
+# Lock the screen
+bindsym Alt+l exec swaylock
+
 # Open terminal
 bindsym $mod+Return exec $term
 
@@ -30,15 +33,18 @@ bindsym $mod+Shift+c reload
 
 # Output
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output "*" bg ~/.config/sway/gruv-commit.png fill
+output "*" bg ~/.config/sway/solid-color-image.png fill
+
+# Hide mouse cursor on inactivity
+seat * hide_cursor 3000
 
 # Style
 client.focused #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 client.unfocused #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 client.focused_inactive #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 default_border pixel 1
-gaps inner 4
-gaps outer 2
+gaps inner 12
+gaps outer 0
 
 # Move focus around
 bindsym $mod+$left focus left
@@ -79,18 +85,9 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Autostart
 workspace 2
 exec $term tmux new
+exec_always --no-startup-id autotiling
 
-# Swaybar
+# Bar
 bar {
-  position top
-    font pango:JetBrainsMonoNL Nerd Font 12
-    status_command while date --date="-3 hours" +"%F %H:%M";do sleep 1; done
-
-    colors {
-       statusline #ebdbb2
-        background #1a1c1d
-        focused_workspace #1a1c1d #1a1c1d #ebdbb2
-        active_workspace #1a1c1d #1a1c1d #5e5747
-        inactive_workspace #1a1c1d #1a1c1d #5e5747
-    }
+  swaybar_command waybar
 }
