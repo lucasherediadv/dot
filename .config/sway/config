@@ -85,7 +85,6 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Autostart
 workspace 2
 exec $term tmux new
-exec_always --no-startup-id autotiling
 
 # Bar
 bar {
