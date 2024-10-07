@@ -14,10 +14,11 @@ export VISUAL=vim
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
+export SCRIPTS="$GHREPOS/scr/bin"
 export LESSHISTFILE=/dev/null
 
 # Path
-export PATH=$PATH:$GHREPOS/scr/bin
+export PATH=$PATH:$SCRIPTS
 
 # Aliases
 unalias -a
