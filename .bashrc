@@ -16,6 +16,9 @@ export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export LESSHISTFILE=/dev/null
 
+# Path
+export PATH=$PATH:$GHREPOS/scr/bin
+
 # Aliases
 unalias -a
 alias dot='/usr/bin/git --git-dir=/home/user/.dot --work-tree=$HOME'
