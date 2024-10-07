@@ -24,7 +24,7 @@ export PATH=$PATH:$SCRIPTS
 unalias -a
 alias dot='/usr/bin/git --git-dir=/home/user/.dot --work-tree=$HOME'
 alias ls='ls -h --color=auto'
-alias ghrepos='cd $GHREPOS'
-alias gr='ghrepos'
+alias gr='cd $GHREPOS'
+alias sr='cd $SCRIPTS'
 alias todo='vim ~/.todo.md'
 alias c='clear'
