@@ -1,6 +1,3 @@
-# Disable Xwayland
-xwayland disable
-
 # Super key
 set $mod Mod4
 
@@ -15,9 +12,6 @@ set $term foot
 
 # Browser
 set $browser firefox
-
-# Lock the screen
-bindsym Alt+l exec swaylock
 
 # Open terminal
 bindsym $mod+Return exec $term
