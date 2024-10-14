@@ -13,8 +13,6 @@
     "modules-right": [
       "user",
       "custom/separator",
-      "cpu",
-      "custom/separator",
       "memory",
       "custom/separator",
       "load",
@@ -23,9 +21,6 @@
     ],
     "user": {
       "format": "up. {work_H}.{work_M}"
-    },
-    "cpu": {
-      "format":"cpu. {avg_frequency}"
     },
     "load": {
       "format": "load. {}"
