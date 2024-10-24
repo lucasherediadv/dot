@@ -11,8 +11,8 @@ PS1='\w $ '
 
 # Environment variables
 unset HISTFILE
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=vi
+export VISUAL=vi
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
@@ -28,4 +28,4 @@ alias dot='/usr/bin/git --git-dir=/home/user/.dot --work-tree=$HOME'
 alias ls='ls -h --color=auto'
 alias gr='cd $GHREPOS'
 alias sr='cd $SCRIPTS'
-alias todo='vim ~/.todo.md'
+alias todo='vi ~/.todo'
