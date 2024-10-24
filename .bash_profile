@@ -1,3 +1,6 @@
+#!/bin/bash
+# shellcheck disable=SC1090
+
 # If running from tty1 start sway
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec sway
