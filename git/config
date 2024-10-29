@@ -1,0 +1,7 @@
+[user]
+  name = Lucas
+  email = 151478033+lucasherediadv@users.noreply.github.com
+[init]
+  defaultBranch = main
+[core]
+  autocrlf = input
