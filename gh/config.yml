@@ -4,3 +4,4 @@ editor: vi
 prompt: enabled
 prefer_editor_prompt: disabled
 pager: less
+browser: firefox
