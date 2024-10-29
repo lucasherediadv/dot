@@ -7,7 +7,7 @@
 set -o vi
 
 # prompt
-PS1='\w $ '
+PS1='[\u@\h \W]\$ '
 
 # environment variables
 unset HISTFILE
