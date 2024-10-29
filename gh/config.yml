@@ -1,0 +1,6 @@
+version: 1
+git_protocol: ssh
+editor: vi
+prompt: enabled
+prefer_editor_prompt: disabled
+pager: less
