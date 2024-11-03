@@ -1,37 +1,37 @@
 {
-    "layer": "top",
-		"position": "left",
-		"width": 40,
-    "spacing": 10,
-    "margin-left": 12,
-    "margin-right": 0,
-    "margin-top": 12,
-    "margin-bottom": 12,
-    "modules-left": [
-      "sway/workspaces"
-    ],
-    "modules-right": [
-			"cpu",
-      "custom/separator",
-      "memory",
-      "custom/separator",
-      "clock"
-    ],
-		"cpu": {
-			"format": "cpu. {usage}%",
-			"rotate": 90
-		},
-    "memory": {
-      "format": "mem. {percentage}%",
-			"rotate": 90
-    },
-    "clock": {
-      "format": "{:%F %H:%M}",
-      "timezone": "America/Argentina/Cordoba",
-			"rotate": 90
-    },
-    "custom/separator": {
-      "format": "|",
-			"rotate": 90
-    }
+  "layer": "top",
+  "position": "left",
+  "width": 40,
+  "spacing": 10,
+  "margin-left": 12,
+  "margin-right": 0,
+  "margin-top": 12,
+  "margin-bottom": 12,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "clock"
+  ],
+  "cpu": {
+    "format": "cpu. {usage}%",
+    "rotate": 90
+  },
+  "memory": {
+    "format": "mem. {percentage}%",
+    "rotate": 90
+  },
+  "clock": {
+    "format": "{:%F %H:%M}",
+    "timezone": "America/Argentina/Cordoba",
+    "rotate": 90
+  },
+  "custom/separator": {
+    "format": "|",
+    "rotate": 90
+  }
 }
