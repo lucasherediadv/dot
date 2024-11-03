@@ -7,7 +7,6 @@
 set -o vi
 
 # smart prompt (stolen from rwxrob)
-
 PROMPT_LONG=20
 PROMPT_MAX=95
 PROMPT_AT=@
