@@ -6,36 +6,19 @@
 # use vi commands
 set -o vi
 
-# smart prompt (stolen from rwxrob)
-PROMPT_LONG=20
-PROMPT_MAX=95
-PROMPT_AT=@
-
+# prompt
 __ps1() {
-  local P='$' dir="${PWD##*/}" B countme short long double
+  local P='$' dir="${PWD##*/}" B
 
   [[ $EUID == 0 ]] && P='#' 
-  [[ $PWD = / ]] && dir=/
+  [[ $PWD = / ]] && dir='/'
   [[ $PWD = "$HOME" ]] && dir='~'
 
   B=$(git branch --show-current 2>/dev/null)
   [[ $dir = "$B" ]] && B=.
-  countme="$USER$PROMPT_AT$(hostnamectl hostname):$dir($B)\$ "
+  [[ -n "$B" && ($B == master || $B == main) ]] && B="─[$B]"
 
-  [[ $B == master || $B == main ]] 
-  [[ -n "$B" ]] && B="($B)"
-
-  short="\u$PROMPT_AT\h:$dir$B$P "
-  long="┌\u$PROMPT_AT\h:$dir$B\n└$P "
-  double="┌\u$PROMPT_AT\h:$dir\n|$B\n└$P "
-
-  if ((${#countme} > PROMPT_MAX)); then
-    PS1="$double"
-  elif ((${#countme} > PROMPT_LONG)); then
-    PS1="$long"
-  else
-    PS1="$short"
-  fi
+  PS1="┌[\u@\h]─[$dir]$B\n└$P "
 }
 
 PROMPT_COMMAND="__ps1"
