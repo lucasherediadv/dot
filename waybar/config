@@ -11,12 +11,18 @@
     "sway/workspaces"
   ],
   "modules-right": [
+    "user",
+    "custom/separator",
     "cpu",
     "custom/separator",
     "memory",
     "custom/separator",
     "clock"
   ],
+  "user": {
+    "format": "up. {work_H}:{work_M}",
+    "rotate": 90
+  },
   "cpu": {
     "format": "cpu. {usage}%",
     "rotate": 90

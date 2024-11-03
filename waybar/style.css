@@ -19,6 +19,10 @@
   color: #ebdbb2; 
 }
 
+#user {
+  padding-left: 13px;
+}
+
 #clock {
   padding-bottom: 10px;
 }
