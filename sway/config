@@ -1,7 +1,7 @@
 # super key
 set $mod Mod4
 
-# home row direction keys, like VI
+# home row direction keys, like vi
 set $left h
 set $down j
 set $up k
@@ -32,7 +32,7 @@ output "*" bg ~/.config/sway/solid-color-image.png fill
 # hide mouse cursor on inactivity
 seat * hide_cursor 3000
 
-# style
+# window style
 client.focused #a4997c #a4997c #a4997c #a4997c #a4997c
 client.unfocused #a4997c #a4997c #a4997c #a4997c #a4997c
 client.focused_inactive #a4997c #a4997c #a4997c #a4997c #a4997c
@@ -77,10 +77,9 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # autostart
-workspace 2
 exec $term tmux new
 
 # bar
 bar {
-	swaybar_command waybar
+  swaybar_command waybar
 }
