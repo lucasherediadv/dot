@@ -6,7 +6,7 @@ ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.exrc" "$HOME/.exrc"
 
-for i in foot gh git sway tmux waybar; do
+for i in foot gh git nvim sway tmux waybar; do
   cd $i && ./setup
   cd -
 done

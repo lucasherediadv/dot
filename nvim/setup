@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir ~/.config 2>/dev/null
+rm -rf ~/.config/nvim 2>/dev/null
+ln -s "$PWD" "$HOME/.config/nvim"
