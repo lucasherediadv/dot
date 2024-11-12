@@ -8,6 +8,7 @@ local options = {
   ignorecase = true, -- Ignore case in search
   showmode = false, -- Don't show mode
   laststatus = 0, -- No status line
+  swapfile = false, -- Disable use of swap files
 }
 
 for option, value in pairs(options) do
