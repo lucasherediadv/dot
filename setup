@@ -4,9 +4,9 @@ set -e
 
 ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
-ln -sf "$PWD/.exrc" "$HOME/.exrc"
+ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 
-for i in foot gh git nvim sway tmux waybar; do
+for i in foot git sway tmux; do
   cd $i && ./setup
   cd -
 done
