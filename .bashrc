@@ -25,8 +25,8 @@ PROMPT_COMMAND="__ps1"
 
 # environment variables
 unset HISTFILE
-export EDITOR=vi
-export VISUAL=vi
+export EDITOR=nvim
+export VISUAL=nvim
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
@@ -41,6 +41,7 @@ export PATH=$PATH:$SCRIPTS
 # aliases
 unalias -a
 alias ls='ls -h --color=auto'
+alias vi='nvim'
 alias gr='cd $GHREPOS'
 alias sr='cd $SCRIPTS'
 alias dot='cd $DOT'
