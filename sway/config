@@ -9,14 +9,10 @@ set $right l
 
 # terminal
 set $term foot
+bindsym $mod+Return exec $term
 
 # browser
 set $browser firefox
-
-# open terminal
-bindsym $mod+Return exec $term
-
-# open browser
 bindsym $mod+Shift+Return exec $browser
 
 # kill focused window
@@ -25,19 +21,16 @@ bindsym $mod+Shift+q kill
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
+# exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you    really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg   exit'
+
 # output
 output HDMI-A-3 mode 1920x1080@74.973Hz
-output "*" bg ~/.config/sway/solid-color-image.png fill
+output * bg ~/.config/sway/solid-color-image.png fill
 
-# hide mouse cursor on inactivity
-seat * hide_cursor 3000
-
-# window style
-client.focused #a4997c #a4997c #a4997c #a4997c #a4997c
-client.unfocused #a4997c #a4997c #a4997c #a4997c #a4997c
-client.focused_inactive #a4997c #a4997c #a4997c #a4997c #a4997c
-default_border pixel 1
-gaps inner 12
+# minimal window style
+default_border none
+gaps inner 4
 gaps outer 0
 
 # move focus around
@@ -76,10 +69,17 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# autostart
-exec $term tmux new
-
-# bar
+# status bar
 bar {
-  swaybar_command waybar
+  position top
+  font pango:JetBrainsMonoNL Nerd Font 12
+  status_command while date +"%F %H:%M";do sleep 1; done
+
+  colors {
+    statusline #ebdbb2
+    background #1a1c1d
+    focused_workspace #1a1c1d #1a1c1d #ebdbb2
+    active_workspace #1a1c1d #1a1c1d #5e5747
+    inactive_workspace #1a1c1d #1a1c1d #5e5747
+  }
 }
