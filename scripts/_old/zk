@@ -1,0 +1,8 @@
+#!/bin/bash
+
+main () {
+  timestamp=$(date +"%Y%m%d%H%M%S")
+  $EDITOR "$ZET"/"$timestamp".md
+}
+
+main

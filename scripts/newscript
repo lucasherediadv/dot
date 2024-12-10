@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Create a new script in my scripts collection
+
+name=$1
+
+if [ -z "$name" ]; then
+  read -rp "Please provide a name for the script: " name
+fi
+
+cd "$SCRIPTS" || exit
+touch "$name" && chmod u+x "$name"
+{
+  echo "#!/bin/bash"
+  echo "#"
+  echo "#"
+} >> "$name"
+
+"$EDITOR" "$name"

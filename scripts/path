@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Takes the content of the $PATH environment variable and replaces every ":" with a newline character.
+# "//" is a global search and replace syntax of several text processing programs.
+# It is known as parameter expansion in bash.
+
+echo -e "${PATH//:/\\n}"
