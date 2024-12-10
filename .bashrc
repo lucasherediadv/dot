@@ -30,8 +30,8 @@ export VISUAL=vim
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
-export SCRIPTS="$GHREPOS/scr/bin"
 export DOT="$GHREPOS/dot"
+export SCRIPTS="$DOT/scripts"
 export ZET="$GHREPOS/zet/docs"
 export LESSHISTFILE=/dev/null
 
