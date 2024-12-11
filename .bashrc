@@ -39,6 +39,16 @@ export LESSHISTFILE=/dev/null
 # path
 export PATH=$PATH:$SCRIPTS
 
+# bash shell options
+shopt -s checkwinsize # enables $COLUMNS and $ROWS
+shopt -s expand_aliases # ensures that aliases are expanded even in non-interactive shells
+shopt -s globstar
+shopt -s dotglob
+shopt -s extglob
+
+# stty annoyances
+stty -ixon # disable control-s/control-q tty flow control
+
 # aliases
 unalias -a
 alias ls='ls -h --color=auto'
