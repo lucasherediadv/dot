@@ -3,6 +3,9 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# local utility function
+_have() { type "$1" &>/dev/null; }
+
 # use vi commands
 set -o vi
 
@@ -25,8 +28,6 @@ PROMPT_COMMAND="__ps1"
 
 # environment variables
 unset HISTFILE
-export EDITOR=vim
-export VISUAL=vim
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
@@ -41,9 +42,11 @@ export PATH=$PATH:$SCRIPTS
 # aliases
 unalias -a
 alias ls='ls -h --color=auto'
-alias vi='vim'
 alias gr='cd $GHREPOS'
 alias sr='cd $SCRIPTS'
 alias dot='cd $DOT'
 alias zet='cd $ZET'
 alias todo='$EDITOR ~/.todo'
+
+_have "vim" && alias vi=vim && export EDITOR=vim && export VISUAL=vim
+_have "nvim" && alias vi=nvim && export EDITOR=nvim && export VISUAL=nvim
