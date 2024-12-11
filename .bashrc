@@ -60,3 +60,8 @@ alias todo='$EDITOR ~/.todo'
 
 _have "vim" && alias vi=vim && export EDITOR=vim && export VISUAL=vim
 _have "nvim" && alias vi=nvim && export EDITOR=nvim && export VISUAL=nvim
+
+# source external dependencies / completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
