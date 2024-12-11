@@ -1,5 +1,9 @@
 #!/bin/bash
-> /tmp/buf
+
+: >/tmp/buf
+
 while IFS= read -r line;do
   echo "$line" >> /tmp/buf
 done
+
+type wl-copy &>/dev/null && wl-copy </tmp/buf
