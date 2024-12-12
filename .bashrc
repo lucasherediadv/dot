@@ -34,7 +34,7 @@ export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
 export SCRIPTS="$DOT/scripts"
-export ZET="$GHREPOS/zet/docs"
+export BROWSER=firefox
 export LESSHISTFILE=/dev/null
 
 # path
@@ -56,10 +56,9 @@ stty -ixon # disable control-s/control-q tty flow control
 # aliases
 unalias -a
 alias ls='ls -h --color=auto'
-alias gr='cd $GHREPOS'
-alias sr='cd $SCRIPTS'
+alias repos='cd $GHREPOS'
+alias scripts='cd $SCRIPTS'
 alias dot='cd $DOT'
-alias zet='cd $ZET'
 alias todo='$EDITOR ~/.todo'
 
 set-editor() {
