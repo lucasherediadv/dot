@@ -38,7 +38,10 @@ export ZET="$GHREPOS/zet/docs"
 export LESSHISTFILE=/dev/null
 
 # path
-export PATH=$PATH:$SCRIPTS
+case ":$PATH:" in
+  *":$SCRIPTS:"*) ;;
+  *) export PATH="${PATH:+"$PATH;"}$SCRIPTS" ;;
+esac
 
 # bash shell options
 shopt -s checkwinsize # enables $COLUMNS and $ROWS
