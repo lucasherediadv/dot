@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Produces a centered title in the middle of a horizontal rule of text.
+
+HRULEWIDTH=80
+pre='#'
+
+_echon () {
+  declare i
+  for ((i=0; i<${2:-1}; i++)); do echo -n "$1"; done
+}
+
+_filter(){
+  [[ -n "$1" ]] && return 1
+  while IFS= read -ra args; do
+    "${FUNCNAME[1]}" "${args[@]}"
+  done
+}
+
+htitle() {
+  _filter "$@" && return $?
+  local str="$1" char="${2:--}"
+  local -i len=${#str}
+  local -i side=$((((HRULEWIDTH / 2) - len / 2) - 3))
+  local -i left=$side
+  local -i right=$side
+  (( len % 2 == 1 )) && ((right -= 1))
+  echo "$pre $(_echon "$char" "$left") "$str" $(_echon "$char" "$right")"
+}
+
+htitle "$@"
