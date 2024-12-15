@@ -6,6 +6,7 @@ ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
+ln -sf "$PWD/.exrc" "$HOME/.exrc"
 
 for i in foot git sway tmux; do
   cd $i && ./setup
