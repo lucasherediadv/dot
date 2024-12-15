@@ -33,15 +33,25 @@ export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
+export ZET="$GHREPOS/zet/docs"
 export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
 export LESSHISTFILE=/dev/null
 
 # path
-case ":$PATH:" in
-  *":$SCRIPTS:"*) ;;
-  *) export PATH="${PATH:+"$PATH;"}$SCRIPTS" ;;
-esac
+pathappend() {
+  declare arg
+  for arg in "$@"; do
+    test -d "$arg" || continue
+    PATH=${PATH//":$arg:"/:}
+    PATH=${PATH/#"$arg:"/}
+    PATH=${PATH/%":$arg"/}
+    export PATH="${PATH:+"$PATH:"}$arg"
+  done
+} && export -f pathappend
+
+pathappend \
+  "$SCRIPTS"
 
 # bash shell options
 shopt -s checkwinsize # enables $COLUMNS and $ROWS
@@ -58,6 +68,7 @@ unalias -a
 alias ls='ls -h --color=auto'
 alias repos='cd $GHREPOS'
 alias scripts='cd $SCRIPTS'
+alias zet='cd $ZET'
 alias dot='cd $DOT'
 alias todo='$EDITOR ~/.todo'
 
@@ -69,6 +80,7 @@ set-editor() {
   alias vi="\$EDITOR"
 }
 
+_have "vi" && set-editor vi
 _have "vim" && set-editor vim
 _have "nvim" && set-editor nvim
 
