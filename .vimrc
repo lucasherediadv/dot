@@ -95,9 +95,6 @@ filetype plugin on
 " no status line
 set laststatus=0
 
-" make Y consistent with D and C (yank til end)
-map Y y$
-
 " better command-line completion
 set wildmenu
 
