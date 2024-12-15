@@ -2,6 +2,7 @@ version: 1
 git_protocol: ssh
 prompt: enabled
 prefer_editor_prompt: disabled
-editor: $EDITOR
-pager: $PAGER
-browser: $BROWSER
+# empty values refer to environment variables 
+editor:
+pager:
+browser:
