@@ -1,20 +1,19 @@
 #!/bin/bash
 # shellcheck disable=SC1090,SC1091
 
-# if not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ $- != *i* ]] && return # if not running interactively, don't do anything
 
-# local utility function
+# -------------------------- local utility functions --------------------------
+
 _have() { type "$1" &>/dev/null; }
+_source_if() { [[ -r "$1" ]] && source "$1"; }
 
-# use vi commands
-set -o vi
+# ---------------------------------- prompt ----------------------------------
 
-# prompt
 __ps1() {
   local P='$' dir="${PWD##*/}" B
 
-  [[ $EUID == 0 ]] && P='#' 
+  [[ $EUID == 0 ]] && P='#'
   [[ $PWD = / ]] && dir='/'
   [[ $PWD = "$HOME" ]] && dir='~'
 
@@ -27,7 +26,8 @@ __ps1() {
 
 PROMPT_COMMAND="__ps1"
 
-# environment variables
+# --------------------------- environment variables --------------------------
+
 unset HISTFILE
 export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
@@ -38,7 +38,8 @@ export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
 export LESSHISTFILE=/dev/null
 
-# path
+# ----------------------------------- path -----------------------------------
+
 pathappend() {
   declare arg
   for arg in "$@"; do
@@ -53,17 +54,21 @@ pathappend() {
 pathappend \
   "$SCRIPTS"
 
-# bash shell options
-shopt -s checkwinsize # enables $COLUMNS and $ROWS
-shopt -s expand_aliases # ensures that aliases are expanded even in non-interactive shells
-shopt -s globstar
+# ---------------------------- bash shell options ----------------------------
+
+set -o vi
 shopt -s dotglob
 shopt -s extglob
+shopt -s globstar
+shopt -s checkwinsize
+shopt -s expand_aliases
 
-# stty annoyances
+# ------------------------------ stty annoyances -----------------------------
+
 stty -ixon # disable control-s/control-q tty flow control
 
-# aliases
+# ---------------------------------- aliases ---------------------------------
+
 unalias -a
 alias ls='ls -h --color=auto'
 alias repos='cd $GHREPOS'
@@ -80,11 +85,10 @@ set-editor() {
   alias vi="\$EDITOR"
 }
 
-_have "vi" && set-editor vi
 _have "vim" && set-editor vim
+_have "vi" && set-editor vi # currently using more vi
 _have "nvim" && set-editor nvim
 
-# source external dependencies / completion
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-  . /usr/share/bash-completion/bash_completion
-fi
+# ----------------- source external dependencies / completion ----------------
+
+_source_if /usr/share/bash-completion/bash_completion
