@@ -37,8 +37,8 @@ export ZET="$GHREPOS/zet/docs"
 export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
 
-_have "more" && PAGER=more
-_have "less" && PAGER=less && LESS="-FXR" && LESSHISTFILE=/dev/null
+_have "more" && export PAGER=more
+_have "less" && export PAGER=less && export LESS="-FXR" && export LESSHISTFILE="/dev/null"
 
 # ----------------------------------- path -----------------------------------
 
