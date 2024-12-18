@@ -38,7 +38,7 @@ export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
 
 _have "more" && PAGER=more
-_have "less" && PAGER=less
+_have "less" && PAGER=less && LESS="-FXR" && LESSHISTFILE=/dev/null
 
 # ----------------------------------- path -----------------------------------
 
