@@ -19,7 +19,7 @@ __ps1() {
 
   B=$(git branch --show-current 2>/dev/null)
   [[ $dir = "$B" ]] && B=.
-  [[ -n "$B" && ($B == master || $B == main) ]] && B="─[$B]"
+	[[ -n "$B" ]] && B="─[$B]"
 
   PS1="┌[\u@\h]─[$dir]$B\n└$P "
 }
