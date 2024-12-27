@@ -87,8 +87,8 @@ set-editor() {
   alias vi="\$EDITOR"
 }
 
+_have "vi" && set-editor vi
 _have "vim" && set-editor vim
-_have "vi" && set-editor vi # currently using more vi
 _have "nvim" && set-editor nvim
 
 # ----------------- source external dependencies / completion ----------------
