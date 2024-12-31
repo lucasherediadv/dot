@@ -53,7 +53,7 @@ if v:version >= 800
 
   " better ascii friendly listchars
   set listchars=trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
-  set list
+  " set list
 
   " no automatic folding
   set foldmethod=manual
@@ -158,4 +158,4 @@ autocmd BufNewFile,BufRead * call s:DetectBash()
 endif
 
 " go settings
-autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab listchars=trail:*,nbsp:*,extends:>,precedes:<
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
