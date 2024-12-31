@@ -33,7 +33,6 @@ export REPOS="$HOME/Repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
-export ZET="$GHREPOS/zet/docs"
 export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
 
@@ -75,7 +74,6 @@ unalias -a
 alias ls='ls -h --color=auto'
 alias repos='cd $GHREPOS'
 alias scripts='cd $SCRIPTS'
-alias zet='cd $ZET'
 alias dot='cd $DOT'
 alias todo='$EDITOR ~/.todo'
 
