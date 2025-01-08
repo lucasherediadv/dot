@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# Check current weather
-
-exec curl -L wttr.in?T0

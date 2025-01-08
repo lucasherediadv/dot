@@ -75,9 +75,10 @@ set viminfofile=NONE
 set icon
 
 " highlight search hits
-set hlsearch
-set incsearch
+" set hlsearch
+" set incsearch
 set linebreak
+set nohlsearch
 
 " avoid most of the 'Hit Enter ...' messages
 set shortmess=aoOtTI

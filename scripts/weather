@@ -1,0 +1,4 @@
+#!/bin/sh
+
+city=$(curl -s ipinfo.io | perl -nle 'print $1 if /"city":\s*"([^"]*)"/' | perl -pe 's/ /+/g')
+exec curl -sSL wttr.in/"$city"?format=2

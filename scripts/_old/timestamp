@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# Generates an unformatted timestamp
-
-date +"%Y%m%d%H%M%S"

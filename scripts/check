@@ -1,6 +1,9 @@
 #!/bin/bash
-#
-# Check all executable file in a directory with ShellCheck
+
+if ! command -v shellcheck &> /dev/null; then
+  echo "Error: shellcheck is not installed"
+  exit 1
+fi
 
 if [ -z "$1" ]; then
   echo "Usage: $0 <directory>"

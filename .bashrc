@@ -35,9 +35,15 @@ export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
 export SCRIPTS="$DOT/scripts"
 export BROWSER=firefox
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
 
 _have "more" && export PAGER=more
 _have "less" && export PAGER=less && export LESS="-FXR" && export LESSHISTFILE="/dev/null"
+
+# use this instead of many aliases
+# be caution not to include too many directories here
+export CDPATH=".:$GHREPOS:$DOT:$HOME"
 
 # ----------------------------------- path -----------------------------------
 
@@ -53,7 +59,8 @@ pathappend() {
 } && export -f pathappend
 
 pathappend \
-  "$SCRIPTS"
+  "$SCRIPTS" \
+  "$GOBIN"
 
 # ---------------------------- bash shell options ----------------------------
 
@@ -72,9 +79,6 @@ stty -ixon # disable control-s/control-q tty flow control
 
 unalias -a
 alias ls='ls -h --color=auto'
-alias repos='cd $GHREPOS'
-alias scripts='cd $SCRIPTS'
-alias dot='cd $DOT'
 alias todo='$EDITOR ~/.todo'
 
 set-editor() {
