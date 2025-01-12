@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Create a new script in my scripts collection
 
 name=$1
 
 if [ -z "$name" ]; then
-  read -rp "Please provide a name for the script: " name
+  echo "No name provided. Exiting."
+  exit 1
 fi
 
 cd "$SCRIPTS" || exit

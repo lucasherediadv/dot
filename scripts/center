@@ -1,6 +1,4 @@
-#!/bin/bash
-#
-# Open a centered tmux pane
+#!/bin/sh
 
 if [ -z "$TMUX" ]; then
   echo "Not inside a tmux session"
@@ -8,13 +6,13 @@ if [ -z "$TMUX" ]; then
 fi
 
 center() {
-  local PANE_WIDTH=40
+  _PANE_WIDTH=40
 
   tmux split-window -h
   tmux split-window -h
   tmux select-pane -t 1
-  tmux resize-pane -t 0 -x "$PANE_WIDTH"
-  tmux resize-pane -t 2 -x "$PANE_WIDTH"
+  tmux resize-pane -t 0 -x "$_PANE_WIDTH"
+  tmux resize-pane -t 2 -x "$_PANE_WIDTH"
   tmux send-keys -t 0 "$EDITOR" C-m
   tmux send-keys -t 2 "$EDITOR" C-m
 }

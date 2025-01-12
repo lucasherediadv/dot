@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 : >/tmp/buf
 
@@ -7,4 +7,4 @@ while IFS= read -r line;do
   echo "$line"
 done
 
-type wl-copy &>/dev/null && wl-copy </tmp/buf
+type wl-copy >/dev/null 2>&1 && wl-copy </tmp/buf

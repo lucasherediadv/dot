@@ -1,8 +1,12 @@
-#!/bin/bash
-#
-# Push changes to remote repository
+#!/bin/sh
 
-read -rp "Enter commit message: " commitmessage
+commitmessage=$1
+
+if [ -z "$commitmessage" ]; then
+  echo "Please enter commit message. Exiting."
+  exit 1
+fi
+
 git add .
 git commit -m "$commitmessage"
 git push

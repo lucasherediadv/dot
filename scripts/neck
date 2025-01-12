@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Open a file inside a centered tmux pane
 # Inspired on the neovim plugin shortcuts/no-neck-pain.nvim
 
 if [ -z "$TMUX" ]; then
   echo "Not inside a tmux session"
-  exit 0
+  exit 1
 fi
 
 center
