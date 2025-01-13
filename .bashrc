@@ -43,7 +43,7 @@ _have "less" && export PAGER=less && export LESS="-FXR" && export LESSHISTFILE="
 
 # use this instead of many aliases
 # be caution not to include too many directories here
-export CDPATH=".:$GHREPOS:$DOT:$HOME"
+export CDPATH=".:$HOME:$REPOS:$GHREPOS:$DOT"
 
 # ----------------------------------- path -----------------------------------
 
