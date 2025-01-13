@@ -12,7 +12,7 @@ fi
 cd "$SCRIPTS" || exit
 touch "$name" && chmod u+x "$name"
 {
-  echo "#!/bin/bash"
+  echo "#!/bin/sh"
   echo "#"
   echo "#"
 } >> "$name"
