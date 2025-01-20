@@ -1,2 +1,0 @@
-#!/bin/sh
-curl --silent https://cht.sh/"$1" | less
