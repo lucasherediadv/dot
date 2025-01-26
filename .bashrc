@@ -96,3 +96,4 @@ _have "nvim" && set-editor nvim
 # ----------------- source external dependencies / completion ----------------
 
 _source_if /usr/share/bash-completion/bash_completion
+_have pomo && . <(pomo completion)
