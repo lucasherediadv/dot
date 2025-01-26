@@ -83,3 +83,6 @@ bar {
     inactive_workspace #1a1c1d #1a1c1d #5e5747
   }
 }
+
+# autostart
+exec $term tmux new
