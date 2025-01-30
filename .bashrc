@@ -57,3 +57,4 @@ pathappend \
 unalias -a
 alias ls='ls -h --color=auto'
 alias vi='$EDITOR'
+alias todo='$EDITOR ~/.todo'
