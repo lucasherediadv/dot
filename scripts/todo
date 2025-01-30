@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -f ./todo ]; then
+  $EDITOR ./todo
+else
+  $EDITOR ~/.todo
+fi

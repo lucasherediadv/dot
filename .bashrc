@@ -1,15 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC1090,SC1091
 
-[[ $- != *i* ]] && return # if not running interactively, don't do anything
+# if not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# -------------------------- local utility functions --------------------------
-
-_have() { type "$1" &>/dev/null; }
-_source_if() { [[ -r "$1" ]] && source "$1"; }
-
-# ---------------------------------- prompt ----------------------------------
-
+# prompt
 __ps1() {
   local P='$' dir="${PWD##*/}" B
 
@@ -26,27 +21,23 @@ __ps1() {
 
 PROMPT_COMMAND="__ps1"
 
-# --------------------------- environment variables --------------------------
-
+# environment variables
 unset HISTFILE
-export REPOS="$HOME/Repos"
+export EDITOR="vim"
+export VISUAL="vim"
+export PAGER="less"
+export LESS="-FXR"
+export LESSHISTFILE="/dev/null"
+export REPOS="$HOME/repos"
 export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
 export SCRIPTS="$DOT/scripts"
-export BROWSER=firefox
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
+export CDPATH=".:$HOME:$GHREPOS:$DOT"
 
-_have "more" && export PAGER=more
-_have "less" && export PAGER=less && export LESS="-FXR" && export LESSHISTFILE="/dev/null"
-
-# use this instead of many aliases
-# be caution not to include too many directories here
-export CDPATH=".:$HOME:$REPOS:$GHREPOS:$DOT"
-
-# ----------------------------------- path -----------------------------------
-
+# path
 pathappend() {
   declare arg
   for arg in "$@"; do
@@ -62,38 +53,7 @@ pathappend \
   "$SCRIPTS" \
   "$GOBIN"
 
-# ---------------------------- bash shell options ----------------------------
-
-set -o vi
-shopt -s dotglob
-shopt -s extglob
-shopt -s globstar
-shopt -s checkwinsize
-shopt -s expand_aliases
-
-# ------------------------------ stty annoyances -----------------------------
-
-stty -ixon # disable control-s/control-q tty flow control
-
-# ---------------------------------- aliases ---------------------------------
-
+# aliases
 unalias -a
 alias ls='ls -h --color=auto'
-alias todo='$EDITOR ~/.todo'
-
-set-editor() {
-  export EDITOR="$1"
-  export VISUAL="$1"
-  export GH_EDITOR="$1"
-  export GIT_EDITOR="$1"
-  alias vi="\$EDITOR"
-}
-
-_have "vi" && set-editor vi
-_have "vim" && set-editor vim
-_have "nvim" && set-editor nvim
-
-# ----------------- source external dependencies / completion ----------------
-
-_source_if /usr/share/bash-completion/bash_completion
-_have pomo && . <(pomo completion)
+alias vi='$EDITOR'
