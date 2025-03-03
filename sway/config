@@ -21,9 +21,6 @@ bindsym $mod+Shift+q kill
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you    really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg   exit'
-
 # output
 output HDMI-A-3 mode 1920x1080@74.973Hz
 output * bg ~/.config/sway/solid-color-image.png fill
@@ -73,7 +70,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bar {
   position top
   font pango:JetBrainsMonoNL Nerd Font 12
-  status_command while date +"%F %H:%M";do sleep 1; done
+  status_command while date +'%F %H:%M'; do sleep 1; done
 
   colors {
     statusline #ebdbb2

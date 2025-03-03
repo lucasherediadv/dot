@@ -1,25 +1,13 @@
 #!/bin/bash
 # shellcheck disable=SC1090,SC1091
 
-# if not running interactively, don't do anything
-[[ $- != *i* ]] && return
+case $- in
+*i*) ;; # interactive
+*) return ;;
+esac
 
 # prompt
-__ps1() {
-  local P='$' dir="${PWD##*/}" B
-
-  [[ $EUID == 0 ]] && P='#'
-  [[ $PWD = / ]] && dir='/'
-  [[ $PWD = "$HOME" ]] && dir='~'
-
-  B=$(git branch --show-current 2>/dev/null)
-  [[ $dir = "$B" ]] && B=.
-  [[ -n "$B" ]] && B="─[$B]"
-
-  PS1="┌[\u@\h]─[$dir]$B\n└$P "
-}
-
-PROMPT_COMMAND="__ps1"
+PS1='[\u@\h \W]\$ '
 
 # environment variables
 unset HISTFILE
@@ -33,9 +21,10 @@ export GITUSER="lucasherediadv"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOT="$GHREPOS/dot"
 export SCRIPTS="$DOT/scripts"
+export GOTELEMETRY=off
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
-export CDPATH=".:$HOME:$GHREPOS:$DOT"
+export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS:$DOT"
 
 # path
 pathappend() {
@@ -55,6 +44,6 @@ pathappend \
 
 # aliases
 unalias -a
-alias ls='ls -h --color=auto'
 alias vi='$EDITOR'
+alias ls='ls --color=auto'
 alias todo='$EDITOR ~/.todo'

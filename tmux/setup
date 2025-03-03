@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir ~/.config 2>/dev/null
 rm -rf ~/.config/tmux 2>/dev/null

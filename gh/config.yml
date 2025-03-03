@@ -1,8 +1,6 @@
 version: 1
-git_protocol: ssh
+editor: vim
+pager: less
 prompt: enabled
-prefer_editor_prompt: disabled
-# empty values refer to environment variables 
-editor:
-pager:
-browser:
+browser: firefox
+git_protocol: ssh

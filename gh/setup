@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir -p ~/.config/gh 2>/dev/null
 ln -fs "$PWD/config.yml" "$HOME/.config/gh/config.yml"
