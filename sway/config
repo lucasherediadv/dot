@@ -25,10 +25,13 @@ bindsym $mod+Shift+c reload
 output HDMI-A-3 mode 1920x1080@74.973Hz
 output * bg ~/.config/sway/solid-color-image.png fill
 
-# minimal window style
-default_border none
-gaps inner 4
+# Style
+gaps inner 6
 gaps outer 0
+default_border pixel 1
+client.focused #a4997c #a4997c #a4997c #a4997c #a4997c
+client.unfocused #a4997c #a4997c #a4997c #a4997c #a4997c
+client.focused_inactive #a4997c #a4997c #a4997c #a4997c #a4997c
 
 # move focus around
 bindsym $mod+$left focus left
@@ -66,17 +69,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# status bar
+# waybar
 bar {
-  position top
-  font pango:JetBrainsMonoNL Nerd Font 12
-  status_command while date +'%F %H:%M'; do sleep 1; done
-
-  colors {
-    statusline #ebdbb2
-    background #1a1c1d
-    focused_workspace #1a1c1d #1a1c1d #ebdbb2
-    active_workspace #1a1c1d #1a1c1d #5e5747
-    inactive_workspace #1a1c1d #1a1c1d #5e5747
-  }
+   swaybar_command waybar
 }
