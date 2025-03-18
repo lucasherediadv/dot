@@ -1,5 +1,5 @@
 version: 1
-editor: vim
+editor: nvim
 pager: less
 prompt: enabled
 browser: firefox
