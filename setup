@@ -8,7 +8,7 @@ ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.exrc" "$HOME/.exrc"
 
-for i in foot gh git sway tmux; do
+for i in foot gh git newsboat nvim sway tmux waybar; do
   cd $i && ./setup
   cd -
 done
