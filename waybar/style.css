@@ -1,0 +1,29 @@
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: normal;
+    font-size: 15px;
+}
+
+#waybar {
+    border: 1px solid #a4997c;
+    background-color: #1a1c1d;
+    color: #ebdbb2;
+}
+
+#workspaces button {
+	padding-left: 5px;
+	padding-right: 0px;
+	color: #5e5747;
+}
+
+#workspaces button.focused {
+  color: #ebdbb2; 
+}
+
+#clock {
+  padding-right: 5px;
+}
+
+#custom-separator {
+	color: #ebdbb2;
+}
