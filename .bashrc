@@ -11,22 +11,27 @@ _have() { type "$1" &>/dev/null; }
 _source_if() { [[ -r "$1" ]] && source "$1"; }
 
 # prompt
-__ps1() {
-  local dir="${PWD##*/}" B
-  local P='>' dir="${PWD##*/}" B
+if _have "starship"; then
+  export STARSHIP_CONFIG=~/.config/starship/starship.toml
+  eval "$(starship init bash)"
+else
+  __ps1() {
+    local dir="${PWD##*/}" B
+    local P='>' dir="${PWD##*/}" B
 
-  [[ $EUID == 0 ]] && P='#'
-  [[ $PWD = / ]] && dir='/'
-  [[ $PWD = "$HOME" ]] && dir='~'
+    [[ $EUID == 0 ]] && P='#'
+    [[ $PWD = / ]] && dir='/'
+    [[ $PWD = "$HOME" ]] && dir='~'
 
-  B=$(git branch --show-current 2>/dev/null)
-  [[ $dir = "$B" ]] && B=.
-  [[ -n "$B" ]] && B="─[$B]"
+    B=$(git branch --show-current 2>/dev/null)
+    [[ $dir = "$B" ]] && B=.
+    [[ -n "$B" ]] && B="─[$B]"
 
-  PS1="┌─[\u@\h]─[$dir]$B\n└──$P "
-}
+    PS1="┌─[\u@\h]─[$dir]$B\n└──$P "
+  }
 
-PROMPT_COMMAND="__ps1; history -a" # 'history -a' store history immediately
+  PROMPT_COMMAND="__ps1; history -a"
+fi
 
 # environment variables
 export PAGER="less"
@@ -78,15 +83,22 @@ set -o noclobber # Prevent file overwrite on stdout redirection. Use ">|" to for
 
 # aliases
 unalias -a
-alias c='printf "\e[H\e[2J"'
-alias clear='printf "\e[H\e[2J"'
 alias todo='$EDITOR ~/.todo.md'
-alias to='bat ~/.todo.md'
+alias to='cat ~/.todo.md'
 alias gitl='git log -n 5 --graph --decorate --oneline'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lhrt {} +'
 alias btm='btm --tree --disable_click --hide_table_gap --celsius'
 alias ls='eza --long --all --all --classify --git --git-repos --header --icons=auto --color=auto --group-directories-first'
-alias cat='bat --theme=gruvbox-dark --paging=never'
+alias cat='bat --theme-dark=gruvbox-dark --paging=never'
+
+# If ZELLIJ is set, use the standard 'clear' command
+if [ -n "$ZELLIJ" ]; then
+  alias c='clear'
+else
+  # Otherwise, use escape sequences for clearing the terminal
+  alias c='printf "\e[H\e[2J"'
+  alias clear='printf "\e[H\e[2J"'
+fi
 
 # editor configuration
 set-editor() {
