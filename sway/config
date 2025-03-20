@@ -26,7 +26,7 @@ output HDMI-A-3 mode 1920x1080@74.973Hz
 output * bg ~/.config/sway/solid-color-image.png fill
 
 # Style
-gaps inner 6
+gaps inner 8
 gaps outer 0
 default_border pixel 1
 client.focused #a4997c #a4997c #a4997c #a4997c #a4997c
