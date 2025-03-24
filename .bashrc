@@ -85,11 +85,13 @@ set -o noclobber # Prevent file overwrite on stdout redirection. Use ">|" to for
 unalias -a
 alias todo='$EDITOR ~/.todo.md'
 alias to='cat ~/.todo.md'
+alias gs='git status'
 alias gitl='git log -n 5 --graph --decorate --oneline'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lhrt {} +'
 alias btm='btm --tree --disable_click --hide_table_gap --celsius'
 alias ls='eza --long --all --all --classify --git --git-repos --header --icons=auto --color=auto --group-directories-first'
 alias cat='bat --theme-dark=gruvbox-dark --paging=never'
+alias tree='eza --tree'
 
 # If ZELLIJ is set, use the standard 'clear' command
 if [ -n "$ZELLIJ" ]; then
