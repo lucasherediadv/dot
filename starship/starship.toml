@@ -1,179 +1,308 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
 # Inserts a blank line between shell prompts
-add_newline=false
+add_newline = false 
 
-# Nerd Font Symbols Preset
-[aws]
-symbol = "  "
+# Custom prompt format
+format = """
+[┌─](white) $username\
+$hostname\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_metrics\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$jobs\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+[└─────](white)\
+$character"""
 
-[buf]
-symbol = " "
+# [username]
+# show_always = true
+# style_user = "grey"
+# format = '[$user]($style) [on](white) '
 
-[c]
-symbol = " "
-
-[cmake]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[crystal]
-symbol = " "
-
-[dart]
-symbol = " "
+# [hostname]
+# ssh_only = false
+# style = "grey"
+# format = '[$ssh_symbol$hostname]($style) '
 
 [directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
+truncate_to_repo = true
+truncation_length = 3
+read_only = '  '
+read_only_style = 'bright-red'
+format = '[$path]($style)[$read_only]($read_only_style) '
+# format = '[──](white) [$path]($style)[$read_only]($read_only_style) ' # Used when <username> or <hostname> on
 
 [git_branch]
 symbol = " "
+style = "bright-blue"
+format = '[──](white) [$symbol$branch(:$remote_branch)]($style)'
 
-[git_commit]
-tag_symbol = '  '
+[git_status]
+ahead = "⇡${count} "
+behind = "⇣${count} "
+conflicted = '$count '
+deleted = " "
+diverged = '↑$ahead_count↓$behind_count '
+modified = "󱇬 "
+renamed = " "
+staged = "󰝒 "
+stashed = "󰬲 "
+untracked = " "
+format = "[ $all_status$ahead_behind](yellow)"
 
-[golang]
-symbol = " "
+[fill]
+disabled = false 
+symbol = " "
+style = "white"
 
-[guix_shell]
-symbol = " "
+[cmd_duration]
+format = ' [󰚭 $duration](yellow) [──](white)'
 
-[haskell]
-symbol = " "
+[time]
+disabled = false
+format = '[  $time ]($style)'
+# format = '[  $time ]($style)[──](white) ' # Add line from right to left
 
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
+[docker_context]
+symbol = '󰡨'
+format = '[──](white)[ $symbol $version ](bright-black)'
 
 [package]
-symbol = "󰏗 "
+symbol = '󰏗'
+format = '[──](white)[ $symbol $version ](bright-black)'
 
-[perl]
-symbol = " "
+[c]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
 
-[php]
-symbol = " "
+[cmake]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
 
-[pijul_channel]
-symbol = " "
+[cobol]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[python]
-symbol = " "
+[dart]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[rlang]
-symbol = "󰟔 "
+[deno]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[ruby]
-symbol = " "
+[dotnet]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
 
-[rust]
-symbol = "󱘗 "
+[elixir]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[scala]
-symbol = " "
+[elm]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[swift]
-symbol = " "
+[erlang]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
-[zig]
-symbol = " "
+[fennel]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[golang]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
+
+[guix_shell]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[haskell]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[haxe]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[helm]
+symbol = '󰠳'
+format = '[ $symbol $version ](bright-black)'
+
+[java]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[julia]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[kotlin]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
 
 [gradle]
-symbol = " "
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[lua]
+symbol = ''
+lua_binary = 'luajit'
+format = '[──](white)[ $symbol $version ](bright-black)'
+
+[nim]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[nodejs]
+symbol = '󰎙'
+format = '[──](white)[ $symbol $version ](bright-black)'
+
+[ocaml]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[opa]
+symbol = '󱡓'
+format = '[ $symbol $version ](bright-black)'
+
+[perl]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
+
+[php]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[purescript]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[python]
+symbol = ''
+format = '[──](white)[ $symbol $version ](bright-black)'
+
+[rlang]
+symbol = '󰟔'
+format = '[ $symbol $version ](bright-black)'
+
+[red]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[ruby]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[rust]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[scala]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[swift]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[terraform]
+symbol = '󱁢'
+format = '[ $symbol $version ](bright-black)'
+
+[vlang]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[vagrant]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[zig]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[nix_shell]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[conda]
+symbol = '󱔎'
+format = '[ $symbol $version ](bright-black)'
+
+[spack]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
+
+[crystal]
+symbol = ''
+format = '[ $symbol $version ](bright-black)'
