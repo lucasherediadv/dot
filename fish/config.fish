@@ -2,8 +2,13 @@ if status is-interactive
   # Init starship
   starship init fish | source
 
-  # Set up fzf key bindings
+  # Setup fzf
   fzf --fish | source
+
+  # Setup zoxide
+  zoxide init fish | source
+  set -Ux _ZO_ECHO 1
+  set -Ux _ZO_RESOLVE_SYMLINKS 1
 
   # Custom cursor style on vi-mode
   set fish_cursor_default block
