@@ -74,12 +74,86 @@ $crystal\
 $custom\
 $sudo\
 $jobs\
-$fill\
 $cmd_duration\
-$time\
 $line_break\
 [└─────](white)\
 $character"""
+
+# format = """
+# [┌─](white) $username\
+# $hostname\
+# $shlvl\
+# $singularity\
+# $kubernetes\
+# $directory\
+# $vcsh\
+# $fossil_branch\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_status\
+# $git_metrics\
+# $hg_branch\
+# $pijul_channel\
+# $docker_context\
+# $package\
+# $c\
+# $cmake\
+# $cobol\
+# $daml\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $fennel\
+# $golang\
+# $guix_shell\
+# $haskell\
+# $haxe\
+# $helm\
+# $java\
+# $julia\
+# $kotlin\
+# $gradle\
+# $lua\
+# $nim\
+# $nodejs\
+# $ocaml\
+# $opa\
+# $perl\
+# $php\
+# $pulumi\
+# $purescript\
+# $python\
+# $raku\
+# $rlang\
+# $red\
+# $ruby\
+# $rust\
+# $scala\
+# $swift\
+# $terraform\
+# $vlang\
+# $vagrant\
+# $zig\
+# $buf\
+# $nix_shell\
+# $conda\
+# $spack\
+# $memory_usage\
+# $env_var\
+# $crystal\
+# $custom\
+# $sudo\
+# $jobs\
+# $fill\
+# $cmd_duration\
+# $time\
+# $line_break\
+# [└─────](white)\
+# $character"""
 
 # [username]
 # show_always = true
@@ -123,7 +197,8 @@ symbol = " "
 style = "white"
 
 [cmd_duration]
-format = ' [󰚭 $duration](yellow) [──](white)'
+format = '[──](white) [󰚭 $duration](yellow)'
+# format = ' [󰚭 $duration](yellow) [──](white)'
 
 [time]
 disabled = false
