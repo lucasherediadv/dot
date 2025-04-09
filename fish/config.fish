@@ -20,4 +20,7 @@ if status is-interactive
   set fish_cursor_replace_one underscore
   set fish_cursor_replace underscore
   set fish_cursor_external block
+
+  # Append entries to PATH
+  set -U fish_user_paths $fish_user_paths "$SCRIPTS" "$GOBIN"
 end
