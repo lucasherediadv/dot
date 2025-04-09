@@ -1,6 +1,7 @@
 if status is-interactive
-  # Init starship
+  # Setup starship
   starship init fish | source
+  set -Ux STARSHIP_CONFIG "~/.config/starship/starship.toml"
 
   # Setup fzf
   fzf --fish | source
