@@ -1,7 +1,7 @@
 if status is-interactive
   # Setup starship
   starship init fish | source
-  set -Ux STARSHIP_CONFIG "~/.config/starship/starship.toml"
+  set -Ux STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
   # Setup fzf
   fzf --fish | source
@@ -20,6 +20,24 @@ if status is-interactive
   set fish_cursor_replace_one underscore
   set fish_cursor_replace underscore
   set fish_cursor_external block
+
+  # Editor and Pager
+  set -Ux EDITOR nvim
+  set -Ux VISUAL nvim
+  set -Ux PAGER less
+  set -Ux LESS "-FXR"
+
+  # Repositories
+  set -Ux REPOS "$HOME/repos"
+  set -Ux GITUSER "lucasherediadv"
+  set -Ux GHREPOS "$REPOS/github.com/$GITUSER"
+  set -Ux DOT "$GHREPOS/dot"
+  set -Ux SCRIPTS "$DOT/scripts"
+
+  # Go related
+  set -Ux GOTELEMETRY off
+  set -Ux GOPATH "$HOME/go"
+  set -Ux GOBIN "$GOPATH/bin"
 
   # Append entries to PATH
   set -U fish_user_paths $fish_user_paths "$SCRIPTS" "$GOBIN"
