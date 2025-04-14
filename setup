@@ -8,7 +8,7 @@ ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.exrc" "$HOME/.exrc"
 
-for i in bottom fish foot gh git nvim starship sway tmux waybar zellij; do
+for i in bat bottom fish foot gh git nvim starship sway tmux waybar zellij; do
   cd $i && ./setup
   cd -
 done
