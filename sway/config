@@ -21,6 +21,9 @@ bindsym $mod+Shift+q kill
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
+# Hide mouse cursor after a period of inactivity.
+seat seat0 hide_cursor 3000
+
 # Outputs
 output HDMI-A-3 mode 1920x1080@74.973Hz
 output DP-1 mode 1440x900@59.887Hz
