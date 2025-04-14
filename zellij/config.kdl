@@ -258,7 +258,7 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
 }
- 
+
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
 //   - true
@@ -353,7 +353,7 @@ default_layout "compact"
 // copy_command "pbcopy"                     // osx
 // 
 copy_command "wl-copy"
- 
+
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
 // Does not apply when using copy_command.
@@ -397,8 +397,8 @@ copy_command "wl-copy"
 //   - true (default)
 //   - false
 // 
-// session_serialization false
- 
+session_serialization false
+
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
 //   - true
@@ -428,8 +428,8 @@ copy_command "wl-copy"
 // (Requires restart)
 // Default: false
 // 
-// disable_session_metadata false
- 
+disable_session_metadata true
+
 // Enable or disable support for the enhanced Kitty Keyboard Protocol (the host terminal must also support it)
 // (Requires restart)
 // Default: true (if the host terminal supports it)
@@ -445,7 +445,7 @@ copy_command "wl-copy"
 // Default: true
 // 
 show_startup_tips false
- 
+
 // Whether to show release notes on first version run
 // Default: true
 // 
