@@ -93,5 +93,5 @@ bar {
 
 # Automatically start applications
 exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
-exec --no-startup-id swaymsg 'workspace 6; exec --no-startup-id $term zellij'
-exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term zellij'
+exec --no-startup-id swaymsg 'workspace 6; exec --no-startup-id $term'
+exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term'
