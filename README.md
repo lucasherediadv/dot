@@ -1,7 +1,33 @@
 # Lucas's dotfiles 
 
-Here you'll find a collection of configuration files for various tools and programs that I use on a daily basis.
+Here you'll find a collection of configuration files for various tools I often use.
 
-![screenshot](./screenshots/screenshot-1.png)
+![Screenshot of my main screen](./screenshots/main-screen.png)
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+## Management
+
+Instead of manually copying configuration files to different locations, this repository uses ***symbolic links***. To automate the symbolic linking process, I use a bash scriptthat takes care of creating links for all neccessary files.
+
+## Installation
+
+***Caution:*** Before running the setup script, ensure you back up your current configuration files. This script will ***overwrite existing files*** without warning. Use at your own risk!
+
+### Steps
+
+1. Clone the github repository:
+
+```bash
+git clone https://github.com/lucasherediadv/dotfiles.git
+```
+
+2. Enter the dotfiles directory:
+
+```bash
+cd dotfiles
+```
+
+3. Run the `setup` script:
+
+```bash
+./setup
+```
