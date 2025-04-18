@@ -6,7 +6,7 @@ Here you'll find a collection of configuration files for various tools I often u
 
 ## Management
 
-Instead of manually copying configuration files to different locations, this repository uses ***symbolic links***. To automate the symbolic linking process, I use a bash scriptthat takes care of creating links for all neccessary files.
+Instead of manually copying configuration files to different locations, this repository uses ***symbolic links***. To automate the symbolic linking process, I use a bash script that takes care of creating links for all neccessary files.
 
 ## Installation
 
