@@ -31,8 +31,8 @@ if status is-interactive
   set -Ux REPOS "$HOME/repos"
   set -Ux GITUSER "lucasherediadv"
   set -Ux GHREPOS "$REPOS/github.com/$GITUSER"
-  set -Ux DOT "$GHREPOS/dot"
-  set -Ux SCRIPTS "$DOT/scripts"
+  set -Ux DOTFILES "$GHREPOS/dotfiles"
+  set -Ux SCRIPTS "$DOTFILES/scripts"
 
   # Go related
   set -Ux GOTELEMETRY off
