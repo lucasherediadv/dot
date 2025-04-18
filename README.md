@@ -31,3 +31,9 @@ cd dotfiles
 ```bash
 ./setup
 ```
+
+4. To install the necessary packages, run the following:
+
+```bash
+sudo pacman -S --needed - < ./pkglist.txt
+```
