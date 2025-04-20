@@ -27,6 +27,7 @@ neovim
 openssh
 pacman-contrib
 shellcheck
+shfmt
 starship
 staticcheck
 sway
