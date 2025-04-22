@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export DOT:/home/user/repos/github\x2ecom/lucasherediadv/dotfiles
 SETUVAR --export DOTFILES:/home/user/repos/github\x2ecom/lucasherediadv/dotfiles
+SETUVAR --export DOTNET_CLI_TELEMETRY_OPTOUT:1
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GHREPOS:/home/user/repos/github\x2ecom/lucasherediadv
 SETUVAR --export GITUSER:lucasherediadv
