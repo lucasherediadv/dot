@@ -39,6 +39,9 @@ if status is-interactive
   set -Ux GOPATH "$HOME/go"
   set -Ux GOBIN "$GOPATH/bin"
 
+  # Dotnet
+  set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
+
   # Append entries to PATH
   set -U fish_user_paths $fish_user_paths "$SCRIPTS" "$GOBIN"
 end
