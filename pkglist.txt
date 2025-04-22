@@ -3,6 +3,7 @@ base-devel
 bat
 bottom
 chrony
+dotnet-sdk
 efibootmgr
 eza
 firefox
