@@ -11,6 +11,7 @@ fish
 foot
 fzf
 git
+git-delta
 github-cli
 glow
 go
