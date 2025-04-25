@@ -1,7 +1,7 @@
 abbr --add e 'exit'
 abbr --add c 'clear'
 abbr --add mv 'mv -i'
-abbr --add df 'df -h'
+abbr --add df 'duf'
 abbr --add cp 'cp -Ri'
 abbr --add du 'du -ch'
 abbr --add vi '$EDITOR'
