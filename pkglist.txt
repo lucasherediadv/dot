@@ -4,6 +4,7 @@ bat
 bottom
 chrony
 dotnet-sdk
+duf
 efibootmgr
 eza
 firefox
@@ -28,6 +29,7 @@ man-pages
 neovim
 openssh
 pacman-contrib
+reflector
 shellcheck
 shfmt
 starship
