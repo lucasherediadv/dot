@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if command -v duf &>/dev/null; then
+  duf
+else
+  df --human-readable \
+    --print-type \
+    --local
+fi
+

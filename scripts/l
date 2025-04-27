@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if command -v eza &>/dev/null; then
+# --all option used twice to also show the '.' and '..' directories
+eza --long \
+  --all \
+  --all \
+  --classify \
+  --git \
+  --git-repos \
+  --header \
+  --icons=auto \
+  --color=auto \
+  --group-directories-first
+else
+  ls -l \
+    --all \
+    --classify \
+    --color=auto \
+    --human-readable \
+    --group-directories-first
+fi
