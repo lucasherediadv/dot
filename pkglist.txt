@@ -1,6 +1,7 @@
 base
 base-devel
 bat
+bc
 bottom
 chrony
 dotnet-sdk
@@ -24,6 +25,7 @@ iwd
 less
 linux
 linux-firmware
+lynx
 man-db
 man-pages
 neovim
@@ -38,6 +40,7 @@ sway
 swaybg
 tmux
 translate-shell
+tree
 ttf-jetbrains-mono-nerd
 vi
 vim
