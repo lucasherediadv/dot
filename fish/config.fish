@@ -5,6 +5,7 @@ if status is-interactive
 
   # Setup fzf
   fzf --fish | source
+  set -Ux FZF_CTRL_R_OPTS "--no-sort --exact --border=sharp --layout=reverse --info=inline --height=45%" 
 
   # Setup zoxide
   zoxide init fish | source

@@ -1,9 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export DOT:/home/user/repos/github\x2ecom/lucasherediadv/dotfiles
 SETUVAR --export DOTFILES:/home/user/repos/github\x2ecom/lucasherediadv/dotfiles
 SETUVAR --export DOTNET_CLI_TELEMETRY_OPTOUT:1
 SETUVAR --export EDITOR:nvim
+SETUVAR --export FZF_CTRL_R_OPTS:\x2d\x2dno\x2dsort\x20\x2d\x2dexact\x20\x2d\x2dborder\x3dsharp\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dinfo\x3dinline\x20\x2d\x2dheight\x3d45\x25
 SETUVAR --export GHREPOS:/home/user/repos/github\x2ecom/lucasherediadv
 SETUVAR --export GITUSER:lucasherediadv
 SETUVAR --export GOBIN:/home/user/go/bin
@@ -48,4 +48,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/user/repos/github\x2ecom/lucasherediadv/dot/scripts\x1e/home/user/go/bin\x1e\x1e/home/user/repos/github\x2ecom/lucasherediadv/dotfiles/scripts
+SETUVAR fish_user_paths:/home/user/go/bin\x1e\x1e/home/user/repos/github\x2ecom/lucasherediadv/dotfiles/scripts
