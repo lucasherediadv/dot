@@ -3,8 +3,9 @@
 if command -v &>/dev/null; then
 fzf --style=full \
   --preview "bat --color=always --style=numbers --line-range=:500 {}" \
-  --bind 'focus:transform-header:file \
-  --brief {}'
+  --bind 'focus:transform-header:file --brief {}' \
+  --border=sharp
+
 else
   echo "fzf not available"
 fi

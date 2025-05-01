@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if command -v eza &>/dev/null; then
-  eza --tree
-else
-  tree
-fi
