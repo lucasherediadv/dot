@@ -19,6 +19,7 @@ glow
 go
 gopass
 grim
+hyprland
 imv
 intel-ucode
 iwd
