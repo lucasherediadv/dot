@@ -8,6 +8,7 @@ dotnet-sdk
 duf
 efibootmgr
 eza
+fd
 firefox
 fish
 foot
@@ -30,9 +31,11 @@ lynx
 man-db
 man-pages
 neovim
+noto-fonts-emoji
 openssh
 pacman-contrib
 reflector
+ripgrep
 shellcheck
 shfmt
 starship
@@ -43,6 +46,7 @@ tmux
 translate-shell
 tree
 ttf-jetbrains-mono-nerd
+unzip
 vi
 vim
 waybar
