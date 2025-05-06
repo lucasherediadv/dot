@@ -8,7 +8,8 @@
     "margin-top": 8,
     "margin-bottom": 0,
     "modules-left": [
-      "sway/workspaces"
+      // "sway/workspaces"
+      "hyprland/workspaces"
     ],
     "modules-right": [
       "user",

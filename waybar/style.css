@@ -6,6 +6,7 @@
 
 #waybar {
     border: 1px solid #a4997c;
+    border-radius: 10px;
     background-color: #1a1c1d;
     color: #ebdbb2;
 }
@@ -16,7 +17,7 @@
 	color: #5e5747;
 }
 
-#workspaces button.focused {
+#workspaces button.active{
   color: #ebdbb2; 
 }
 
