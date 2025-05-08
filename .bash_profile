@@ -1,10 +1,15 @@
 #!/bin/bash
 # shellcheck disable=SC1090
 
-# if running from tty1 start sway
+# if running from tty1 start Hyprland
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec sway
+  exec Hyprland 
 fi
+
+# if running from tty1 start sway
+# if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+#   exec sway
+# fi
 
 # source ~/.bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
