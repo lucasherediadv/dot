@@ -7,7 +7,7 @@ ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 
-for i in bat bottom delta fish foot gh git glow nvim starship sway tmux waybar zellij; do
+for i in bat bottom delta fish foot gh git glow hypr nvim starship sway tmux waybar zellij; do
   cd $i && ./setup
   cd -
 done
