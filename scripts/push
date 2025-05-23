@@ -1,12 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-commitmessage=$1
-
-if [ -z "$commitmessage" ]; then
-  echo "Please enter commit message. Exiting."
-  exit 1
-fi
-
+read -rp "Enter commit message: " commitmessage
 git add .
 git commit -m "$commitmessage"
 git push

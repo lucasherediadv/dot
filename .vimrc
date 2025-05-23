@@ -8,6 +8,9 @@ set nocompatible
 " automatically indent new lines
 set autoindent
 
+" Override the 'ignorecase' option if the search pattern contains upper case characters
+set smartcase
+
 " replace tabs with spaces
 set expandtab
 
@@ -75,7 +78,7 @@ set linebreak
 set nohlsearch
 
 " avoid most of the 'Hit Enter ...' messages
-set shortmess=aoOtTI
+" set shortmess=aoOtTI
 
 " not a fan of bracket matching
 if has("eval")

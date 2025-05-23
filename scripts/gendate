@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-# Generates the date in YYY-MM-DD format
-
-date=$(date +"%Y-%m-%d")
-echo "$date"

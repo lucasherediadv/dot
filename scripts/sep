@@ -1,8 +1,0 @@
-#!/usr/bin/perl -pa
-
-BEGIN {
-  $separator = shift @ARGV;
-  $separator = "-" if not defined $separator;
-}
-
-$_ = join $separator, @F;
