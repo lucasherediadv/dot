@@ -72,21 +72,21 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Swaybar
-bar {
-  position top
-    font pango:JetBrainsMonoNL Nerd Font 12
-    status_command while date +"%F %H:%M";do sleep 1; done
-
-    colors {
-      statusline #ebdbb2
-        background #1a1c1d
-        focused_workspace #1a1c1d #1a1c1d #ebdbb2
-        active_workspace #1a1c1d #1a1c1d #5e5747
-        inactive_workspace #1a1c1d #1a1c1d #5e5747
-    }
-}
+# bar {
+#   position top
+#     font pango:JetBrainsMonoNL Nerd Font 12
+#     status_command while date +"%F %H:%M";do sleep 1; done
+#
+#     colors {
+#       statusline #ebdbb2
+#         background #1a1c1d
+#         focused_workspace #1a1c1d #1a1c1d #ebdbb2
+#         active_workspace #1a1c1d #1a1c1d #5e5747
+#         inactive_workspace #1a1c1d #1a1c1d #5e5747
+#     }
+# }
 
 # Automatically start applications
-exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
+# exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
 exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term tmux'
 exec swaymsg 'workspace 2'
