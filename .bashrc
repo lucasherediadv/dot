@@ -18,6 +18,7 @@ export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
 export PAGER=less
 export LESS="-FXR"
+export LESSHISTFILE=/dev/null
 export PROMPT_COMMAND='history -a' # Record each line as it gets issued
 export VISUAL=vim
 export EDITOR=vim
