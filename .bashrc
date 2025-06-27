@@ -14,39 +14,52 @@ export REPOS="$HOME/Repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
-export GOPATH="$HOME/.local/go"
-export GOBIN="$HOME/.local/bin"
 export PAGER=less
 export LESS="-FXR"
 export LESSHISTFILE=/dev/null
-export PROMPT_COMMAND='history -a' # Record each line as it gets issued
 export VISUAL=vim
 export EDITOR=vim
-export GOTELEMETRY=off
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export HISTSIZE=500000
-export HISTFILESIZE=100000
-export HISTCONTROL="erasedups:ignoreboth" # Avoid duplicate entries
-export HISTTIMEFORMAT='%F %T ' # Use standard ISO 8601 timestamp
-export CDPATH=".:$HOME:$GHREPOS:$DOTFILES" # This defines where cd looks for targets
+
+# CDPATH
+export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS" # This defines where cd looks for targets
 
 # Aliases
 unalias -a
 alias vi='vim'
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
 alias c='clear'
+alias grep='grep --color=auto'
+alias ip='ip --color=auto'
+alias rm='rm -i'
+alias mv='mv -i'
+alias du='du -h'
+alias df='df -h'
+alias free='free -h'
+alias diff='diff --color'
 alias me='cd $GHREPOS'
 alias dot='cd $DOTFILES'
 alias todo='$EDITOR $GHREPOS/notes/TODO.md'
 
 # Bash options
-shopt -s histappend # Append to the history file, don't overwrite it
-shopt -s cmdhist # Save multi-line commands as one command
 shopt -s checkwinsize # Update window size after every command
 shopt -s globstar 2> /dev/null # Turn on recursive globbing
 shopt -s autocd 2> /dev/null # Prepend cd to directory names automatically
 shopt -s dirspell 2> /dev/null # Correct spelling errors during tab-completion
 shopt -s cdspell 2> /dev/null # Correct spelling errors in arguments supplied to cd
+shopt -s expand_aliases
+shopt -s globstar
+shopt -s dotglob
+shopt -s extglob
+
+# History
+export HISTSIZE=500000
+export HISTFILESIZE=100000
+export HISTCONTROL="erasedups:ignoreboth" # Avoid duplicate entries
+export HISTTIMEFORMAT='%F %T ' # Use standard ISO 8601 timestamp
+export PROMPT_COMMAND='history -a' # Record each line as it gets issued
+
+shopt -s histappend # Append to the history file, don't overwrite it
+shopt -s cmdhist # Save multi-line commands as one command
 
 # Path
 pathappend() {
@@ -61,20 +74,8 @@ pathappend() {
 } && export -f pathappend
 
 pathappend \
-  "$SCRIPTS" \
-  "$GOBIN"
+  "$SCRIPTS"
 
 # Source bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
   source /usr/share/bash-completion/bash_completion
-
-# Bash parameter completion for the dotnet CLI
-function _dotnet_bash_complete()
-{
-  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
-  local candidates
-  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
-  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
-}
-
-complete -f -F _dotnet_bash_complete dotnet
