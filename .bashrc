@@ -37,6 +37,7 @@ alias ls='ls --color=auto --human-readable --classify --group-directories-first'
 alias c='clear'
 alias me='cd $GHREPOS'
 alias dot='cd $DOTFILES'
+alias todo='$EDITOR $GHREPOS/notes/TODO.md'
 
 # Bash options
 shopt -s histappend # Append to the history file, don't overwrite it
