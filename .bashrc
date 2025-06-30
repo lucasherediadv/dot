@@ -19,6 +19,11 @@ export LESS="-FXR"
 export LESSHISTFILE=/dev/null
 export VISUAL=vim
 export EDITOR=vim
+export GOPATH="$HOME/.local/go"
+export GOBIN="$HOME/.local/bin"
+export GOTELEMETRY=off
+export GOPROXY=direct
+export CGO_ENABLED=0
 
 # CDPATH
 export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS" # This defines where cd looks for targets
@@ -74,7 +79,8 @@ pathappend() {
 } && export -f pathappend
 
 pathappend \
-  "$SCRIPTS"
+  "$SCRIPTS" \
+  "$GOBIN"
 
 # Source bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
