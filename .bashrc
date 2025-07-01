@@ -7,6 +7,9 @@ case $- in
 *) return ;;
 esac
 
+# Local utility functions
+_source_if() { [[ -r "$1" ]] && source "$1"; }
+
 # Environment variables
 export LANG=en_US.UTF-8
 export GITUSER="lucasherediadv"
@@ -19,8 +22,11 @@ export LESS="-FXR"
 export LESSHISTFILE=/dev/null
 export VISUAL=vim
 export EDITOR=vim
+
+# Go environment variables
 export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
+export GOROOT="/usr/lib/go"
 export GOTELEMETRY=off
 export GOPROXY=direct
 export CGO_ENABLED=0
@@ -32,7 +38,8 @@ export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS" # This defines where cd looks
 unalias -a
 alias vi='vim'
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
-alias c='clear'
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
 alias grep='grep --color=auto'
 alias ip='ip --color=auto'
 alias rm='rm -i'
@@ -79,9 +86,12 @@ pathappend() {
 } && export -f pathappend
 
 pathappend \
+  "$GOROOT/bin" \
   "$SCRIPTS" \
   "$GOBIN"
 
 # Source bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-  source /usr/share/bash-completion/bash_completion
+_source_if "/usr/share/bash-completion/bash_completion"
+
+# Other configurations
+_source_if "$HOME/.bash_private"
