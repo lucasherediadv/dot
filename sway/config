@@ -88,5 +88,6 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 # Automatically start applications
 # exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
-exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term tmux'
+#exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term tmux'
+exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term'
 exec swaymsg 'workspace 2'
