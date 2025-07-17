@@ -51,6 +51,7 @@ alias diff='diff --color'
 alias me='cd $GHREPOS'
 alias dot='cd $DOTFILES'
 alias todo='$EDITOR $GHREPOS/notes/TODO.md'
+alias cur='$EDITOR ~/.currently.md'
 
 # Bash options
 shopt -s checkwinsize # Update window size after every command
