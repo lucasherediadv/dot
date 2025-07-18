@@ -22,6 +22,7 @@ export LESS="-FXR"
 export LESSHISTFILE=/dev/null
 export VISUAL=vim
 export EDITOR=vim
+export SUDO_EDITOR=vim
 
 # Go environment variables
 export GOPATH="$HOME/.local/go"
