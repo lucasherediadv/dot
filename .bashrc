@@ -39,6 +39,7 @@ export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS" # This defines where cd looks
 unalias -a
 alias vi='vim'
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
+alias e='exit'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
 alias grep='grep --color=auto'
