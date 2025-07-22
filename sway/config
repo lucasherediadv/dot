@@ -1,38 +1,23 @@
 # Logo key
 set $mod Mod4
 
-# Home row direction keys, like vim
+# Home row direction keys, like vi
 set $left h
 set $down j
 set $up k
 set $right l
 
-# Terminal
-set $term foot
-bindsym $mod+Return exec $term
-
-# Browser
-set $browser firefox
-bindsym $mod+Shift+Return exec $browser
-
-# Kill focused window
+# Keybinds
+bindsym $mod+Return exec foot
+bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+q kill
-
-# Reload the configuration file
 bindsym $mod+Shift+c reload
-
-# Exit sway (logs you out of your wayland session)
 bindsym $mod+Shift+e exec swaymsg exit
 
 # Output
 output HDMI-A-3 mode 1920x1080@74.973Hz
 
-# Wallpaper
-output * bg ~/.config/sway/solid-color-image.png fill
-
 # Window style
-gaps inner 4
-gaps outer 0
 default_border none
 
 # Move focus around
@@ -71,23 +56,6 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Swaybar
-# bar {
-#   position top
-#     font pango:JetBrainsMonoNL Nerd Font 12
-#     status_command while date +"%F %H:%M";do sleep 1; done
-#
-#     colors {
-#       statusline #ebdbb2
-#         background #1a1c1d
-#         focused_workspace #1a1c1d #1a1c1d #ebdbb2
-#         active_workspace #1a1c1d #1a1c1d #5e5747
-#         inactive_workspace #1a1c1d #1a1c1d #5e5747
-#     }
-# }
-
 # Automatically start applications
-# exec --no-startup-id swaymsg 'workspace 1; exec --no-startup-id $browser'
-#exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term tmux'
-exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id $term'
+exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id foot'
 exec swaymsg 'workspace 2'
