@@ -32,7 +32,7 @@ export GOPROXY=direct
 export CGO_ENABLED=0
 
 # CDPATH
-export CDPATH=".:$HOME:$GHREPOS:$DOTFILES" # This defines where cd looks for targets
+export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS:$DOTFILES" # This defines where cd looks for targets
 
 # Aliases
 unalias -a
