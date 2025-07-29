@@ -130,4 +130,5 @@ clone() {
 # Source external dependencies / completion
 _source_if "/usr/share/bash-completion/bash_completion"
 _have gh && . <(gh completion -s bash)
+_have glow && . <(glow completion bash)
 _source_if "$HOME/.bash_private"
