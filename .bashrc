@@ -14,7 +14,7 @@ _source_if() { [[ -r "$1" ]] && source "$1"; }
 # Environment variables
 export LANG=en_US.UTF-8
 export USER="${USER:-$(whoami)}"
-export GITUSER="lucasherediadv"
+export GITUSER="$USER"
 export REPOS="$HOME/Repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
