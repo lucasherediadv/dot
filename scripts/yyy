@@ -1,5 +1,4 @@
 #!/bin/sh
-
 : >/tmp/buf
 
 while IFS= read -r line;do

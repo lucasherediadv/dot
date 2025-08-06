@@ -6,7 +6,6 @@ getnics () {
   done < <(ip --br -4 a)
 }
 
-
 # complete -W "$(ips)" ips
 if [ -z "$1" ]; then
   getnics

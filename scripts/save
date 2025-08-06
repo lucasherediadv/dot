@@ -20,7 +20,7 @@ gitsave() {
 		git commit -a -F /tmp/commitmsg
 		mv /tmp/commitmsg "/tmp/commitmsg.$(date +%s)"
 	else
-		git commit -a -m "save"
+		git commit -a -m "Save"
 	fi
 	if type push; then
 		push
