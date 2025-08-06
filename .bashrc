@@ -22,6 +22,7 @@ export SCRIPTS="$DOTFILES/scripts"
 export PAGER=less
 export LESS="-FXR"
 export LESSHISTFILE=/dev/null
+export SYSTEMD_LESS="-FRXMK"
 
 # Go environment variables
 export GOPATH="$HOME/.local/go"
