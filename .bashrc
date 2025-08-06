@@ -1,17 +1,18 @@
 #!/bin/bash
 # shellcheck disable=SC1090,SC1091
 
-# Interactive
 case $- in
-*i*) ;;
+*i*) ;; # Interactive
 *) return ;;
 esac
 
-# Local utility functions
+# ---------------------- Local utility functions ---------------------
+
 _have() { type "$1" &>/dev/null; }
 _source_if() { [[ -r "$1" ]] && source "$1"; }
 
-# Environment variables
+# ----------------------- Environment variables ----------------------
+
 export LANG=en_US.UTF-8
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
@@ -19,76 +20,41 @@ export REPOS="$HOME/Repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
+export HELP_BROWSER=w3m
 export PAGER=less
 export LESS="-FXR"
 export LESSHISTFILE=/dev/null
 export SYSTEMD_LESS="-FRXMK"
-
-# Go environment variables
+export HRULEWIDTH=73
 export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
-export GOROOT="/usr/lib/go"
 export GOTELEMETRY=off
 export GOPROXY=direct
 export CGO_ENABLED=0
 
-# CDPATH
-export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS:$DOTFILES" # This defines where cd looks for targets
+# gruvbox-material
+export LS_COLORS="di=38;5;245:fi=38;5;223:ln=38;5;179:ex=38;5;108:*.txt=38;5;223"
+export LESS="-FXR"
+export LESS_TERMCAP_md=$'\e[1;33m'       # start bold (yellow)
+export LESS_TERMCAP_mb=$'\e[1;35m'       # start blinking (magenta)
+export LESS_TERMCAP_me=$'\e[0m'          # end bold/blinking
+export LESS_TERMCAP_so=$'\e[38;5;108;1m' # start standout (green bold)
+export LESS_TERMCAP_se=$'\e[0m'          # end standout
+export LESS_TERMCAP_us=$'\e[4m'          # start underline
+export LESS_TERMCAP_ue=$'\e[0m'          # end underline
 
-# Aliases
-unalias -a
-alias ls='ls --color=auto --human-readable --classify --group-directories-first'
-alias c='printf "\e[H\e[2J"'
-alias clear='printf "\e[H\e[2J"'
-alias grep='grep --color=auto'
-alias ip='ip --color=auto'
-alias du='du -h'
-alias df='df -h'
-alias free='free -h'
-alias diff='diff --color=auto'
-alias more='less'
-alias me='cd $GHREPOS'
-alias dot='cd $DOTFILES'
-alias scripts='cd $SCRIPTS'
-alias todo='$EDITOR ~/.todo'
+# ----------------------------- Dircolors ----------------------------
 
-# Editor related
-set-editor() {
-  export EDITOR="$1"
-  export VISUAL="$1"
-  export SUDO_EDITOR="$1"
-  export GH_EDITOR="$1"
-  export GIT_EDITOR="$1"
-  alias vi="\$EDITOR"
-}
-_have "vim" && set-editor vim
-_have "nvim" && set-editor nvim
+if _have dircolors; then
+  if [[ -r "$HOME/.dircolors" ]]; then
+    eval "$(dircolors -b "$HOME/.dircolors")"
+  else
+    eval "$(dircolors -b)"
+  fi
+fi
 
-# Bash options
-shopt -s checkwinsize # Update window size after every command
-shopt -s globstar 2> /dev/null # Turn on recursive globbing
-shopt -s autocd 2> /dev/null # Prepend cd to directory names automatically
-shopt -s dirspell 2> /dev/null # Correct spelling errors during tab-completion
-shopt -s cdspell 2> /dev/null # Correct spelling errors in arguments supplied to cd
-shopt -s expand_aliases
-shopt -s globstar
-shopt -s dotglob
-shopt -s extglob
+# ------------------------------- Path -------------------------------
 
-# Disable control-s/control-q tty flow control
-stty -ixon
-
-# History
-export HISTSIZE=500000
-export HISTFILESIZE=100000
-export HISTCONTROL="erasedups:ignoreboth" # Avoid duplicate entries
-export HISTTIMEFORMAT='%F %T ' # Use standard ISO 8601 timestamp
-export PROMPT_COMMAND='history -a' # Record each line as it gets issued
-
-shopt -s histappend # Append to the history file, don't overwrite it
-shopt -s cmdhist # Save multi-line commands as one command
-
-# Path
 pathappend() {
   declare arg
   for arg in "$@"; do
@@ -105,7 +71,120 @@ pathappend \
   "$SCRIPTS" \
   "$GOBIN"
 
-# Functions
+# ------------------------------ CDPATH ------------------------------
+
+export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS:$DOTFILES"
+
+# ------------------------ Bash shell options ------------------------
+
+shopt -s expand_aliases
+shopt -s checkwinsize
+shopt -s dirspell
+shopt -s globstar
+shopt -s cdspell
+shopt -s dotglob
+shopt -s extglob
+
+# -------------------------- stty annoyances -------------------------
+
+stty -ixon # Disable control-s/control-q tty flow control
+
+# ------------------------------ History -----------------------------
+
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export HISTCONTROL="erasedups:ignoreboth"
+
+set -o vi
+shopt -s histappend
+
+# --------------------------- Smart prompt ---------------------------
+#                 (keeping in bashrc for portability)
+
+PROMPT_LONG=20
+PROMPT_MAX=95
+PROMPT_AT=@
+
+__ps1() {
+  local P='$' dir="${PWD##*/}" B countme short long double \
+    r='\[\e[31m\]' h='\[\e[34m\]' \
+    u='\[\e[33m\]' p='\[\e[34m\]' w='\[\e[35m\]' \
+    b='\[\e[36m\]' x='\[\e[0m\]' \
+    g="\[\033[38;2;90;82;76m\]"
+
+  [[ $EUID == 0 ]] && P='#' && u=$r && p=$u # root
+  [[ $PWD = / ]] && dir=/
+  [[ $PWD = "$HOME" ]] && dir='~'
+
+  B=$(git branch --show-current 2>/dev/null)
+  [[ $dir = "$B" ]] && B=.
+  countme="$USER$PROMPT_AT$(hostnamectl hostname):$dir($B)\$ "
+
+  [[ $B == master || $B == main ]] && b="$r"
+  [[ -n "$B" ]] && B="$g($b$B$g)"
+
+  short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
+  long="${g}┌$u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n${g}└$p$P$x "
+  double="${g}┌$u\u$g$PROMPT_AT$h\h$g:$w$dir\n${g}║$B\n${g}└$p$P$x "
+
+  if ((${#countme} > PROMPT_MAX)); then
+    PS1="$double"
+  elif ((${#countme} > PROMPT_LONG)); then
+    PS1="$long"
+  else
+    PS1="$short"
+  fi
+
+  if _have tmux && [[ -n "$TMUX" ]]; then
+    tmux rename-window "$(wd)"
+  fi
+}
+
+wd() {
+  dir="${PWD##*/}"
+  parent="${PWD%"/${dir}"}"
+  parent="${parent##*/}"
+  echo "$parent/$dir"
+} && export wd
+
+PROMPT_COMMAND="__ps1"
+
+# ------------------------------ Aliases -----------------------------
+#      (use exec scripts instead, which work from vim and subprocs)
+
+unalias -a
+alias ls='ls --color=auto --human-readable --classify --group-directories-first'
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
+alias env='env -u LESS_TERMCAP_mb -u LESS_TERMCAP_md -u LESS_TERMCAP_me -u LESS_TERMCAP_so -u LESS_TERMCAP_se -u LESS_TERMCAP_us -u LESS_TERMCAP_ue'
+alias grep='grep --color=auto'
+alias ip='ip --color=auto'
+alias du='du -h'
+alias df='df -h'
+alias free='free -h'
+alias diff='diff --color=auto'
+alias more='less'
+alias me='cd $GHREPOS'
+alias repos='cd $REPOS/github.com'
+alias dot='cd $DOTFILES'
+alias scripts='cd $SCRIPTS'
+alias todo='$EDITOR ~/.todo'
+
+# Editor related
+set-editor() {
+  export EDITOR="$1"
+  export VISUAL="$1"
+  export SUDO_EDITOR="$1"
+  export GH_EDITOR="$1"
+  export GIT_EDITOR="$1"
+  alias vi="\$EDITOR"
+}
+_have "vi" && set-editor vi
+_have "vim" && set-editor vim
+_have "nvim" && set-editor nvim
+
+# ----------------------------- Functions ----------------------------
+
 clone() {
   local repo="$1" user
   local repo="${repo#https://github.com/}"
@@ -128,8 +207,7 @@ clone() {
   cd "$name"
 } && export -f clone
 
-# Source external dependencies / completion
+# ------------- Source external dependencies / Completion ------------
+
 _source_if "/usr/share/bash-completion/bash_completion"
-_have gh && . <(gh completion -s bash)
-_have glow && . <(glow completion bash)
 _source_if "$HOME/.bash_private"
