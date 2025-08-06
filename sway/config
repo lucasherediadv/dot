@@ -1,17 +1,11 @@
 # Logo key
 set $mod Mod4
 
-# Home row direction keys, like vi
-set $left h
-set $down j
-set $up k
-set $right l
-
 # Keybinds
-bindsym $mod+Return exec foot
-bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
+bindsym $mod+Return exec foot
+bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+e exec swaymsg exit
 
 # Output
@@ -21,16 +15,16 @@ output HDMI-A-3 mode 1920x1080@74.973Hz
 default_border none
 
 # Move focus around
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Move the focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -57,5 +51,4 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # Automatically start applications
-exec --no-startup-id swaymsg 'workspace 2; exec --no-startup-id foot tmux'
-exec swaymsg 'workspace 2'
+exec foot
