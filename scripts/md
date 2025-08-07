@@ -1,0 +1,3 @@
+#!/bin/sh
+test -z "$@"  && test -f ./README.md && exec glow --pager ./README.md
+exec glow --pager "$@"

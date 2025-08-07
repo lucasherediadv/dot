@@ -1,6 +1,2 @@
 #!/bin/sh
-# -cache removes the entire go build cache
-# -modcache remove the entire module download cache
-# -i remove the corresponding installed archive or binary
-# -r apply recursively to all the dependencies of the packages name by the import paths
 exec go clean -cache -modcache -i -r
