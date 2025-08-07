@@ -99,7 +99,7 @@ set -o vi
 shopt -s histappend
 
 # --------------------------- Smart prompt ---------------------------
-#                 (keeping in bashrc for portability)
+#                 (Keeping in bashrc for portability)
 
 PROMPT_LONG=20
 PROMPT_MAX=95
@@ -150,7 +150,7 @@ wd() {
 PROMPT_COMMAND="__ps1"
 
 # ------------------------------ Aliases -----------------------------
-#      (use exec scripts instead, which work from vim and subprocs)
+#      (Use exec scripts instead, which work from vim and subprocs)
 
 unalias -a
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
@@ -210,5 +210,11 @@ clone() {
 
 # ------------- Source external dependencies / Completion ------------
 
+_have glow && . <(glow completion bash)
+_have gh && . <(gh completion --shell bash)
+_have podman && . <(podman completion bash)
 _source_if "/usr/share/bash-completion/bash_completion"
+
+# -------------------- Personalized configuration --------------------
+
 _source_if "$HOME/.bash_private"
