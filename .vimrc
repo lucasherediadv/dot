@@ -1,12 +1,11 @@
 " designed for vim 8+
-
 if has("eval") " vim-tiny lacks 'eval'
   let skip_defaults_vim = 1
 endif
 
 set nocompatible
 
-"#################### Vi Compatible (~/.exrc) #######################
+" #################### Vi Compatible (~/.exrc) #######################
 
 " automatically indent new lines
 set autoindent " (alpine)
@@ -34,7 +33,7 @@ set ruler " see ruf for formatting
 " show command and insert mode
 set showmode
 
-"###################################################################
+" ###################################################################
 
 " disable bell (also disable in .inputrc)
 set noerrorbells
@@ -164,69 +163,6 @@ nnoremap coming i_In development..._<Esc>
 
 set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
-" base default color changes (gruvbox dark friendly)
-hi StatusLine ctermfg=245 ctermbg=NONE
-hi StatusLineNC ctermfg=245 ctermbg=NONE
-hi Normal ctermbg=NONE
-hi Special ctermfg=cyan
-hi LineNr ctermfg=245 ctermbg=NONE
-hi SpecialKey ctermfg=245 ctermbg=NONE
-hi ModeMsg ctermfg=245 cterm=NONE ctermbg=NONE
-hi MoreMsg ctermfg=245 ctermbg=NONE
-hi NonText ctermfg=245 ctermbg=NONE
-hi vimGlobal ctermfg=245 ctermbg=NONE
-hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-hi Search ctermbg=236 ctermfg=darkred
-hi vimTodo ctermbg=236 ctermfg=darkred
-hi Todo ctermbg=236 ctermfg=darkred
-hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
-hi MatchParen ctermbg=236 ctermfg=darkred
-hi SignColumn ctermbg=NONE " make gutter less annoying
-hi WinBar ctermfg=245 ctermbg=NONE cterm=NONE
-
-" color overrides
-au FileType * hi StatusLine ctermfg=245 ctermbg=NONE
-au FileType * hi StatusLineNC ctermfg=245 ctermbg=NONE
-au FileType * hi Normal ctermbg=NONE
-au FileType * hi Special ctermfg=cyan
-au FileType * hi LineNr ctermfg=245ctermbg=NONE
-au FileType * hi SpecialKey ctermfg=245ctermbg=NONE
-au FileType * hi ModeMsg ctermfg=245cterm=NONE ctermbg=NONE
-au FileType * hi MoreMsg ctermfg=245 ctermbg=NONE
-au FileType * hi NonText ctermfg=245 ctermbg=NONE
-au FileType * hi vimGlobal ctermfg=245 ctermbg=NONE
-au FileType * hi Comment ctermfg=245ctermbg=NONE
-au FileType * hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi Search ctermbg=236 ctermfg=darkred
-au FileType * hi vimTodo ctermbg=236 ctermfg=darkred
-au FileType * hi Todo ctermbg=236 ctermfg=darkred
-au FileType * hi MatchParen ctermbg=236 ctermfg=darkred
-au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
-au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
-au FileType markdown,pandoc set tw=0
-au FileType markdown,pandoc set wrap
-au FileType yaml hi yamlBlockMappingKey ctermfg=NONE
-au FileType yaml set sw=2
-au FileType sh,bash set sw=2
-au FileType c set sw=8
-au FileType markdown,pandoc,asciidoc noremap j gj
-au FileType markdown,pandoc,asciidoc noremap k gk
-au FileType sh,bash set noet
-
-" force loclist to always close when buffer does (affects vim-go, etc.)
-augroup CloseLoclistWindowGroup
-  autocmd!
-  autocmd QuitPre * if empty(&buftype) | lclose | endif
-augroup END
-
-autocmd BufWritePost *.{md,adoc} silent !toemoji %
-
 " make Y consistent with D and C (yank til end)
 map Y y$
 
@@ -262,10 +198,10 @@ au bufnewfile,bufRead *.go set spell spellcapcheck=0
 au bufnewfile,bufRead commands.yaml set spell
 au bufnewfile,bufRead *.{txt,md,adoc} set spell
 
-" fix bork bash detection
+"fix bork bash detection
 if has("eval")  " vim-tiny detection
 fun! s:DetectBash()
-    if getline(1) == '#!/usr/bin/bash' 
+    if getline(1) == '#!/usr/bin/bash'
           \ || getline(1) == '#!/bin/bash'
           \ || getline(1) == '#!/usr/bin/env bash'
         set ft=bash
@@ -289,29 +225,10 @@ endif
 " start at last place you were editing
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" functions keys
-map <F1> :set number!<CR> :set relativenumber!<CR>
-nmap <F2> :call <SID>SynStack()<CR>
-set pastetoggle=<F3>
-map <F4> :set list!<CR>
-map <F5> :set cursorline!<CR>
-map <F7> :set spell!<CR>
-map <F12> :set fdm=indent<CR>
-
 set cursorline
 highlight CursorLine cterm=NONE ctermbg=236
 
 nmap <leader>2 :set paste<CR>i
-
-" disable arrow keys (vi muscle memory)
-" noremap <up> :echoerr "Umm, use k instead"<CR>
-" noremap <down> :echoerr "Umm, use j instead"<CR>
-" noremap <left> :echoerr "Umm, use h instead"<CR>
-" noremap <right> :echoerr "Umm, use l instead"<CR>
-" inoremap <up> <NOP>
-" inoremap <down> <NOP>
-" inoremap <left> <NOP>
-" inoremap <right> <NOP>
 
 " better page down and page up
 noremap <C-n> <C-d>
