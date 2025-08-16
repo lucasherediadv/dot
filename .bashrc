@@ -168,7 +168,7 @@ alias me='cd $GHREPOS'
 alias repos='cd $REPOS/github.com'
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
-alias todo='$EDITOR ~/.todo'
+alias todo='$EDITOR ~/.todo.md'
 alias gitl="git log -n 5 --graph --decorate --oneline"
 
 # Editor related
