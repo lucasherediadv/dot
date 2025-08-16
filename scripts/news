@@ -1,0 +1,2 @@
+#!/bin/sh
+exec w3m https://archlinux.org/news
