@@ -84,6 +84,7 @@ set spc=
 set nobackup
 set noswapfile
 set nowritebackup
+set viminfofile=NONE
 
 set icon
 
@@ -96,7 +97,7 @@ set linebreak
 set shortmess=aoOtTI
 
 " prevents truncated yanks, deletes, etc.
-set viminfo='20,<1000,s1000
+" set viminfo='20,<1000,s1000
 
 " not a fan of bracket matching or folding
 if has("eval") " vim-tiny detection
