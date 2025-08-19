@@ -166,6 +166,7 @@ PROMPT_COMMAND="__ps1"
 #      (Use exec scripts instead, which work from vim and subprocs)
 
 unalias -a
+alias '?'=gpt
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
@@ -184,6 +185,7 @@ alias repos='cd $REPOS/github.com'
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
 alias todo='$EDITOR ~/.todo.md'
+alias to='glow ~/.todo.md'
 alias gitl="git log -n 5 --graph --decorate --oneline"
 
 # Editor related
