@@ -66,9 +66,22 @@ pathappend() {
   done
 } && export -f pathappend
 
+pathprepend() {
+	for arg in "$@"; do
+		test -d "$arg" || continue
+		PATH=${PATH//:"$arg:"/:}
+		PATH=${PATH/#"$arg:"/}
+		PATH=${PATH/%":$arg"/}
+		export PATH="$arg${PATH:+":${PATH}"}"
+	done
+} && export -f pathprepend
+
+# Remember last argument will be first in $PATH
+pathprepend \
+  "$SCRIPTS"
+
 pathappend \
   "$GOROOT/bin" \
-  "$SCRIPTS" \
   "$GOBIN"
 
 # ------------------------------ CDPATH ------------------------------
