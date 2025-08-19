@@ -213,6 +213,7 @@ clone() {
 # ------------- Source external dependencies / Completion ------------
 
 _have glow && . <(glow completion bash)
+_have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
 _have podman && . <(podman completion bash)
 _source_if "/usr/share/bash-completion/bash_completion"
