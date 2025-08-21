@@ -1,2 +1,3 @@
 #!/bin/sh
-exec w3m https://archlinux.org/news
+# exec w3m https://archlinux.org/news/
+exec lynx https://archlinux.org/news/
