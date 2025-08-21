@@ -205,6 +205,19 @@ _have "nvim" && set-editor nvim
 
 # ----------------------------- Functions ----------------------------
 
+envx() {
+	local envfile="${1:-"$HOME/.env"}"
+	[[ ! -e "$envfile" ]] && echo "$envfile not found" && return 1
+	while IFS= read -r line; do
+		name=${line%%=*}
+		value=${line#*=}
+		[[ -z "${name}" || $name =~ ^# ]] && continue
+		export "$name"="$value"
+	done <"$envfile"
+} && export -f envx
+
+[[ -e "$HOME/.env" ]] && envx "$HOME/.env"
+
 clone() {
   local repo="$1" user
   local repo="${repo#https://github.com/}"
