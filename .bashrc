@@ -31,6 +31,7 @@ export GOBIN="$HOME/.local/bin"
 export GOTELEMETRY=off
 export GOPROXY=direct
 export CGO_ENABLED=0
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # gruvbox-material
 export LS_COLORS="di=38;5;245:fi=38;5;223:ln=38;5;179:ex=38;5;108:*.txt=38;5;223"
@@ -81,8 +82,9 @@ pathprepend \
   "$SCRIPTS"
 
 pathappend \
+  "$GOBIN" \
   "$GOROOT/bin" \
-  "$GOBIN"
+  "$HOME/.dotnet/tools"
 
 # ------------------------------ CDPATH ------------------------------
 
@@ -232,6 +234,16 @@ _have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
 _have podman && . <(podman completion bash)
 _source_if "/usr/share/bash-completion/bash_completion"
+
+# Bash parameter completion for the dotnet CLI
+function _dotnet_bash_complete()
+{
+  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
+  local candidates
+  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
+  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
+}
+complete -f -F _dotnet_bash_complete dotnet
 
 # -------------------- Personalized configuration --------------------
 
