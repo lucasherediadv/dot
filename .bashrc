@@ -260,4 +260,6 @@ complete -f -F _dotnet_bash_complete dotnet
 
 # -------------------- Personalized configuration --------------------
 
+_source_if "$HOME/.bash_personal"
 _source_if "$HOME/.bash_private"
+_source_if "$HOME/.bash_work"
