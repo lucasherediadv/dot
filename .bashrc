@@ -246,6 +246,7 @@ _have glow && . <(glow completion bash)
 _have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
 _have podman && . <(podman completion bash)
+_have pandoc && . <(pandoc --bash-completion)
 _source_if "/usr/share/bash-completion/bash_completion"
 
 # Bash parameter completion for the dotnet CLI
