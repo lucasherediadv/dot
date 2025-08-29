@@ -1,0 +1,81 @@
+# Normal type styles correspond to HTML tags
+b: bold: red
+sub: dim: gray
+i: bold: yellow
+img: dim: brown
+q: normal: cyan
+tr: bold: white
+fig: normal: gray
+ul: normal: brown
+big: bold: yellow
+sup: bold: yellow
+hr: normal: yellow
+code: normal: cyan
+cite: normal: cyan
+a: bold: brightblue
+small: dim: default
+li: normal: magenta
+td: normal: default
+br: normal: default
+em: bold: brightblue
+title: normal: magenta
+label: normal: magenta
+table: normal: default
+strong: bold: brightred
+caption: reverse: brown
+blockquote: normal: cyan
+address: normal: magenta
+h1: bold: black: lightgray
+tt: dim: brightmagenta: black
+
+# Special styles - not corresponding directly to HTML tags
+alink: reverse: default
+alert: bold: yellow: red
+forwbackw.arrow: reverse
+menu.n: normal: red: gray
+status: reverse: cyan: default
+menu.bg: normal: black: lightgray
+hot.paste: normal: brightred: gray
+menu.active: reverse: black: yellow
+whereis: bold+reverse: black: yellow
+menu.frame: normal: black: lightgray
+menu.entry: normal: lightgray: black
+menu.sb: normal: brightred: lightgray
+
+# Styles with classes - <ul class=red> etc.
+li.blue: bold: blue
+tr.batwo: bold: green
+tr.bathree: bold: red
+tr.baone: bold: yellow
+link: bold: brightblue
+link.red.next: bold: red
+ul.blue: bold: brightblue
+strong.a: bold: black: red
+em.a: reverse: black: blue
+strong.b: bold: white: red
+em.b: reverse: white: blue
+input.submit: normal: cyan
+link.red: bold: black: red
+link.blue.next: bold: blue
+ul.red: underline: brightred
+li.red: reverse: red: yellow
+strong.debug: reverse: green
+link.blue: bold: white: blue
+link.toc: bold: black: white
+link.green: bold: brightgreen
+font.letter: normal: white: blue
+link.red.prev: bold: yellow: red
+link.blue.prev: bold: yellow: blue
+link.green.toc: bold: white: green
+
+# Define styles that will be used when syntax highlighting is requested
+span.htmlsrc_badseq: normal: red
+span.htmlsrc_badtag: normal: red
+span.htmlsrc_badattr: normal: red
+span.htmlsrc_entity: normal: white
+span.htmlsrc_attrib: normal: yellow
+span.htmlsrc_tag: normal: brightcyan
+span.htmlsrc_abracket: normal: white
+span.htmlsrc_sgmlspecial: normal: yellow
+span.htmlsrc_comment: normal: brightgreen
+span.htmlsrc_attrval: normal: brightgreen
