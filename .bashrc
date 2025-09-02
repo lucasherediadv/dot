@@ -44,6 +44,8 @@ export LESS_TERMCAP_se=$'\e[0m'          # end standout
 export LESS_TERMCAP_us=$'\e[4m'          # start underline
 export LESS_TERMCAP_ue=$'\e[0m'          # end underline
 
+[[ -d "$HOME/.vim/spell" ]] && export VIMSPELL=("$HOME/.vim/spell/*.add")
+
 # ------------------------------- Pager ------------------------------
 
 if [[ -x /usr/bin/lesspipe ]]; then
