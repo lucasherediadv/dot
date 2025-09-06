@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Copy a file from a GitHub repository locally without cloning the repository.
+
+set -e
+
+usage() {
+  echo "Usage: ghcp <repo> <path> <dest>"
+  echo "Example: ./ghcp 'octocat/Spoon-Knife' 'README.md' '~/documents/'"
+}
+
+if [ $# -lt 3 ]; then
+  usage >&2
+  exit 1
+fi
+
+repo="$1"
+path="$2"
+dest="$3"
+
+dest_file="${3%/}/$(basename "$path")"
+if [ ! -d "$dest" ] && [[ $dest != */ ]]; then
+  dest_file="$dest"
+fi
+
+dest_dir="$(dirname "$dest_file")"
+[ "$dest_dir" = "." ] || mkdir -p "$dest_dir"
+
+curl -sL "https://raw.githubusercontent.com/$repo/HEAD/$path" > "$dest_file"

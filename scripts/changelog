@@ -1,0 +1,26 @@
+#!/bin/bash
+# Usage: changelog [<range>] [-- <directory> ...]
+#
+# Displays git log in a format suitable for change log. If no range given,
+# displays log from the last git tag reachable from this branch. Use
+# `<directory>` to filter down entries to just files that contain runtime code.
+set -eu
+
+range=
+head=HEAD
+
+if [ "$#" -gt 0 ] && [ "$1" != "--" ]; then
+  if [[ $1 == *..* ]]; then
+    range="$1"
+  else
+    head="$1"
+  fi
+  shift 1
+fi
+
+if [ -z "$range" ]; then
+  previous_tag="$(git describe --tags --abbrev=0 "$head"^ 2>/dev/null)"
+  range="${previous_tag}..${head}"
+fi
+
+git log --first-parent --pretty=tformat:'%C(auto,green)* %s%C(auto,reset)%n%w(0,2,2)%+b%n' --reverse "$range" "$@"
