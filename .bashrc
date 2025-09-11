@@ -126,12 +126,12 @@ export HISTCONTROL="erasedups:ignoreboth"
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
 # Record each line as it gets issued
-PROMPT_COMMAND+="; history -a"
+export PROMPT_COMMAND="history -a"
 
 # Use standard ISO 8601
 # %F equivalent to %Y-%m-%d
 # %T equivalent to %H:%M:%S (24-hours format)
-HISTTIMEFORMAT='%F %T '
+export HISTTIMEFORMAT='%F %T '
 
 set -o vi
 shopt -s cmdhist # Save multi-line commands as one command
@@ -186,7 +186,7 @@ wd() {
   echo "$parent/$dir"
 } && export wd
 
-PROMPT_COMMAND="__ps1"
+PROMPT_COMMAND+="; __ps1"
 
 # ------------------------------ Aliases -----------------------------
 #      (Use exec scripts instead, which work from vim and subprocs)
