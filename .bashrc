@@ -115,12 +115,27 @@ stty -ixon # Disable control-s/control-q tty flow control
 
 # ------------------------------ History -----------------------------
 
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+# Huge history. Doesn't appear to slow things down, so why not?
+export HISTSIZE=500000
+export HISTFILESIZE=100000
+
+# Avoid duplicate entries
 export HISTCONTROL="erasedups:ignoreboth"
 
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+# Record each line as it gets issued
+PROMPT_COMMAND+="; history -a"
+
+# Use standard ISO 8601
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+HISTTIMEFORMAT='%F %T '
+
 set -o vi
-shopt -s histappend
+shopt -s cmdhist # Save multi-line commands as one command
+shopt -s histappend # Append to the history file, don't overwrite it
 
 # --------------------------- Smart prompt ---------------------------
 #                 (Keeping in bashrc for portability)
