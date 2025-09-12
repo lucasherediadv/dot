@@ -20,7 +20,7 @@ export REPOS="$HOME/Repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
-export NOTES="$GHREPOS/notes"
+export ZETTELKASTEN="$GHREPOS/zet"
 export PAGER=less
 export LESS="-FXR"
 export LESSHISTFILE=/dev/null
@@ -211,7 +211,7 @@ alias me='cd $GHREPOS'
 alias repos='cd $REPOS/github.com'
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
-alias todo='$EDITOR $NOTES/TODO.md'
+alias todo='$EDITOR $ZETTELKASTEN/TODO.md'
 alias gitl='git log -n 5 --graph --decorate --oneline'
 
 # Editor related
