@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 test ! -n "${SCRIPTS}"  && echo "SCRIPTS not set" && exit 1;
-test ! -n "${1}"  && echo "usage: newscript <name>" && exit 1;
+test ! -n "${1}"  && echo "usage: newx <name>" && exit 1;
 
 path="${SCRIPTS}/${1}"
 
