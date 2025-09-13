@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo pacman --sync --noconfirm --needed bash-completion bc dotnet-sdk firefox git github-cli glow go jq lesspipe lynx openssh rsync pacman-contrib pandoc-cli podman reflector shellcheck shfmt staticcheck tmux tree ttf-jetbrains-mono unzip vim
+sudo pacman --sync --noconfirm --needed bash-completion bc dotnet-sdk firefox git github-cli glow go go-yq jq lesspipe lynx openssh rsync pacman-contrib pandoc-cli podman reflector shellcheck shfmt staticcheck tmux tree ttf-jetbrains-mono unzip vim
