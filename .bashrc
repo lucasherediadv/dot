@@ -211,6 +211,7 @@ alias me='cd $GHREPOS'
 alias repos='cd $REPOS/github.com'
 alias dot='cd $DOTFILES'
 alias scripts='cd $SCRIPTS'
+alias isaui='cd $GHREPOS/ISAUI'
 alias todo='$EDITOR $ZETTELKASTEN/TODO.md'
 alias gitl='git log -n 5 --graph --decorate --oneline'
 
