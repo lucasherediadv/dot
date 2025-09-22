@@ -97,7 +97,7 @@ pathappend \
 
 # ------------------------------ CDPATH ------------------------------
 
-export CDPATH=".:$HOME:$REPOS/github.com:$GHREPOS:$DOTFILES"
+export CDPATH=".:$GHREPOS:$DOTFILES:$REPOS:$HOME"
 
 # ------------------------ Bash shell options ------------------------
 
