@@ -109,13 +109,8 @@ export CDPATH=".:$GHREPOS:$DOTFILES:$REPOS:$HOME"
 
 # ------------------------ Bash shell options ------------------------
 
-shopt -s expand_aliases
-shopt -s checkwinsize
-shopt -s dirspell
-shopt -s globstar
-shopt -s cdspell
-shopt -s dotglob
-shopt -s extglob
+shopt -s expand_aliases checkwinsize dirspell \
+         globstar cdspell dotglob extglob
 
 # -------------------------- stty annoyances -------------------------
 
