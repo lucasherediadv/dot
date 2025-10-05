@@ -29,6 +29,7 @@ export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
 export ZETTELKASTEN="$GHREPOS/zet"
+export TERMINAL_BROWSER=lynx
 export PAGER=less
 export LESS="-FXR"
 export LESSHISTFILE=/dev/null
