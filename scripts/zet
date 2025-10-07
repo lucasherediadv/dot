@@ -68,6 +68,35 @@ query() {
     git grep -i "$SEARCH_TERM" -- "$ZK_DOCS"
 }
 
+todo() {
+    TODO_FILE="$ZETTELKASTEN/TODO.md"
+
+    # Record the modification time before editing
+    MOD_TIME=$(stat -c %Y "$TODO_FILE" 2>/dev/null || stat -f %m "$TODO_FILE")
+
+    # Open the editor with the todo file
+    echo "Opening todo file: $TODO_FILE"
+    ${EDITOR:-vim} "$TODO_FILE"
+
+    # Check if the file was modified by comparing modification times
+    NEW_MOD_TIME=$(stat -c %Y "$TODO_FILE" 2>/dev/null || stat -f %m "$TODO_FILE")
+
+    if [ "$MOD_TIME" -ne "$NEW_MOD_TIME" ]; then
+        echo "Changes detected in todo.md. Committing and pushing..."
+
+        cd "$ZETTELKASTEN"
+
+        # Commit with a fixed message
+        COMMIT_MSG="Update TODO"
+
+        git add "TODO.md"
+        git commit -m "$COMMIT_MSG"
+        git push
+    else
+        echo "No changes made to TODO.md. Exiting without commit."
+    fi
+}
+
 # Get the script name for the help message
 SCRIPT_NAME=${0##*/}
 
@@ -79,6 +108,9 @@ query)
     shift
     query "$@"
     ;;
+todo)
+    todo
+    ;;
 "")
     echo "Manage your zettelkasten knowledge base."
     echo ""
@@ -88,6 +120,7 @@ query)
     echo "COMMANDS:"
     echo "  add:   Create a new note."
     echo "  query: Search the content of all committed notes."
+    echo "  todo:  Edit the todo file and commit changes."
     exit 0
     ;;
 *)
