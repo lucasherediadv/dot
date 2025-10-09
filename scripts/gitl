@@ -1,0 +1,2 @@
+#!/bin/sh
+exec git log --max-count=5 --graph --decorate --oneline
