@@ -210,10 +210,8 @@ alias chmox='chmod +x'
 alias free='free -h'
 alias tree='tree --dirsfirst -C -a -I .git/'
 alias diff='diff --color=auto'
-alias temp='cd $(mktemp -d)'
 alias more='less'
 alias todo='$EDITOR $ZETTELKASTEN/TODO.md'
-alias gitl='git log -n 5 --graph --decorate --oneline'
 
 # Editor related
 set-editor() {
