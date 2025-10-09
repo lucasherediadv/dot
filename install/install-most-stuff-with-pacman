@@ -1,2 +1,4 @@
 #!/bin/sh
-sudo pacman --sync --noconfirm --needed bash-completion bc bind dotnet-sdk firefox foot foot-terminfo git github-cli glow go go-yq jq lesspipe lostfiles lynx openssh pacman-contrib pandoc-cli podman reflector rsync shellcheck shfmt staticcheck strace tmux tree ttf-jetbrains-mono unzip vim
+sudo pacman --sync --noconfirm --needed bash-completion bc bind dotnet-sdk firefox foot foot-terminfo git github-cli glow go go-yq iwd jq lesspipe man-db lynx openssh pacman-contrib podman reflector shellcheck shfmt staticcheck strace tmux tree ttf-jetbrains-mono vim
+
+# rsync pandoc-cli unzip lostfiles
