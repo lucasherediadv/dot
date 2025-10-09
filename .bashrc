@@ -8,11 +8,11 @@ esac
 
 # ------------------ Start tmux on every shell login -----------------
 
-if command -v tmux >/dev/null 2>&1; then
-  if [ -z "${TMUX}" ]; then
-    tmux new-session
-  fi
-fi
+# if command -v tmux >/dev/null 2>&1; then
+#   if [ -z "${TMUX}" ]; then
+#     tmux new-session
+#   fi
+# fi
 
 # ---------------------- Local utility functions ---------------------
 
@@ -31,9 +31,7 @@ export SCRIPTS="$DOTFILES/scripts"
 export ZETTELKASTEN="$GHREPOS/zet"
 export TERMINAL_BROWSER=lynx
 export PAGER=less
-export LESS="-FXR"
 export LESSHISTFILE=/dev/null
-export SYSTEMD_LESS="-FRXMK"
 export HRULEWIDTH=73
 export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
@@ -41,6 +39,9 @@ export GOTELEMETRY=off
 export GOPROXY=direct
 export CGO_ENABLED=0
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# export LESS="-FXR"
+# export SYSTEMD_LESS="-FRXMK"
 
 # gruvbox-material
 export LS_COLORS="di=38;5;245:fi=38;5;223:ln=38;5;179:ex=38;5;108:*.txt=38;5;223"
@@ -223,6 +224,7 @@ set-editor() {
   export GIT_EDITOR="$1"
   alias vi="\$EDITOR"
 }
+
 _have "vi" && set-editor vi
 _have "vim" && set-editor vim
 _have "nvim" && set-editor nvim
@@ -271,8 +273,9 @@ _have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
 _have yq && . <(yq completion bash)
 _have podman && . <(podman completion bash)
-# _have pandoc && . <(pandoc --bash-completion)
 _source_if "/usr/share/bash-completion/bash_completion"
+
+# _have pandoc && . <(pandoc --bash-completion)
 
 # Bash parameter completion for the dotnet CLI
 function _dotnet_bash_complete()
