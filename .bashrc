@@ -212,6 +212,7 @@ alias tree='tree --dirsfirst -C -a -I .git/'
 alias diff='diff --color=auto'
 alias more='less'
 alias todo='$EDITOR $ZETTELKASTEN/TODO.md'
+alias temp='cd $(mktemp -d)'
 
 # Editor related
 set-editor() {
