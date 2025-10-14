@@ -1,0 +1,2 @@
+#!/bin/sh
+printf '%s\n' "${BASH_VERSION:-unknown}"
