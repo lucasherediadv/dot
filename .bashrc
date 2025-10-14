@@ -197,7 +197,7 @@ PROMPT_COMMAND+="; __ps1"
 #      (Use exec scripts instead, which work from vim and subprocs)
 
 unalias -a
-alias '?'=gpt
+alias '?'='gpt'
 alias ls='ls --color=auto --human-readable --classify --group-directories-first'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
@@ -266,14 +266,14 @@ clone() {
 
 # ------------- Source external dependencies / Completion ------------
 
+_have yq && . <(yq completion bash)
 _have glow && . <(glow completion bash)
 _have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
-_have yq && . <(yq completion bash)
 _have podman && . <(podman completion bash)
+_have pandoc && . <(pandoc --bash-completion)
+_have docker && _source_if "$HOME/.local/share/docker/completion" # d
 _source_if "/usr/share/bash-completion/bash_completion"
-
-# _have pandoc && . <(pandoc --bash-completion)
 
 # Bash parameter completion for the dotnet CLI
 function _dotnet_bash_complete()
