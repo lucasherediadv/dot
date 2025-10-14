@@ -257,7 +257,7 @@ au bufnewfile,bufRead .dockerignore set filetype=gitignore
 au bufnewfile,bufRead .bashrc,.bash_profile set filetype=bash
 au bufnewfile,bufRead *gitconfig set filetype=gitconfig
 au bufnewfile,bufRead /tmp/psql.edit.* set syntax=sql
-au bufnewfile,bufRead *.go set spell spellcapcheck=0
+au bufnewfile,bufRead *.go set nospell filetype=go
 au bufnewfile,bufRead commands.yaml set spell
 au bufnewfile,bufRead *.{txt,md,adoc} set spell
 
@@ -320,6 +320,9 @@ noremap <C-p> <C-b>
 if exists('$TMUX')
     autocmd BufEnter * call system('tmux rename-window ' . expand('%:p:h:t') . '/' . expand('%:t'))
 endif
+
+" Apply settings specifically for Go files
+autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Read personal/private vim configuration (keep last to override)
 set rtp^=~/.vimpersonal
