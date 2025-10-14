@@ -7,7 +7,7 @@ ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.dircolors" "$HOME/.dircolors"
 ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 
-for i in foot gh git lynx mods sway tmux; do
+for i in docker foot gh git lynx mods sway tmux; do
   cd $i && ./setup
   cd -
 done
