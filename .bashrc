@@ -265,6 +265,12 @@ clone() {
   cd "$name"
 } && export -f clone
 
+mkcd() {
+    mkdir -p -- "$1" || return
+    # shellcheck disable=SC2164
+    cd -- "$1"
+}
+
 # ------------- Source external dependencies / Completion ------------
 
 _have yq && . <(yq completion bash)
