@@ -39,13 +39,10 @@ export GOTELEMETRY=off
 export GOPROXY=direct
 export CGO_ENABLED=0
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export SYSTEMD_LESS="-FRXMK"
 
-# export LESS="-FXR"
-# export SYSTEMD_LESS="-FRXMK"
+# ------------------------- gruvbox-material -------------------------
 
-# gruvbox-material
-export LS_COLORS="di=38;5;245:fi=38;5;223:ln=38;5;179:ex=38;5;108:*.txt=38;5;223"
-export LESS="-FXR"
 export LESS_TERMCAP_md=$'\e[1;33m'       # start bold (yellow)
 export LESS_TERMCAP_mb=$'\e[1;35m'       # start blinking (magenta)
 export LESS_TERMCAP_me=$'\e[0m'          # end bold/blinking
@@ -53,6 +50,10 @@ export LESS_TERMCAP_so=$'\e[38;5;108;1m' # start standout (green bold)
 export LESS_TERMCAP_se=$'\e[0m'          # end standout
 export LESS_TERMCAP_us=$'\e[4m'          # start underline
 export LESS_TERMCAP_ue=$'\e[0m'          # end underline
+
+export LS_COLORS="di=38;5;245:fi=38;5;223:ln=38;5;179:ex=38;5;108:*.txt=38;5;223"
+
+# ------------------------ Vim spell directory -----------------------
 
 [[ -d "$HOME/.vim/spell" ]] && export VIMSPELL=("$HOME/.vim/spell/*.add")
 
@@ -62,6 +63,8 @@ if [[ -x /usr/bin/lesspipe ]]; then
   export LESSOPEN="| /usr/bin/lesspipe %s"
   export LESSCLOSE="/usr/bin/lesspipe %s %s"
 fi
+
+export LESS="-FXR"
 
 # ----------------------------- Dircolors ----------------------------
 
@@ -274,6 +277,7 @@ mkcd() {
 # ------------- Source external dependencies / Completion ------------
 
 _have yq && . <(yq completion bash)
+_have dyff && . <(dyff completion bash)
 _have glow && . <(glow completion bash)
 _have mods && . <(mods completion bash)
 _have gh && . <(gh completion --shell bash)
@@ -297,3 +301,6 @@ complete -f -F _dotnet_bash_complete dotnet
 _source_if "$HOME/.bash_personal"
 _source_if "$HOME/.bash_private"
 _source_if "$HOME/.bash_work"
+
+_have terraform && complete -C /usr/bin/terraform terraform
+_have terraform && complete -C /usr/bin/terraform tf

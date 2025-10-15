@@ -71,7 +71,7 @@ endif
 match Visual '\s\+$'
 
 " Enough for line numbers + gutter within 80 standard
-set textwidth=72
+set textwidth=70
 " set colorcolumn=73
 
 " Disable relative line numbers, remove no to sample it
@@ -79,6 +79,8 @@ set norelativenumber
 
 " Disable spellcapcheck
 set spc=
+
+set spelllang=en,es
 
 " More risky, but cleaner
 set nobackup
@@ -147,6 +149,7 @@ set ttyfast
 
 " Allow sensing the filetype
 filetype plugin on
+filetype indent on
 
 " High contrast for streaming, etc.
 " set background=dark
