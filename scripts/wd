@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 dir="${PWD##*/}"
 parent="${PWD%"/${dir}"}"
 parent="${parent##*/}"

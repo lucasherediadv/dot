@@ -57,7 +57,7 @@ query() {
 
     SEARCH_TERM="$*"
 
-    if ! type git >/dev/null 2>&1; then
+    if ! command -v git >/dev/null 2>&1; then
         echo "Error: 'git' command not found. Cannot perform query."
         exit 1
     fi
