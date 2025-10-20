@@ -1,2 +1,2 @@
 #!/bin/sh
-exec git status --branch --short "$@"
+exec git status "$@"
