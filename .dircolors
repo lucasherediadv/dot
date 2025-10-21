@@ -19,6 +19,7 @@ TERM dtterm
 TERM Eterm
 TERM eterm-color
 TERM fbterm
+TERM foot
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
@@ -56,6 +57,7 @@ TERM st
 TERM st-meta
 TERM st-256color
 TERM st-meta-256color
+TERM tmux-256color
 TERM vt100
 TERM xterm
 TERM xterm-new
