@@ -6,14 +6,6 @@ case $- in
 *) return ;;
 esac
 
-# ------------------ Start tmux on every shell login -----------------
-
-# if command -v tmux >/dev/null 2>&1; then
-#   if [ -z "${TMUX}" ]; then
-#     tmux new-session
-#   fi
-# fi
-
 # ---------------------- Local utility functions ---------------------
 
 _have() { type "$1" &>/dev/null; }
