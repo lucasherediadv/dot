@@ -8,8 +8,8 @@ esac
 
 # ---------------------- Local utility functions ---------------------
 
-_have() { type "$1" &>/dev/null; }
-_source_if() { [[ -r "$1" ]] && source "$1"; }
+_have() { command -v "$1" &>/dev/null; }
+_source_if() { test -r "$1" && source "$1"; }
 
 # ----------------------- Environment variables ----------------------
 
@@ -22,18 +22,19 @@ export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
 export ZETTELKASTEN="$GHREPOS/zet"
 export TERMINAL_BROWSER=lynx
-export PAGER=less
-export LESSHISTFILE=/dev/null
 export HRULEWIDTH=73
+
+# Go
+export CGO_ENABLED=0
+export GOPROXY=direct
+export GOTELEMETRY=off
 export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
-export GOTELEMETRY=off
-export GOPROXY=direct
-export CGO_ENABLED=0
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export SYSTEMD_LESS="-FRXMK"
 
-# ------------------------- gruvbox-material -------------------------
+# .NET
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# ---------------------- gruvbox-material colors ---------------------
 
 export LESS_TERMCAP_md=$'\e[1;33m'       # start bold (yellow)
 export LESS_TERMCAP_mb=$'\e[1;35m'       # start blinking (magenta)
@@ -56,12 +57,15 @@ if [[ -x /usr/bin/lesspipe ]]; then
   export LESSCLOSE="/usr/bin/lesspipe %s %s"
 fi
 
+export PAGER=less
 export LESS="-FXR"
+export SYSTEMD_LESS="-FRXMK"
+export LESSHISTFILE=/dev/null
 
 # ----------------------------- Dircolors ----------------------------
 
 if _have dircolors; then
-  if [[ -r "$HOME/.dircolors" ]]; then
+  if test -r "$HOME/.dircolors"; then
     eval "$(dircolors -b "$HOME/.dircolors")"
   else
     eval "$(dircolors -b)"
@@ -97,7 +101,6 @@ pathprepend \
 
 pathappend \
   "$GOBIN" \
-  "$GOROOT/bin" \
   "$HOME/.dotnet/tools"
 
 # ------------------------------ CDPATH ------------------------------
@@ -134,7 +137,7 @@ export PROMPT_COMMAND="history -a"
 export HISTTIMEFORMAT='%F %T '
 
 set -o vi
-shopt -s cmdhist # Save multi-line commands as one command
+shopt -s cmdhist    # Save multi-line commands as one command
 shopt -s histappend # Append to the history file, don't overwrite it
 
 # --------------------------- Smart prompt ---------------------------
@@ -206,10 +209,10 @@ alias free='free -h'
 alias tree='tree --dirsfirst -C -a -I .git/'
 alias diff='diff --color=auto'
 alias more='less'
-alias todo='$EDITOR $ZETTELKASTEN/TODO.md'
 alias temp='cd $(mktemp -d)'
 
-# Editor related
+# ------------------------------ Editor ------------------------------
+
 set-editor() {
   export EDITOR="$1"
   export VISUAL="$1"
@@ -221,7 +224,6 @@ set-editor() {
 
 _have "vi" && set-editor vi
 _have "vim" && set-editor vim
-_have "nvim" && set-editor nvim
 
 # ----------------------------- Functions ----------------------------
 
