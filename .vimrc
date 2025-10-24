@@ -1,4 +1,4 @@
-" vim-tiny lacks 'eval'
+" Skip default settings only if 'eval' is available
 if has("eval")
   let skip_defaults_vim = 1
 endif
@@ -26,6 +26,9 @@ set autowrite
 
 " Deactivate line numbers
 set nonumber
+
+" Disable relative line numbers
+set norelativenumber
 
 " Turn col and row position on in bottom right
 set ruler
@@ -67,8 +70,6 @@ match Visual '\s\+$'
 " Enough for line numbers + gutter within 80 standard
 set textwidth=70
 
-" Disable relative line numbers
-set norelativenumber
 
 " Disable spellcapcheck
 set spc=

@@ -220,10 +220,13 @@ set-editor() {
   export GH_EDITOR="$1"
   export GIT_EDITOR="$1"
   alias vi="\$EDITOR"
-}
+} && export -f set-editor
 
-_have "vi" && set-editor vi
-_have "vim" && set-editor vim
+if _have "vim"; then
+  set-editor vim
+elif _have "vi"; then
+  set-editor vi
+fi
 
 # ----------------------------- Functions ----------------------------
 
@@ -281,14 +284,16 @@ _have docker && _source_if "$HOME/.local/share/docker/completion" # d
 _source_if "/usr/share/bash-completion/bash_completion"
 
 # Bash parameter completion for the dotnet CLI
-function _dotnet_bash_complete()
-{
-  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
-  local candidates
-  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
-  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
-}
-complete -f -F _dotnet_bash_complete dotnet
+if _have dotnet; then
+  function _dotnet_bash_complete()
+  {
+    local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
+    local candidates
+    read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
+    read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
+  }
+  complete -f -F _dotnet_bash_complete dotnet
+fi
 
 # -------------------- Personalized configuration --------------------
 
