@@ -13,16 +13,13 @@ _source_if() { test -r "$1" && source "$1"; }
 
 # ----------------------- Environment variables ----------------------
 
-export LANG=en_US.UTF-8
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
-export REPOS="$HOME/Repos"
+export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
 export ZETTELKASTEN="$GHREPOS/zet"
-export TERMINAL_BROWSER=lynx
-export HRULEWIDTH=73
 
 # Go
 export CGO_ENABLED=0
