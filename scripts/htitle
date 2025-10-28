@@ -15,7 +15,7 @@ htitle() {
   _filter "$@" && return $?
   local str="$1" char="${2:--}"
   local -i len=${#str}
-  local -i side=$((((HRULEWIDTH / 2) - len / 2) - 3))
+  local -i side=$((((73 / 2) - len / 2) - 3))
   local -i left=$side
   local -i right=$side
   (( len % 2 == 1 )) && ((right -= 1))
