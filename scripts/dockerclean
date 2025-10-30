@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+command -v docker >/dev/null 2>&1 || { echo "This script requires docker"; exit 1; }
+
 all=$(docker ps -aq)
 
 if [[ -z "$all" ]];then

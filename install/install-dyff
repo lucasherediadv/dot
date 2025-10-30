@@ -1,2 +1,0 @@
-#!/bin/sh
-go install github.com/homeport/dyff/cmd/dyff@latest

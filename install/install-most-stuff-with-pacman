@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo pacman --sync --noconfirm --needed asciiquarium bash-completion bc bind docker docker-buildx dotnet-sdk firefox foot foot-terminfo git github-cli glow go go-yq iwd jq lesspipe man-db lostfiles lynx openssh pacman-contrib reflector rsync shellcheck shfmt sl staticcheck strace terraform tmux tree ttf-jetbrains-mono vim vim-spell-es
-
-# pandoc-cli podman unzip

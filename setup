@@ -4,10 +4,10 @@ set -e
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
 ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
 ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
-ln -sf "$PWD/.dircolors" "$HOME/.dircolors"
+ln -sf "$PWD/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$PWD/.bash_profile" "$HOME/.bash_profile"
 
-for i in docker foot gh git lynx mods sway tmux; do
+for i in foot gh git sway; do
   cd $i && ./setup
   cd -
 done
