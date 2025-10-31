@@ -82,9 +82,11 @@ set viminfofile=NONE
 " Avoid most of the 'Hit Enter ...' messages
 set shortmess=aoOtTI
 
-" Not a fan of bracket matching or folding
+" Not a fan of bracket matching or folding (or netrw)
 if has("eval")
   let g:loaded_matchparen=1
+  let g:loaded_netrw = 0
+  let g:loaded_netrwPlugin = 0
 endif
 set noshowmatch
 
