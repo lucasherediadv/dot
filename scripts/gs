@@ -1,2 +1,2 @@
 #!/bin/sh
-# exec git status "$@"
+exec git status "$@"
