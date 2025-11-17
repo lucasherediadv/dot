@@ -19,7 +19,6 @@ export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dot"
 export SCRIPTS="$DOTFILES/scripts"
-export ZETTELKASTEN="$GHREPOS/zet"
 
 # Pager
 export PAGER=less
