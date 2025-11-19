@@ -6,19 +6,19 @@ case $- in
 *) return ;;
 esac
 
-# ---------------------- Local utility functions ---------------------
-
-_have() { command -v "$1" &>/dev/null; }
-_source_if() { test -r "$1" && source "$1"; }
-
 # ----------------------- Environment variables ----------------------
 
+export LANG="en_US.UTF-8"
 export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
+
+# Editor
+export EDITOR=vim
+export VISUAL=vim
 
 # Pager
 export PAGER=less
@@ -71,6 +71,7 @@ shopt -s histappend
 # ------------------------------ Aliases -----------------------------
 
 unalias -a
+alias vi='vim'
 alias free='free -h'
 alias ip='ip --color=auto'
 alias grep='grep --color=auto'
@@ -78,21 +79,7 @@ alias diff='diff --color=auto'
 alias clear='printf "\e[H\e[2J"'
 alias ls='ls -hF --color=auto --group-directories-first'
 
-# ------------------------------ Editor ------------------------------
-
-set-editor() {
-  export EDITOR="$1"
-  export VISUAL="$1"
-  export SUDO_EDITOR="$1"
-  export GH_EDITOR="$1"
-  export GIT_EDITOR="$1"
-  alias vi="\$EDITOR"
-}
-
-_have "vi" && set-editor vi
-_have "vim" && set-editor vim
-
 # ------------- Source external dependencies / Completion ------------
 
-_source_if "$HOME/.bash_private"
-_source_if "/usr/share/bash-completion/bash_completion"
+[ -f "$HOME/.bash_private" ] && . "$HOME/.bash_private"
+[ -f "/usr/share/bash-completion/bash_completion" ] && . "/usr/share/bash-completion/bash_completion"
